@@ -123,7 +123,8 @@ class Distribuisaun(models.Model):
         ('Gazoel', 'Gazoel'))   
          
     id_distribuisaun = models.AutoField(primary_key=True, editable=False)
-    tipo_kombustivel = models.CharField(max_length=20, choices = KATEGORY)    
+    tipo_kombustivel = models.CharField(max_length=20, choices = KATEGORY)
+    kilometrajen = models.CharField(max_length=200, default=0)   
     id_transporte = models.ForeignKey(Transporte, on_delete=models.CASCADE, null=False, blank=False)
     id_senhas = models.ForeignKey(Senhas, on_delete=models.CASCADE, null=False, blank=False)
     id_motorista = models.ForeignKey(Motorista, on_delete=models.CASCADE, null=False, blank=False)

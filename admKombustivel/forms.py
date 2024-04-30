@@ -9,24 +9,15 @@ from crispy_forms.layout import Layout, Submit, Row, Column, Button, HTML
 class DistributorForm(forms.ModelForm):
     class Meta:
         model = Distribuitor
-        fields = ['naran_distribuitor']
+        fields = ['naran_distribuitor', 'montante_distribuitor', 'data', 'ano']
         labels = {
              'naran_distribuitor': 'Naran Distributor',
+             'montante_distribuitor': 'Montante Kombustivel',
+             'data': 'Data Simu Kombustivel',
+             'ano': 'Tinan',
         # fields = ['cutomer'] #only specific form
         }
-    def __init__(self, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            self.helper = FormHelper()
-            self.fields['naran_distributor'].required = True
-            self.helper.layout = Layout(
-                Row(
-                    Column('naran_distributor', css_class='form-group col-md-6 mb-0'),
-                    css_class='form-row'
-                ),
-                HTML(""" <div class="form-group text-right"><button class="btn btn-sm btn-info" type="submit">Save <i class="fa fa-save"></i></button> """),
-                HTML(""" <span class="btn btn-sm btn-secondary"  onclick=self.history.back()><i class="fa close"></i> Cancel</span></div> """)
-            )
-
+   
 #formulario Motorista
 class MotoristaForm(forms.ModelForm):
     class Meta:

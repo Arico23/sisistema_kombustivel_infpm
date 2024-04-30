@@ -84,9 +84,9 @@ admin.site.register(Senhas, admKombustivelAdminSenhas)
 # admin.site.register(Kombustivel, admKombustivelAdminKombustivel)
 
 class admKombustivelAdminDistribuisaun(admin.ModelAdmin):
-    list_display = ('id_distribuisaun', 'tipo_kombustivel', 'id_transporte', 'id_senhas', 'id_motorista', 'fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data')
-    list_filter = ('tipo_kombustivel', 'id_transporte', 'id_senhas', 'id_motorista', 'fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data')
-    search_fields = ('tipo_kombustivel', 'id_transporte', 'id_senhas', 'id_motorista', 'fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data')
+    list_display = ('id_distribuisaun', 'tipo_kombustivel', 'kilometrajen', 'id_transporte', 'id_senhas', 'id_motorista', 'fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data')
+    list_filter = ('tipo_kombustivel', 'kilometrajen', 'id_transporte', 'id_senhas', 'id_motorista', 'fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data')
+    search_fields = ('tipo_kombustivel', 'kilometrajen', 'id_transporte', 'id_senhas', 'id_motorista', 'fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data')
 
 #registu model ba admin django
 admin.site.register(Distribuisaun, admKombustivelAdminDistribuisaun)

@@ -22,7 +22,6 @@ dadus kombustivel
                           Dadus Distribuitor
                       </div>
                       <div class="card-body">
-                        {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
                         <a class="button-add mb-2 btn btn-primary " data-toggle="modal" data-target="aumenta" href="{% url 'aumenta_distributor' %}">
                         <i class ="fa fa-plus"></i>Aumenta</a> 
                                       
@@ -30,7 +29,10 @@ dadus kombustivel
                               <thead>
                                   <tr>
                                       <th>Nu</th>
-                                      <th>Naran Distributor</th>                           
+                                      <th>Naran Distributor</th> 
+                                      <th>Montante Distributor</th>
+                                      <th>Data</th>
+                                      <th>Loron</th>                          
                                       <th>aksaun</th>
                                   </tr>
                               </thead>
@@ -38,17 +40,22 @@ dadus kombustivel
                                 <tr>
                                     <th>Nu</th>
                                     <th>Naran Distributor</th>
+                                    <th>Montante Distributor</th>
+                                    <th>Lorom</th>
+                                    <th>Ano</th>
                                     <th>aksaun</th>
                                 </tr>
                               </tfoot> 
                               <tbody>
-                                {% for distributor in disributors %}
+                                {% for distributor in kombustivels %}
                                   <tr>
                                     <td>{{ forloop.counter }}</td> <!-- Display field number -->
                                       <td>{{distributor.naran_distribuitor}}</td>
-                                      <td>
-                                        <a class="btn-edit btn btn-primary" href="">Edit</a>
-                                        {% comment %} <a class="btn-Delete btn btn-danger" href="{% url 'apagaDadus' kombustivel.id_kombustivel %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a> {% endcomment %}
+                                      <td>{{distributor.montante_distribuitor}}</td>
+                                      <td>{{distributor.data}}</td>
+                                      <td>{{distributor.ano}}</td>
+                                      <td> <a class="btn-edit btn btn-primary" href="">Edit</a>
+                                        {% comment %} <a class="btn-Delete btn btn-danger" href="{% url 'apagaDadus' kombustivel.id_kombustivel %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a> {% endcomment %} 
                                       </td>
                                     </tr>
                             {% endfor %}

@@ -1,0 +1,44 @@
+{% extends 'templateKombustivel/base.html' %}
+{% load static %}
+
+{% block title %}
+Login
+{% endblock %}
+
+
+{% block templateLogin %}
+<link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block konteudu %}
+<div class="container">
+    <div class="card col-md-6">
+    <div class="card-body">
+    <div class="logo text-center mt-5 skeleton">
+        <img class="logo" src="assets/img/sejd.png" alt="logo_sejd" width="150px">
+    </div>
+    <div class="row mb-5">
+        <div class="col-md-6 offset-md-3">
+
+            <div class="login-container">
+                <h2 class="text-center skeleton">Bemvindo</h2>
+                <form method="POST" action="login_process.php">
+                    <div class="form-group skeleton">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="form-group skeleton">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block skeleton" style="margin-top:20px;">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+   </div> 
+    </div>
+{% endblock %}

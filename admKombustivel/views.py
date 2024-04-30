@@ -3,6 +3,9 @@ from .forms import DistribuisaunForm, TransporteForm, DistributorForm, Motorista
 from .models import *
 from django.shortcuts import render, redirect
 
+def login (request):
+    return render(request, 'templateKombustivel/login/login.html')
+
 
 def dash_kombustivel (request):
     return render(request, 'templateKombustivel/dash_kombustivel.html')
