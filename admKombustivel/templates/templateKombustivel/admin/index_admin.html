@@ -1,0 +1,81 @@
+{% extends 'templateKombustivel/base.html' %}
+{% load static %}
+
+{% block title %}
+Admin
+{% endblock %}
+
+{% block konteudu %}
+<body class="sb-nav-fixed">
+    {% include 'templateKombustivel/side-navbar.html' %}
+      <div id="layoutSidenav_content">
+          <main>
+              <div class="container-fluid px-4">
+                  <div class="card mb-4 mt-4">
+                      <div class="card-header">
+                          <i class="fas fa-table me-1"></i>
+                          Lista Admin
+                      </div>
+                      <div class="card-body">
+                        {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
+                        <a class="button-add mb-2 btn btn-primary" href="{% url 'aumenta_admin' %}">
+                            <i class ="fa fa-plus"></i>Aumenta Admin</a> 
+                               
+                          <table id="datatablesSimple">
+                              <thead>
+                                  <tr>
+                                      <th>Nu</th>
+                                      <th>Naran</th>
+                                      <th>Email</th>
+                                      <th>Nu-Telefone</th>
+                                      <th>level</th>
+                                      <th>aksaun</th>
+                                  </tr>
+                              </thead>
+                           <tfoot>
+                                <tr>
+                                    <th>Nu</th>
+                                      <th>Naran</th>
+                                      <th>Email</th>
+                                      <th>Nu-Telefone</th>
+                                      <th>level</th>
+                                      <th>aksaun</th>
+                                </tr>
+                              </tfoot> 
+                              <tbody>
+                                  <tr>
+                                      <td>Tiger Nixon</td>
+                                      <td>System Architect</td>
+                                      <td>Edinburgh</td>
+                                      <td>61</td>
+                                      <td>2011/04/25</td>
+                                      <td>
+                                        <a class="btn-edit btn btn-primary" href="{% url 'edit_admin' %}">Edit</a>
+                                        <a class="btn-Delete btn btn-danger" href="">Delete</a>
+                                      </td>
+                                    </tr>
+                                  </tr>        
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </main>
+          <footer class="py-4 bg-light mt-auto">
+              <div class="container-fluid px-4">
+                  <div class="d-flex align-items-center justify-content-between small">
+                      <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                      <div>
+                          <a href="#">Privacy Policy</a>
+                          &middot;
+                          <a href="#">Terms &amp; Conditions</a>
+                      </div>
+                  </div>
+              </div>
+          </footer>
+      </div>
+  </div>
+       
+</body>
+{% endblock %}
+

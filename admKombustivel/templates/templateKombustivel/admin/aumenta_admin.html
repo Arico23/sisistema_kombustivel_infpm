@@ -1,0 +1,104 @@
+<!-- input_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Input Form</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    input[type="text"], input[type="email"], textarea, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    label {
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Aumenta Admin</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="name">Naran</label>
+            <input type="text" class="form-control"  id="name" name="name" placeholder="Naran" required>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Email</label>
+            <input type="email" class="form-control" id="name" name="name" placeholder="Email" required>
+        </div>
+
+         <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="name">Nu-telefone</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nu-telefone" required>
+                </div>
+                </div>
+
+        <div class="col-sm-6">
+         <div class="form-group">
+            <label for="gender">Level</label>
+            <select class="form-control" id="gender" name="gender" required>
+                <option value="">Hili</option>
+                <option value="male">Admin</option>
+                <option value="female">User</option>
+            </select>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Username" required>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="name">Password</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Password" required>
+            </div>
+        </div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{% extends 'templateKombustivel/base.html' %}
+{% load static %}
+
+{% block title %}
+dadus kombustivel
+{% endblock %}
+
+{% block konteudu %}
+<body class="sb-nav-fixed">
+    {% include 'templateKombustivel/side-navbar.html' %}
+      <div id="layoutSidenav_content">
+          <main>
+              <div class="container-fluid px-4">
+                <h1 class="mt-4">Dadus Motorista</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Dadus Motorista</li>
+                </ol>
+                  <div class="card mb-4 mt-4">
+                      <div class="card-header">
+                          <i class="fas fa-table me-1"></i>
+                          Dadus Motorista
+                      </div>
+                      <div class="card-body">
+                        {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
+                        <a class="button-add mb-2 btn btn-primary" href="{% url 'aumenta_dadus_motorista' %}">
+                        <i class ="fa fa-plus"></i>Aumenta</a> 
+                                      
+                        <table id="datatablesSimple">
+                              <thead>
+                                  <tr>
+                                      <th>Nu</th>
+                                      <th>Naran Motorista</th>
+                                      <th>Sexo</th>
+                                      <th>Departamentu</th>
+                                      <th>Diresaun</th>
+                                      <th>Regional</th>
+                                      <th>aksaun</th>
+                                  </tr>
+                              </thead>
+                           <tfoot>
+                                <tr>
+                                    <th>Nu</th>
+                                    <th>Naran Motorista</th>
+                                    <th>Sexo</th>
+                                    <th>Departamentu</th>
+                                    <th>Diresaun</th>
+                                    <th>Regional</th>
+                                    <th>aksaun</th>
+                                </tr>
+                              </tfoot> 
+                              <tbody>
+                                 {% for motorista in motorista %}
+                                  <tr>
+                                    <td>{{ forloop.counter }}</td> <!-- Display field number -->
+                                      <td>{{motorista.naran_motorista}}</td>
+                                      <td>{{motorista.sexo}}</td>
+                                      <td>{{motorista.id_departamentu}}</td>
+                                      <td>{{motorista.id_diresaun}}</td>
+                                      <td>{{motorista.id_regional}}</td>
+                                      <td> 
+                                        <a class="btn-edit btn btn-primary" href="{% url 'updateMotorista' motorista.id_motorista %}">Edit</a>
+                                        <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_motorista' motorista.id_motorista %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a>
+                                      </td>
+                                    </tr>
+                            {% endfor %}
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </main>
+          <footer class="py-4 bg-light mt-auto">
+              <div class="container-fluid px-4">
+                  <div class="d-flex align-items-center justify-content-between small">
+                      <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                      <div>
+                          <a href="#">Privacy Policy</a>
+                          &middot;
+                          <a href="#">Terms &amp; Conditions</a>
+                      </div>
+                  </div>
+              </div>
+          </footer>
+      </div>
+  </div>
+       
+</body>
+{% endblock %}
+
