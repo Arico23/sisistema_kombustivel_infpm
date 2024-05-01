@@ -39,7 +39,7 @@ class RegionalForm(forms.ModelForm):
         # fields = ['cutomer'] #only specific form
         }
 
-#formulario Regional
+#formulario Departamentu
 class DepartamentuForm(forms.ModelForm):
     class Meta:
         model = Departamentu
@@ -48,7 +48,17 @@ class DepartamentuForm(forms.ModelForm):
              'naran_departamentu': 'Naran Departamentu',
         # fields = ['cutomer'] #only specific form
         }
+#formulario Diresaun
+class DiresaunForm(forms.ModelForm):
+    class Meta:
+        model = Diresaun
+        fields = ['naran_diresaun']
+        labels = {
+             'naran_diresaun': 'Naran Diresaun',
+        # fields = ['cutomer'] #only specific form
+        }
    
+
 #formulario Motorista
 class MotoristaForm(forms.ModelForm):
     class Meta:

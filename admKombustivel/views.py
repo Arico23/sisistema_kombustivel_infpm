@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm, DepartamentuForm
+from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm, DepartamentuForm, DiresaunForm
 from .models import *
 from django.shortcuts import render, redirect
 
@@ -155,6 +155,43 @@ def updateDepartamentu (request, pk):
     context = {'form': form}
     return render(request, 'templateKombustivel/departamentu/update_departamentu.html', context)
 
+def dadus_diresaun (request):
+    dadus_diresaun = Diresaun.objects.all()
+    context = {'kombustivels': dadus_diresaun}
+    return render(request, 'templateKombustivel/diresaun/dadus_diresaun.html', context)
+
+def aumenta_dadus_diresaun (request):
+    form = DiresaunForm
+    if request.method == 'POST':
+        form = DiresaunForm(request.POST)
+        if form.is_valid():
+           form.save()
+           return redirect('dadus_diresaun')
+        
+    context = {'form': form}
+    return render(request, 'templateKombustivel/diresaun/aumenta_dadus_diresaun.html', context)
+
+
+def delete_dadus_diresaun (request, pk):
+    diresaun = Diresaun.objects.get(id_diresaun=pk)
+    if request.method == 'GET':
+        diresaun.delete()
+        return redirect('dadus_diresaun')
+    
+def updateDiresaun (request, pk):
+    diresaun = Diresaun.objects.get(id_diresaun=pk)
+    form = DiresaunForm(instance=diresaun)
+    
+    if request.method == 'POST':
+        # print('Printing Post', request.POST) print result form iha terminal
+        form = DiresaunForm(request.POST, instance=diresaun)
+        if form.is_valid():
+            form.save()
+            return redirect('dadus_diresaun')
+    context = {'form': form}
+    return render(request, 'templateKombustivel/diresaun/update_diresaun.html', context)
+
+    
 
 def dadus_trans (request):
     dadus_transporte = Transporte.objects.all()
