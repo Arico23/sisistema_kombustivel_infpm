@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm
+from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm, DepartamentuForm
 from .models import *
 from django.shortcuts import render, redirect
 
@@ -26,23 +26,6 @@ def aumenta_distributor (request):
          
     context = {'form': form}
     return render(request, 'templateKombustivel/distributor/aumenta_distributor.html', context)
-
-#views stock kombustivel
-# def dadus_kom (request):
-#     dadus_kombustivel = Kombustivel.objects.all()
-#     context = {'kombustivels': dadus_kombustivel}
-#     return render(request, 'templateKombustivel/kombustivel/dadus_kom.html', context)
-
-# def aumenta_dadus_kom (request):
-#     form = KombustivelForm
-#     if request.method == 'POST':
-#         form = KombustivelForm(request.POST)
-#         if form.is_valid():
-#            form.save()
-#            return redirect('dadus_kom')
-         
-#     context = {'form': form}
-#     return render(request, 'templateKombustivel/kombustivel/aumenta_dadus_kom.html', context)
 
 #views distribuisaun kombustivel
 def distribui_kom (request):
@@ -135,25 +118,43 @@ def updateRegional (request, pk):
     context = {'form': form}
     return render(request, 'templateKombustivel/regional/update_regional.html', context)
 
+#views departamentu
+def dadus_departamentu (request):
+    dadus_departamentu = Departamentu.objects.all()
+    context = {'kombustivels': dadus_departamentu}
+    return render(request, 'templateKombustivel/departamentu/dadus_departamentu.html', context)
 
-# def deleteKombustivel(request, pk):
-#     kombustivel = Kombustivel.objects.get(id_kombustivel=pk)
-#     if request.method == 'GET':
-#         kombustivel.delete()
-#         return redirect('dadus_kom')
+def aumenta_dadus_departamentu (request):
+    form = DepartamentuForm
+    if request.method == 'POST':
+        form = DepartamentuForm(request.POST)
+        if form.is_valid():
+           form.save()
+           return redirect('dadus_departamentu')
+        
+    context = {'form': form}
+    return render(request, 'templateKombustivel/departamentu/aumenta_dadus_departamentu.html', context)
 
-# def updateKombustivel (request, pk):
-#     kombustivel = Kombustivel.objects.get(id_kombustivel=pk)
-#     form = KombustivelForm(instance=kombustivel)
+
+def delete_dadus_departamentu (request, pk):
+    departamentu = Departamentu.objects.get(id_departamentu=pk)
+    if request.method == 'GET':
+        departamentu.delete()
+        return redirect('dadus_departamentu')
     
-#     if request.method == 'POST':
-#         # print('Printing Post', request.POST) print result form iha terminal
-#         form = KombustivelForm(request.POST, instance=kombustivel)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('dadus_kom')
-#     context = {'form': form}
-#     return render(request, 'templateKombustivel/kombustivel/update_kom.html', context)
+def updateDepartamentu (request, pk):
+    departamentu = Departamentu.objects.get(id_departamentu=pk)
+    form = DepartamentuForm(instance=departamentu)
+    
+    if request.method == 'POST':
+        # print('Printing Post', request.POST) print result form iha terminal
+        form = DepartamentuForm(request.POST, instance=departamentu)
+        if form.is_valid():
+            form.save()
+            return redirect('dadus_departamentu')
+    context = {'form': form}
+    return render(request, 'templateKombustivel/departamentu/update_departamentu.html', context)
+
 
 def dadus_trans (request):
     dadus_transporte = Transporte.objects.all()
