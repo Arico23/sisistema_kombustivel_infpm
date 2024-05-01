@@ -1,0 +1,79 @@
+{% extends 'templateKombustivel/base.html' %}
+{% load static %}
+
+{% block title %}
+dadus senhas
+{% endblock %}
+
+{% block konteudu %}
+<body class="sb-nav-fixed">
+    {% include 'templateKombustivel/side-navbar.html' %}
+      <div id="layoutSidenav_content">
+          <main>
+              <div class="container-fluid px-4">
+                <h1 class="mt-4">Dadus Regional</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Dadus Regional</li>
+                </ol>
+                  <div class="card mb-4 mt-4">
+                      <div class="card-header">
+                          <i class="fas fa-table me-1"></i>
+                          Dadus Regional
+                      </div>
+                      <div class="card-body">
+                        {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
+                        <a class="button-add mb-2 btn btn-primary" href="{% url 'aumenta_dadus_regional' %}">
+                        <i class ="fa fa-plus"></i>Aumenta</a> 
+                                      
+                        <table id="datatablesSimple">
+                              <thead>
+                                  <tr>
+                                      <th>Nu</th>
+                                      <th>Naran Regional</th>
+                                      <th>aksaun</th>
+                                  </tr>
+                              </thead>
+                           <tfoot>
+                                <tr>
+                                    <th>Nu</th>
+                                    <th>Naran Regional</th>
+                                    <th>aksaun</th>
+                                </tr>
+                              </tfoot> 
+                              <tbody>
+                                 {% for regional in kombustivels %}
+                                  <tr>
+                                        <td>{{ forloop.counter }}</td> <!-- Display field number -->
+                                        <td>{{regional.naran_regional}}</td>
+                                        <td> 
+                                            <a class="btn-edit btn btn-primary" href="{% url 'updateRegional' regional.id_regional %}">Edit</a>
+                                            <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_regional' regional.id_regional %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </main>
+          <footer class="py-4 bg-light mt-auto">
+              <div class="container-fluid px-4">
+                  <div class="d-flex align-items-center justify-content-between small">
+                      <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                      <div>
+                          <a href="#">Privacy Policy</a>
+                          &middot;
+                          <a href="#">Terms &amp; Conditions</a>
+                      </div>
+                  </div>
+              </div>
+          </footer>
+      </div>
+  </div>
+       
+</body>
+{% endblock %}
+

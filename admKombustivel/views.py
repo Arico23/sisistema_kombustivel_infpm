@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm
+from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm
 from .models import *
 from django.shortcuts import render, redirect
 
@@ -61,6 +61,80 @@ def aumenta_dadus_distribuisaun (request):
          
     context = {'form': form}
     return render(request, 'templateKombustivel/kombustivel/aumenta_dadus_distribuisaun.html', context)
+
+#views senhas
+def senhas (request):
+    dadus_senhas = Senhas.objects.all()
+    context = {'kombustivels': dadus_senhas}
+    return render(request, 'templateKombustivel/senhas/senhas.html', context)
+
+def aumenta_dadus_senhas (request):
+    form = SenhasForm
+    if request.method == 'POST':
+        form = SenhasForm(request.POST)
+        if form.is_valid():
+           form.save()
+           return redirect('dadus_senhas')
+         
+    context = {'form': form}
+    return render(request, 'templateKombustivel/senhas/aumenta_dadus_senhas.html', context)
+
+def delete_dadus_senhas (request, pk):
+    senhas = Senhas.objects.get(id_senhas=pk)
+    if request.method == 'GET':
+        senhas.delete()
+        return redirect('dadus_senhas')
+    
+def updateSenhas (request, pk):
+    senhas = Senhas.objects.get(id_senhas=pk)
+    form = SenhasForm(instance=senhas)
+    
+    if request.method == 'POST':
+        # print('Printing Post', request.POST) print result form iha terminal
+        form = SenhasForm(request.POST, instance=senhas)
+        if form.is_valid():
+            form.save()
+            return redirect('dadus_senhas')
+    context = {'form': form}
+    return render(request, 'templateKombustivel/senhas/update_senhas.html', context)
+
+#views regionsal
+def dadus_regional (request):
+    dadus_regional = Regional.objects.all()
+    context = {'kombustivels': dadus_regional}
+    return render(request, 'templateKombustivel/regional/dadus_regional.html', context)
+
+def aumenta_dadus_regional (request):
+    form = RegionalForm
+    if request.method == 'POST':
+        form = RegionalForm(request.POST)
+        if form.is_valid():
+           form.save()
+           return redirect('dadus_regional')
+        
+    context = {'form': form}
+    return render(request, 'templateKombustivel/regional/aumenta_dadus_regional.html', context)
+
+
+def delete_dadus_regional (request, pk):
+    regional = Regional.objects.get(id_regional=pk)
+    if request.method == 'GET':
+        regional.delete()
+        return redirect('dadus_regional')
+
+def updateRegional (request, pk):
+    regional = Regional.objects.get(id_regional=pk)
+    form = RegionalForm(instance=regional)
+    
+    if request.method == 'POST':
+        # print('Printing Post', request.POST) print result form iha terminal
+        form = RegionalForm(request.POST, instance=regional)
+        if form.is_valid():
+            form.save()
+            return redirect('dadus_regional')
+    context = {'form': form}
+    return render(request, 'templateKombustivel/regional/update_regional.html', context)
+
 
 # def deleteKombustivel(request, pk):
 #     kombustivel = Kombustivel.objects.get(id_kombustivel=pk)

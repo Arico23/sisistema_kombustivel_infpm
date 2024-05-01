@@ -17,6 +17,27 @@ class DistributorForm(forms.ModelForm):
              'ano': 'Tinan',
         # fields = ['cutomer'] #only specific form
         }
+
+#formulario senhas
+class SenhasForm(forms.ModelForm):
+    class Meta:
+        model = Senhas
+        fields = ['nu_senhas', 'folin_senhas']
+        labels = {
+             'nu_senhas': 'Numeru Senhas',
+             'folin senhas': 'Folin Senhas',
+        # fields = ['cutomer'] #only specific form
+        }
+
+#formulario Regional
+class RegionalForm(forms.ModelForm):
+    class Meta:
+        model = Regional
+        fields = ['naran_regional']
+        labels = {
+             'naran_regional': 'Naran Regional',
+        # fields = ['cutomer'] #only specific form
+        }
    
 #formulario Motorista
 class MotoristaForm(forms.ModelForm):
