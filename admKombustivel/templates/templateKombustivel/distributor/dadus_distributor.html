@@ -54,8 +54,8 @@ dadus kombustivel
                                       <td>{{distributor.montante_distribuitor}}</td>
                                       <td>{{distributor.data}}</td>
                                       <td>{{distributor.ano}}</td>
-                                      <td> <a class="btn-edit btn btn-primary" href="">Edit</a>
-                                        {% comment %} <a class="btn-Delete btn btn-danger" href="{% url 'apagaDadus' kombustivel.id_kombustivel %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a> {% endcomment %} 
+                                      <td> <a class="btn-edit btn btn-primary" href="{% url 'updateDistributor' distributor.id_distribuitor %}">Edit</a>
+                                        <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_distributor' distributor.id_distribuitor %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a> 
                                       </td>
                                     </tr>
                             {% endfor %}

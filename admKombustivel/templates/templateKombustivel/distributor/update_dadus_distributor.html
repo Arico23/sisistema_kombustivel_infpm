@@ -4,7 +4,7 @@
 
 {% block konteudu %}
 <div class="container">
-    <h2 class='mt-4 mb-4'>Formulariu Prenxe Dadus Distribuitor</h2>
+    <h2 class='mt-4 mb-4'>Formulariu Update Dadus Distribuitor</h2>
     <form method="post" novalidate>
         {% csrf_token %}
         <div class="card">
@@ -26,8 +26,8 @@
 
         
         </div>
-        <button type="submit" class="btn btn-success">Rai Dadus</button>
-        <a href="#" class="btn btn-warning">Kansela</a> 
+        <button type="submit" class="btn btn-success">Update Dadus</button>
+        <a href="{% url 'dadus_distributor' %}" class="btn btn-warning">Kansela</a> 
     </div>
     </div>
  

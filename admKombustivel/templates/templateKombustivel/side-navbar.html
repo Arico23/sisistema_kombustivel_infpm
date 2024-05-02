@@ -77,6 +77,16 @@
                         Dadus Departamentu
                     </a>
 
+                    <a class="nav-link" href="{% url 'dadus_trans' %}">
+                        <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
+                        Dadus Transporte
+                    </a>
+                    <a class="nav-link" href="{% url 'dadus_motorista' %}">
+                        <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
+                        Dadus Motorista
+                    </a>
+
+
                     <a class="nav-link" href="{% url 'dadus_tinan' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
                         Dadus Tinan
@@ -127,15 +137,7 @@
                             </a>
                         </nav>
                     </div>
-                        <a class="nav-link" href="{% url 'dadus_trans' %}">
-                            <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
-                            Dadus Transporte
-                        </a>
-                        <a class="nav-link" href="{% url 'dadus_motorista' %}">
-                            <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
-                            Dadus Motorista
-                        </a>
-
+                  
                     
 
                      {% comment %} <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">

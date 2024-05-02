@@ -27,6 +27,28 @@ def aumenta_distributor (request):
     context = {'form': form}
     return render(request, 'templateKombustivel/distributor/aumenta_distributor.html', context)
 
+
+def delete_dadus_distributor (request, pk):
+    distributor = Distribuitor.objects.get(id_distribuitor=pk)
+    if request.method == 'GET':
+        distributor.delete()
+        return redirect('dadus_distributor')
+    
+def updateDistributor (request, pk):
+    distributor = Distribuitor.objects.get(id_distribuitor=pk)
+    form = DistributorForm(instance=distributor)
+    
+    if request.method == 'POST':
+        # print('Printing Post', request.POST) print result form iha terminal
+        form = DistributorForm(request.POST, instance=distributor)
+        if form.is_valid():
+            form.save()
+            return redirect('dadus_distributor')
+    context = {'form': form}
+    return render(request, 'templateKombustivel/distributor/update_dadus_distributor.html', context)
+
+    
+
 #views distribuisaun kombustivel
 def distribui_kom (request):
     dadus_distribuisaun = Distribuisaun.objects.all()
@@ -241,6 +263,28 @@ def aumenta_dadus_tinan (request):
         if form.is_valid():
            form.save()
            return redirect('dadus_tinan')
+    context = {'form': form}
+    return render(request, 'templateKombustivel/tinan/aumenta_dadus_tinan.html', context)
+
+def delete_dadus_tinan (request, pk):
+    tinan = Tinan.objects.get(ano=pk)
+    if request.method == 'GET':
+        tinan.delete()
+        return redirect('dadus_tinan')
+    
+def updateTinan (request, pk):
+    tinan = Tinan.objects.get(ano=pk)
+    form = TinanForm(instance=tinan)
+    
+    if request.method == 'POST':
+        # print('Printing Post', request.POST) print result form iha terminal
+        form = TinanForm(request.POST, instance=tinan)
+        if form.is_valid():
+            form.save()
+            return redirect('dadus_tinan')
+    context = {'form': form}
+    return render(request, 'templateKombustivel/tinan/update_tinan.html', context)
+
 
 def dadus_trans (request):
     dadus_transporte = Transporte.objects.all()

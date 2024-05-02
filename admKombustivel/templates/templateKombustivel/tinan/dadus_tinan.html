@@ -11,15 +11,15 @@ dadus senhas
       <div id="layoutSidenav_content">
           <main>
               <div class="container-fluid px-4">
-                <h1 class="mt-4">Dadus Fulan</h1>
+                <h1 class="mt-4">Dadus Tinan</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Dadus Fulan</li>
+                    <li class="breadcrumb-item active">Dadus Tinan</li>
                 </ol>
                   <div class="card mb-4 mt-4">
                       <div class="card-header">
                           <i class="fas fa-table me-1"></i>
-                          Dadus Fulan
+                          Dadus Tinan
                       </div>
                       <div class="card-body">
                         {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
@@ -47,8 +47,8 @@ dadus senhas
                                         <td>{{ forloop.counter }}</td> <!-- Display field number -->
                                         <td>{{tinan.ano}}</td>
                                         <td> 
-                                            <a class="btn-edit btn btn-primary" href="">Edit</a>
-                                            <a class="btn-Delete btn btn-danger" href="" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a>
+                                            <a class="btn-edit btn btn-primary" href="{% url 'updateTinan' tinan.ano %}">Edit</a>
+                                            <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_tinan' tinan.ano %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a>
                                         </td>
                                     </tr>
                                     {% endfor %}

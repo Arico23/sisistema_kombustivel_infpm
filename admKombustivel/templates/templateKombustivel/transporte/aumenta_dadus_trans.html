@@ -4,12 +4,31 @@
 
 
 {% block konteudu %}
+{% include 'templateKombustivel/side-navbar.html' %}
 <div class="container">
     <h2 class='mt-4 mb-4'>Formulariu Prenxe Dadus Transporte</h2>
-    <div class='card'>
-        <div class='card-body'>
-             {% crispy form %}
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="card">
+        <div class="card-body">
+
+        <div class="row">
+          <div class="col-6">
+            {{ form.nu_matricula | as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.categoria | as_crispy_field }}
+          </div>
         </div>
+        <div class="row">
+            <div class="col-6">
+              {{ form.tipo_transporte | as_crispy_field }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Rai Dadus</button>
+        <a href="{% url 'dadus_trans' %}" class="btn btn-warning">Kansela</a> 
     </div>
+    </div>
+    </form>
 </div>
 {% endblock konteudu%}

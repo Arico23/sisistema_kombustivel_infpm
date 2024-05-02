@@ -224,22 +224,22 @@ class TransporteForm(forms.ModelForm):
         }
         # fields = ['cutomer'] #only specific form
     
-    def __init__(self, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            self.helper = FormHelper()
-            self.fields['nu_matricula'].required = True
-            self.fields['categoria'].required = True
-            self.fields['tipo_transporte'].required = True
-            self.helper.layout = Layout(
-                Row(
-                    Column('nu_matricula', css_class='form-group col-md-6 mb-0'),
-                    Column('categoria', css_class='form-group col-md-6 mb-0'),
-                    Column('tipo_transporte', css_class='form-group col-md-6 mb-0'),
-                    css_class='form-row'
-                ),
-                HTML(""" <div class="form-group text-right"><button class="btn btn-sm btn-info" type="submit">Save <i class="fa fa-save"></i></button> """),
-                HTML(""" <span class="btn btn-sm btn-secondary"  onclick=self.history.back()><i class="fa close"></i> Cancel</span></div> """)
-            )
+    # def __init__(self, *args, **kwargs):
+    #         super().__init__(*args, **kwargs)
+    #         self.helper = FormHelper()
+    #         self.fields['nu_matricula'].required = True
+    #         self.fields['categoria'].required = True
+    #         self.fields['tipo_transporte'].required = True
+    #         self.helper.layout = Layout(
+    #             Row(
+    #                 Column('nu_matricula', css_class='form-group col-md-6 mb-0'),
+    #                 Column('categoria', css_class='form-group col-md-6 mb-0'),
+    #                 Column('tipo_transporte', css_class='form-group col-md-6 mb-0'),
+    #                 css_class='form-row'
+    #             ),
+    #             HTML(""" <div class="form-group text-right"><button class="btn btn-sm btn-info" type="submit">Save <i class="fa fa-save"></i></button> """),
+    #             HTML(""" <span class="btn btn-sm btn-secondary"  onclick=self.history.back()><i class="fa close"></i> Cancel</span></div> """)
+    #         )
 
 
 
