@@ -89,7 +89,7 @@ class Distribuitor(models.Model):
         return self.naran_distribuitor
     
 class Fulan(models.Model):     
-    id_fulan = models.IntegerField(primary_key=True, editable=False,)
+    id_fulan = models.AutoField(primary_key=True, editable=False)
     naran_fulan = models.CharField(max_length=20)
     
     # def __str__(self):

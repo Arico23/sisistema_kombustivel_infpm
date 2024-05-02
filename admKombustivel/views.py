@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm, DepartamentuForm, DiresaunForm
+from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm, DepartamentuForm, DiresaunForm, FulanForm, TinanForm
 from .models import *
 from django.shortcuts import render, redirect
 
@@ -191,7 +191,56 @@ def updateDiresaun (request, pk):
     context = {'form': form}
     return render(request, 'templateKombustivel/diresaun/update_diresaun.html', context)
 
+#views fulan
+def dadus_fulan (request):
+    dadus_fulan = Fulan.objects.all()
+    context = {'kombustivels': dadus_fulan}
+    return render(request, 'templateKombustivel/fulan/dadus_fulan.html', context)
+
+def aumenta_dadus_fulan (request):
+    form = FulanForm
+    if request.method == 'POST':
+        form = FulanForm(request.POST)
+        if form.is_valid():
+           form.save()
+           return redirect('dadus_fulan')
+        
+    context = {'form': form}
+    return render(request, 'templateKombustivel/fulan/aumenta_dadus_fulan.html', context)
+
+
+def delete_dadus_fulan (request, pk):
+    fulan = Fulan.objects.get(id_fulan=pk)
+    if request.method == 'GET':
+        fulan.delete()
+        return redirect('dadus_fulan')
     
+def updateFulan (request, pk):
+    fulan = Fulan.objects.get(id_fulan=pk)
+    form = FulanForm(instance=fulan)
+    
+    if request.method == 'POST':
+        # print('Printing Post', request.POST) print result form iha terminal
+        form = FulanForm(request.POST, instance=fulan)
+        if form.is_valid():
+            form.save()
+            return redirect('dadus_fulan')
+    context = {'form': form}
+    return render(request, 'templateKombustivel/fulan/update_fulan.html', context)
+
+#views fulan
+def dadus_tinan (request):
+    dadus_tinan = Tinan.objects.all()
+    context = {'kombustivels': dadus_tinan}
+    return render(request, 'templateKombustivel/tinan/dadus_tinan.html', context)
+
+def aumenta_dadus_tinan (request):
+    form = TinanForm
+    if request.method == 'POST':
+        form = TinanForm(request.POST)
+        if form.is_valid():
+           form.save()
+           return redirect('dadus_tinan')
 
 def dadus_trans (request):
     dadus_transporte = Transporte.objects.all()

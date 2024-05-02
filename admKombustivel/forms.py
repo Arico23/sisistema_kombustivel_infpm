@@ -57,7 +57,25 @@ class DiresaunForm(forms.ModelForm):
              'naran_diresaun': 'Naran Diresaun',
         # fields = ['cutomer'] #only specific form
         }
-   
+#formulario Fulan
+class FulanForm(forms.ModelForm):
+    class Meta:
+        model = Fulan
+        fields = ['naran_fulan']
+        labels = {
+             'naran_fulan': 'Fulan',
+        # fields = ['cutomer'] #only specific form
+        }
+
+#formulario Fulan
+class TinanForm(forms.ModelForm):
+    class Meta:
+        model = Tinan
+        fields = ['ano']
+        labels = {
+             'ano': 'Tinan',
+        # fields = ['cutomer'] #only specific form
+        }
 
 #formulario Motorista
 class MotoristaForm(forms.ModelForm):
