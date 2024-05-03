@@ -20,39 +20,93 @@ Dashboard Kombustivel
                   <div class="row">
                       <div class="col-xl-3 col-md-6">
                           <div class="card bg-primary text-white mb-4">
-                              <div class="card-body">Mina tama</div>
+                              <div class="card-body">Stock Kombustivel Atual</div>
+                              <div class="card-body"><h4>$200</h4></div>
                               <div class="card-footer d-flex align-items-center justify-content-between">
-                                  <a class="small text-white stretched-link" href="#">View Details</a>
+                                  <a class="small text-white stretched-link" href="#">Hare Detalhu</a>
                               </div>
                           </div>
                       </div>
                       <div class="col-xl-3 col-md-6">
                           <div class="card bg-warning text-white mb-4">
-                              <div class="card-body">Warning Card</div>
+                              <div class="card-body">Stock Sai</div>
+                              <div class="card-body"><h3>$200</h3></div>
                               <div class="card-footer d-flex align-items-center justify-content-between">
-                                  <a class="small text-white stretched-link" href="#">View Details</a>
+                                  <a class="small text-white stretched-link" href="#">Hare Detalhu</a>
                                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                               </div>
                           </div>
                       </div>
                       <div class="col-xl-3 col-md-6">
                           <div class="card bg-success text-white mb-4">
-                              <div class="card-body">Success Card</div>
+                              <div class="card-body">Total Transporte</div>
+                              <div class="card-body"><h3>20</h3></div>
                               <div class="card-footer d-flex align-items-center justify-content-between">
-                                  <a class="small text-white stretched-link" href="#">View Details</a>
+                                  <a class="small text-white stretched-link" href="#">Hare Detalhu</a>
                                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                               </div>
                           </div>
                       </div>
                       <div class="col-xl-3 col-md-6">
                           <div class="card bg-danger text-white mb-4">
-                              <div class="card-body">Danger Card</div>
+                              <div class="card-body">Total Motorista</div>
+                              <div class="card-body"><h3>40</h3></div>
                               <div class="card-footer d-flex align-items-center justify-content-between">
-                                  <a class="small text-white stretched-link" href="#">View Details</a>
+                                  <a class="small text-white stretched-link" href="#">Hare Detalhu</a>
                                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                               </div>
                           </div>
                       </div>
+                      <div class="col-xl-3 col-md-6">
+                        <div class="card bg-danger text-white mb-4">
+                            <div class="card-body">Total Diresaun</div>
+                            <div class="card-body"><h3>8</h3></div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="{% url 'dadus_diresaun' %}">Hare Detalhu</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-warning text-white mb-4">
+                            <div class="card-body">Total Departamentu</div>
+                            <div class="card-body"><h3>10</h3></div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="{% url 'dadus_departamentu' %}">Hare Detalhu</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-warning text-white mb-4">
+                            <div class="card-body">Total Distribuisaun</div>
+                            <div class="card-body"><h3>$200</h3></div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="#">Hare Detalhu</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                          <div class="card bg-warning text-white mb-4">
+                              <div class="card-body">Total Distributor</div>
+                              <div class="card-body"><h3>$200</h3></div>
+                              <div class="card-footer d-flex align-items-center justify-content-between">
+                                  <a class="small text-white stretched-link" href="#">Hare Detalhu</a>
+                                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6">
+                        <div class="card bg-warning text-white mb-4">
+                            <div class="card-body">Stock Sai</div>
+                            <div class="card-body"><h3>$200</h3></div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="#">Hare Detalhu</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
                   </div>
                   <div class="row">
                       <div class="col-xl-6">
@@ -74,7 +128,7 @@ Dashboard Kombustivel
                           </div>
                       </div>
                   </div>
-                  <div class="card mb-4">
+                  {% comment %} <div class="card mb-4">
                       <div class="card-header">
                           <i class="fas fa-table me-1"></i>
                           DataTable Example
@@ -126,7 +180,7 @@ Dashboard Kombustivel
                           </table>
                       </div>
                   </div>
-              </div>
+              </div> {% endcomment %}
           </main>
           <footer class="py-4 bg-white mt-auto">
               <div class="container-fluid px-4">
