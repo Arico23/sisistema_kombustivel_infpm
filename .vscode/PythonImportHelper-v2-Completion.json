@@ -1,0 +1,1132 @@
+[
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "ModelForm",
+        "importPath": "django.forms",
+        "description": "django.forms",
+        "isExtraImport": true,
+        "detail": "django.forms",
+        "documentation": {}
+    },
+    {
+        "label": "CreateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "FormHelper",
+        "importPath": "crispy_forms.helper",
+        "description": "crispy_forms.helper",
+        "isExtraImport": true,
+        "detail": "crispy_forms.helper",
+        "documentation": {}
+    },
+    {
+        "label": "Layout",
+        "importPath": "crispy_forms.layout",
+        "description": "crispy_forms.layout",
+        "isExtraImport": true,
+        "detail": "crispy_forms.layout",
+        "documentation": {}
+    },
+    {
+        "label": "Submit",
+        "importPath": "crispy_forms.layout",
+        "description": "crispy_forms.layout",
+        "isExtraImport": true,
+        "detail": "crispy_forms.layout",
+        "documentation": {}
+    },
+    {
+        "label": "Row",
+        "importPath": "crispy_forms.layout",
+        "description": "crispy_forms.layout",
+        "isExtraImport": true,
+        "detail": "crispy_forms.layout",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "crispy_forms.layout",
+        "description": "crispy_forms.layout",
+        "isExtraImport": true,
+        "detail": "crispy_forms.layout",
+        "documentation": {}
+    },
+    {
+        "label": "Button",
+        "importPath": "crispy_forms.layout",
+        "description": "crispy_forms.layout",
+        "isExtraImport": true,
+        "detail": "crispy_forms.layout",
+        "documentation": {}
+    },
+    {
+        "label": "HTML",
+        "importPath": "crispy_forms.layout",
+        "description": "crispy_forms.layout",
+        "isExtraImport": true,
+        "detail": "crispy_forms.layout",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "admKombustivel.migrations.0001_initial",
+        "description": "admKombustivel.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Departamentu',\n            fields=[\n                ('id_departamentu', models.AutoField(editable=False, primary_key=True, serialize=False)),\n                ('naran_departamentu', models.CharField(max_length=200)),",
+        "detail": "admKombustivel.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "admKombustivel.migrations.0002_distribuisaun_kilometrajen",
+        "description": "admKombustivel.migrations.0002_distribuisaun_kilometrajen",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('admKombustivel', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='distribuisaun',\n            name='kilometrajen',\n            field=models.CharField(default=0, max_length=200),\n        ),",
+        "detail": "admKombustivel.migrations.0002_distribuisaun_kilometrajen",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "admKombustivel.migrations.0003_alter_fulan_id_fulan",
+        "description": "admKombustivel.migrations.0003_alter_fulan_id_fulan",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"admKombustivel\", \"0002_distribuisaun_kilometrajen\"),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name=\"fulan\",\n            name=\"id_fulan\",\n            field=models.AutoField(editable=False, primary_key=True, serialize=False),\n        ),",
+        "detail": "admKombustivel.migrations.0003_alter_fulan_id_fulan",
+        "documentation": {}
+    },
+    {
+        "label": "admKombustivelAdminUtilizador",
+        "kind": 6,
+        "importPath": "admKombustivel.admin",
+        "description": "admKombustivel.admin",
+        "peekOfCode": "class admKombustivelAdminUtilizador(admin.ModelAdmin):\n    list_display = ('id_user','username', 'password', 'level')\n    list_filter = ('username', 'password', 'level')\n    search_fields = ('username', 'password', 'level')\n#registu model ba admin django\nadmin.site.register(Utilizador, admKombustivelAdminUtilizador)\nclass admKombustivelAdminTransporte(admin.ModelAdmin):\n    list_display = ('id_transporte','nu_matricula', 'categoria', 'tipo_transporte')\n    list_filter = ('nu_matricula', 'categoria', 'tipo_transporte')\n    search_fields = ('nu_matricula', 'categoria', 'tipo_transporte')",
+        "detail": "admKombustivel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "admKombustivelAdminTransporte",
+        "kind": 6,
+        "importPath": "admKombustivel.admin",
+        "description": "admKombustivel.admin",
+        "peekOfCode": "class admKombustivelAdminTransporte(admin.ModelAdmin):\n    list_display = ('id_transporte','nu_matricula', 'categoria', 'tipo_transporte')\n    list_filter = ('nu_matricula', 'categoria', 'tipo_transporte')\n    search_fields = ('nu_matricula', 'categoria', 'tipo_transporte')\n#registu model ba admin django\nadmin.site.register(Transporte, admKombustivelAdminTransporte)\nclass admKombustivelAdminMotorista(admin.ModelAdmin):\n    list_display = ('id_motorista','naran_motorista', 'sexo', 'id_departamentu', 'id_diresaun', 'id_regional')\n    list_filter = ('naran_motorista', 'sexo', 'id_departamentu', 'id_diresaun', 'id_regional')\n    search_fields = ('naran_motorista', 'sexo', 'id_departamentu', 'id_diresaun', 'id_regional')",
+        "detail": "admKombustivel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "admKombustivelAdminMotorista",
+        "kind": 6,
+        "importPath": "admKombustivel.admin",
+        "description": "admKombustivel.admin",
+        "peekOfCode": "class admKombustivelAdminMotorista(admin.ModelAdmin):\n    list_display = ('id_motorista','naran_motorista', 'sexo', 'id_departamentu', 'id_diresaun', 'id_regional')\n    list_filter = ('naran_motorista', 'sexo', 'id_departamentu', 'id_diresaun', 'id_regional')\n    search_fields = ('naran_motorista', 'sexo', 'id_departamentu', 'id_diresaun', 'id_regional')\n#registu model ba admin django\nadmin.site.register(Motorista, admKombustivelAdminMotorista)\nclass admKombustivelAdminRegional(admin.ModelAdmin):\n    list_display = ('id_regional','naran_regional')\n    list_filter = ['naran_regional']\n    search_fields = ['naran_regional']",
+        "detail": "admKombustivel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "admKombustivelAdminRegional",
+        "kind": 6,
+        "importPath": "admKombustivel.admin",
+        "description": "admKombustivel.admin",
+        "peekOfCode": "class admKombustivelAdminRegional(admin.ModelAdmin):\n    list_display = ('id_regional','naran_regional')\n    list_filter = ['naran_regional']\n    search_fields = ['naran_regional']\n#registu model ba admin django\nadmin.site.register(Regional, admKombustivelAdminRegional)\nclass admKombustivelAdminDiresaun(admin.ModelAdmin):\n    list_display = ('id_diresaun','naran_diresaun')\n    list_filter = ['naran_diresaun']\n    search_fields = ['naran_diresaun']",
+        "detail": "admKombustivel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "admKombustivelAdminDiresaun",
+        "kind": 6,
+        "importPath": "admKombustivel.admin",
+        "description": "admKombustivel.admin",
+        "peekOfCode": "class admKombustivelAdminDiresaun(admin.ModelAdmin):\n    list_display = ('id_diresaun','naran_diresaun')\n    list_filter = ['naran_diresaun']\n    search_fields = ['naran_diresaun']\n#registu model ba admin django\nadmin.site.register(Diresaun, admKombustivelAdminDiresaun)\nclass admKombustivelAdminTinan(admin.ModelAdmin):\n    list_display = ['ano']\n    list_filter = ['ano']\n    search_fields = ['ano']",
+        "detail": "admKombustivel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "admKombustivelAdminTinan",
+        "kind": 6,
+        "importPath": "admKombustivel.admin",
+        "description": "admKombustivel.admin",
+        "peekOfCode": "class admKombustivelAdminTinan(admin.ModelAdmin):\n    list_display = ['ano']\n    list_filter = ['ano']\n    search_fields = ['ano']\n#registu model ba admin django\nadmin.site.register(Tinan, admKombustivelAdminTinan)\nclass admKombustivelAdminDistribuitor(admin.ModelAdmin):\n    list_display = ('id_distribuitor', 'naran_distribuitor')\n    list_filter = ['naran_distribuitor']\n    search_fields = ['naran_distribuitor']",
+        "detail": "admKombustivel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "admKombustivelAdminDistribuitor",
+        "kind": 6,
+        "importPath": "admKombustivel.admin",
+        "description": "admKombustivel.admin",
+        "peekOfCode": "class admKombustivelAdminDistribuitor(admin.ModelAdmin):\n    list_display = ('id_distribuitor', 'naran_distribuitor')\n    list_filter = ['naran_distribuitor']\n    search_fields = ['naran_distribuitor']\n#registu model ba admin django\nadmin.site.register(Distribuitor, admKombustivelAdminDistribuitor)\nclass admKombustivelAdminFulan(admin.ModelAdmin):\n    list_display = ('id_fulan', 'naran_fulan')\n    list_filter = ['naran_fulan']\n    search_fields = ['naran_fulan']",
+        "detail": "admKombustivel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "admKombustivelAdminFulan",
+        "kind": 6,
+        "importPath": "admKombustivel.admin",
+        "description": "admKombustivel.admin",
+        "peekOfCode": "class admKombustivelAdminFulan(admin.ModelAdmin):\n    list_display = ('id_fulan', 'naran_fulan')\n    list_filter = ['naran_fulan']\n    search_fields = ['naran_fulan']\n#registu model ba admin django\nadmin.site.register(Fulan, admKombustivelAdminFulan)\nclass admKombustivelAdminSenhas(admin.ModelAdmin):\n    list_display = ('id_senhas', 'nu_senhas', 'folin_senhas')\n    list_filter = ('nu_senhas', 'folin_senhas')\n    search_fields = ('nu_senhas', 'folin_senhas')",
+        "detail": "admKombustivel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "admKombustivelAdminSenhas",
+        "kind": 6,
+        "importPath": "admKombustivel.admin",
+        "description": "admKombustivel.admin",
+        "peekOfCode": "class admKombustivelAdminSenhas(admin.ModelAdmin):\n    list_display = ('id_senhas', 'nu_senhas', 'folin_senhas')\n    list_filter = ('nu_senhas', 'folin_senhas')\n    search_fields = ('nu_senhas', 'folin_senhas')\n#registu model ba admin django\nadmin.site.register(Senhas, admKombustivelAdminSenhas)\n# class admKombustivelAdminKombustivel(admin.ModelAdmin):\n#     list_display = ('id_kombustivel', 'tipo_kombustivel', 'id_distribuitor', 'ano', 'folin_kombustivel', 'data')\n#     list_filter = ('tipo_kombustivel', 'id_distribuitor', 'ano', 'folin_kombustivel', 'data')\n#     search_fields = ('tipo_kombustivel', 'id_distribuitor', 'ano', 'folin_kombustivel', 'data')",
+        "detail": "admKombustivel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "admKombustivelAdminDistribuisaun",
+        "kind": 6,
+        "importPath": "admKombustivel.admin",
+        "description": "admKombustivel.admin",
+        "peekOfCode": "class admKombustivelAdminDistribuisaun(admin.ModelAdmin):\n    list_display = ('id_distribuisaun', 'tipo_kombustivel', 'kilometrajen', 'id_transporte', 'id_senhas', 'id_motorista', 'fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data')\n    list_filter = ('tipo_kombustivel', 'kilometrajen', 'id_transporte', 'id_senhas', 'id_motorista', 'fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data')\n    search_fields = ('tipo_kombustivel', 'kilometrajen', 'id_transporte', 'id_senhas', 'id_motorista', 'fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data')\n#registu model ba admin django\nadmin.site.register(Distribuisaun, admKombustivelAdminDistribuisaun)\nclass admKombustivelAdminDepartamentu(admin.ModelAdmin):\n    list_display = ('id_departamentu', 'naran_departamentu')\n    list_filter = ['naran_departamentu']\n    search_fields = ['naran_departamentu']",
+        "detail": "admKombustivel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "admKombustivelAdminDepartamentu",
+        "kind": 6,
+        "importPath": "admKombustivel.admin",
+        "description": "admKombustivel.admin",
+        "peekOfCode": "class admKombustivelAdminDepartamentu(admin.ModelAdmin):\n    list_display = ('id_departamentu', 'naran_departamentu')\n    list_filter = ['naran_departamentu']\n    search_fields = ['naran_departamentu']\n#registu model ba admin django\nadmin.site.register(Departamentu, admKombustivelAdminDepartamentu)",
+        "detail": "admKombustivel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "AdmkombustivelConfig",
+        "kind": 6,
+        "importPath": "admKombustivel.apps",
+        "description": "admKombustivel.apps",
+        "peekOfCode": "class AdmkombustivelConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'admKombustivel'",
+        "detail": "admKombustivel.apps",
+        "documentation": {}
+    },
+    {
+        "label": "DistributorForm",
+        "kind": 6,
+        "importPath": "admKombustivel.forms",
+        "description": "admKombustivel.forms",
+        "peekOfCode": "class DistributorForm(forms.ModelForm):\n    class Meta:\n        model = Distribuitor\n        fields = ['naran_distribuitor', 'montante_distribuitor', 'data', 'ano']\n        labels = {\n             'naran_distribuitor': 'Naran Distributor',\n             'montante_distribuitor': 'Montante Kombustivel',\n             'data': 'Data Simu Kombustivel',\n             'ano': 'Tinan',\n        # fields = ['cutomer'] #only specific form",
+        "detail": "admKombustivel.forms",
+        "documentation": {}
+    },
+    {
+        "label": "SenhasForm",
+        "kind": 6,
+        "importPath": "admKombustivel.forms",
+        "description": "admKombustivel.forms",
+        "peekOfCode": "class SenhasForm(forms.ModelForm):\n    class Meta:\n        model = Senhas\n        fields = ['nu_senhas', 'folin_senhas']\n        labels = {\n             'nu_senhas': 'Numeru Senhas',\n             'folin senhas': 'Folin Senhas',\n        # fields = ['cutomer'] #only specific form\n        }\n#formulario Regional",
+        "detail": "admKombustivel.forms",
+        "documentation": {}
+    },
+    {
+        "label": "RegionalForm",
+        "kind": 6,
+        "importPath": "admKombustivel.forms",
+        "description": "admKombustivel.forms",
+        "peekOfCode": "class RegionalForm(forms.ModelForm):\n    class Meta:\n        model = Regional\n        fields = ['naran_regional']\n        labels = {\n             'naran_regional': 'Naran Regional',\n        # fields = ['cutomer'] #only specific form\n        }\n#formulario Departamentu\nclass DepartamentuForm(forms.ModelForm):",
+        "detail": "admKombustivel.forms",
+        "documentation": {}
+    },
+    {
+        "label": "DepartamentuForm",
+        "kind": 6,
+        "importPath": "admKombustivel.forms",
+        "description": "admKombustivel.forms",
+        "peekOfCode": "class DepartamentuForm(forms.ModelForm):\n    class Meta:\n        model = Departamentu\n        fields = ['naran_departamentu']\n        labels = {\n             'naran_departamentu': 'Naran Departamentu',\n        # fields = ['cutomer'] #only specific form\n        }\n#formulario Diresaun\nclass DiresaunForm(forms.ModelForm):",
+        "detail": "admKombustivel.forms",
+        "documentation": {}
+    },
+    {
+        "label": "DiresaunForm",
+        "kind": 6,
+        "importPath": "admKombustivel.forms",
+        "description": "admKombustivel.forms",
+        "peekOfCode": "class DiresaunForm(forms.ModelForm):\n    class Meta:\n        model = Diresaun\n        fields = ['naran_diresaun']\n        labels = {\n             'naran_diresaun': 'Naran Diresaun',\n        # fields = ['cutomer'] #only specific form\n        }\n#formulario Motorista\nclass MotoristaForm(forms.ModelForm):",
+        "detail": "admKombustivel.forms",
+        "documentation": {}
+    },
+    {
+        "label": "MotoristaForm",
+        "kind": 6,
+        "importPath": "admKombustivel.forms",
+        "description": "admKombustivel.forms",
+        "peekOfCode": "class MotoristaForm(forms.ModelForm):\n    class Meta:\n        model = Motorista\n        fields = ['naran_motorista', 'sexo', 'id_diresaun', 'id_departamentu', 'id_regional']\n        # labels = {\n        #      'naran_motorista': 'sexo',\n        # # fields = ['cutomer'] #only specific form\n        # }\n    def __init__(self, *args, **kwargs):\n            super().__init__(*args, **kwargs)",
+        "detail": "admKombustivel.forms",
+        "documentation": {}
+    },
+    {
+        "label": "DistribuisaunForm",
+        "kind": 6,
+        "importPath": "admKombustivel.forms",
+        "description": "admKombustivel.forms",
+        "peekOfCode": "class DistribuisaunForm(forms.ModelForm):\n    class Meta:\n        model = Distribuisaun\n        fields = ['tipo_kombustivel', 'id_transporte', 'id_senhas', 'id_motorista','fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data']\n        labels = {\n             'tipo_kombustivel': 'Tipu Kombustivel',\n             'id_transporte' : 'Transporte',\n             'id_senhas': 'Numeru Senhas',\n             'id_motorista': 'Motorista',\n             'id_diresaun': 'Diresaun',",
+        "detail": "admKombustivel.forms",
+        "documentation": {}
+    },
+    {
+        "label": "TransporteForm",
+        "kind": 6,
+        "importPath": "admKombustivel.forms",
+        "description": "admKombustivel.forms",
+        "peekOfCode": "class TransporteForm(forms.ModelForm):\n    class Meta:\n        model = Transporte\n        fields = ['nu_matricula', 'categoria', 'tipo_transporte']\n        labels = {\n             'nu_matrikula': 'Numeru Matrikula Transporte',\n             'categoria' : 'Kategoria Transporte',\n             'tipo_transporte' : 'Modelu Transporte',\n        }\n        # fields = ['cutomer'] #only specific form",
+        "detail": "admKombustivel.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Utilizador",
+        "kind": 6,
+        "importPath": "admKombustivel.models",
+        "description": "admKombustivel.models",
+        "peekOfCode": "class Utilizador(models.Model):\n    LEVEL = (\n            ('admin', 'admin'),\n            ('user', 'user'))\n    id_user = models.AutoField(primary_key=True, editable=False)\n    username = models.CharField(max_length=100)\n    password = models.CharField(max_length=50)\n    level = models.CharField(max_length=50, choices = LEVEL)\n    def __str__(self):\n        return self.username",
+        "detail": "admKombustivel.models",
+        "documentation": {}
+    },
+    {
+        "label": "Transporte",
+        "kind": 6,
+        "importPath": "admKombustivel.models",
+        "description": "admKombustivel.models",
+        "peekOfCode": "class Transporte(models.Model):\n    KATEGORY = (\n        ('Kareta', 'Kareta'),\n        ('Motor', 'Motor'),\n        ('Forklif', 'Forklif'))\n    id_transporte = models.AutoField(primary_key=True, editable=False)\n    nu_matricula = models.CharField(max_length=10)\n    categoria = models.CharField(max_length=20, choices = KATEGORY)\n    tipo_transporte = models.CharField(max_length=100)\n    def __str__(self):",
+        "detail": "admKombustivel.models",
+        "documentation": {}
+    },
+    {
+        "label": "Regional",
+        "kind": 6,
+        "importPath": "admKombustivel.models",
+        "description": "admKombustivel.models",
+        "peekOfCode": "class Regional(models.Model):     \n    id_regional = models.AutoField(primary_key=True, editable=False)\n    naran_regional = models.CharField(max_length=200)\n    def __str__(self):\n        return self. naran_regional\nclass Departamentu(models.Model):     \n    id_departamentu = models.AutoField(primary_key=True, editable=False)\n    naran_departamentu = models.CharField(max_length=200)\n    def __str__(self):\n        return self.naran_departamentu",
+        "detail": "admKombustivel.models",
+        "documentation": {}
+    },
+    {
+        "label": "Departamentu",
+        "kind": 6,
+        "importPath": "admKombustivel.models",
+        "description": "admKombustivel.models",
+        "peekOfCode": "class Departamentu(models.Model):     \n    id_departamentu = models.AutoField(primary_key=True, editable=False)\n    naran_departamentu = models.CharField(max_length=200)\n    def __str__(self):\n        return self.naran_departamentu\n #Models Diresaun   \nclass Diresaun(models.Model):     \n    id_diresaun = models.AutoField(primary_key=True, editable=False)\n    naran_diresaun = models.CharField(max_length=200)\n    def __str__(self):",
+        "detail": "admKombustivel.models",
+        "documentation": {}
+    },
+    {
+        "label": "Diresaun",
+        "kind": 6,
+        "importPath": "admKombustivel.models",
+        "description": "admKombustivel.models",
+        "peekOfCode": "class Diresaun(models.Model):     \n    id_diresaun = models.AutoField(primary_key=True, editable=False)\n    naran_diresaun = models.CharField(max_length=200)\n    def __str__(self):\n        return self.naran_diresaun\n#Models Motorista\nclass Motorista(models.Model):\n    SEXO = (\n        ('Feto', 'Feto'),\n        ('Mane', 'Mane'))",
+        "detail": "admKombustivel.models",
+        "documentation": {}
+    },
+    {
+        "label": "Motorista",
+        "kind": 6,
+        "importPath": "admKombustivel.models",
+        "description": "admKombustivel.models",
+        "peekOfCode": "class Motorista(models.Model):\n    SEXO = (\n        ('Feto', 'Feto'),\n        ('Mane', 'Mane'))\n    id_motorista = models.AutoField(primary_key=True, editable=False)\n    naran_motorista = models.CharField(max_length=200)\n    sexo = models.CharField(max_length=20, choices = SEXO)\n    id_departamentu = models.ForeignKey(Departamentu, on_delete=models.CASCADE, null=False, blank=False)\n    id_diresaun = models.ForeignKey(Diresaun, on_delete=models.CASCADE, null=False, blank=False)\n    id_regional = models.ForeignKey(Regional, on_delete=models.CASCADE, null=False, blank=False)",
+        "detail": "admKombustivel.models",
+        "documentation": {}
+    },
+    {
+        "label": "Tinan",
+        "kind": 6,
+        "importPath": "admKombustivel.models",
+        "description": "admKombustivel.models",
+        "peekOfCode": "class Tinan(models.Model):     \n    ano = models.IntegerField(primary_key=True)\n    def __str__(self):\n        return str(self.ano) \n #models distributor   \nclass Distribuitor(models.Model):     \n    id_distribuitor = models.AutoField(primary_key=True, editable=False)\n    naran_distribuitor = models.CharField(max_length=200)\n    montante_distribuitor = models.FloatField(default=0) \n    data = models.DateField(default=date.today)",
+        "detail": "admKombustivel.models",
+        "documentation": {}
+    },
+    {
+        "label": "Distribuitor",
+        "kind": 6,
+        "importPath": "admKombustivel.models",
+        "description": "admKombustivel.models",
+        "peekOfCode": "class Distribuitor(models.Model):     \n    id_distribuitor = models.AutoField(primary_key=True, editable=False)\n    naran_distribuitor = models.CharField(max_length=200)\n    montante_distribuitor = models.FloatField(default=0) \n    data = models.DateField(default=date.today)\n    ano = models.ForeignKey(Tinan, on_delete=models.CASCADE, null=False, blank=False)\n    def __str__(self):\n        return self.naran_distribuitor\nclass Fulan(models.Model):     \n    id_fulan = models.AutoField(primary_key=True, editable=False,)",
+        "detail": "admKombustivel.models",
+        "documentation": {}
+    },
+    {
+        "label": "Fulan",
+        "kind": 6,
+        "importPath": "admKombustivel.models",
+        "description": "admKombustivel.models",
+        "peekOfCode": "class Fulan(models.Model):     \n    id_fulan = models.AutoField(primary_key=True, editable=False,)\n    naran_fulan = models.CharField(max_length=20)\n    # def __str__(self):\n    #     return self.name\nclass Senhas(models.Model):\n    id_senhas = models.AutoField(primary_key=True, editable=False)\n    nu_senhas = models.CharField(max_length=200)\n    folin_senhas = models.FloatField(default=0)\n    # def __str__(self):",
+        "detail": "admKombustivel.models",
+        "documentation": {}
+    },
+    {
+        "label": "Senhas",
+        "kind": 6,
+        "importPath": "admKombustivel.models",
+        "description": "admKombustivel.models",
+        "peekOfCode": "class Senhas(models.Model):\n    id_senhas = models.AutoField(primary_key=True, editable=False)\n    nu_senhas = models.CharField(max_length=200)\n    folin_senhas = models.FloatField(default=0)\n    # def __str__(self):\n    #     return f'Kompania: ({self.id_distribuitor.naran_distribuitor}) , Kodigu Senhas: ({self.nu_senhas}), Folin: (${self.folin_senhas})'\n# class Kombustivel(models.Model):\n#     KATEGORY = (\n#         ('Gazolina', 'Gazolina'),\n#         ('Gazoel', 'Gazoel'))   ",
+        "detail": "admKombustivel.models",
+        "documentation": {}
+    },
+    {
+        "label": "Distribuisaun",
+        "kind": 6,
+        "importPath": "admKombustivel.models",
+        "description": "admKombustivel.models",
+        "peekOfCode": "class Distribuisaun(models.Model):\n    KATEGORY = (\n        ('Gazolina', 'Gazolina'),\n        ('Gazoel', 'Gazoel'))   \n    id_distribuisaun = models.AutoField(primary_key=True, editable=False)\n    tipo_kombustivel = models.CharField(max_length=20, choices = KATEGORY)\n    kilometrajen = models.CharField(max_length=200, default=0)   \n    id_transporte = models.ForeignKey(Transporte, on_delete=models.CASCADE, null=False, blank=False)\n    id_senhas = models.ForeignKey(Senhas, on_delete=models.CASCADE, null=False, blank=False)\n    id_motorista = models.ForeignKey(Motorista, on_delete=models.CASCADE, null=False, blank=False)",
+        "detail": "admKombustivel.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "admKombustivel.urls",
+        "description": "admKombustivel.urls",
+        "peekOfCode": "urlpatterns = [\n     path('login/', views.login, name='login'),\n     path('', views.dash_kombustivel, name='dash_kombustivel'),\n     path('dadus_distributor/', views.dadus_distributor, name='dadus_distributor'),\n     path('aumenta_distributor/', views.aumenta_distributor, name='aumenta_distributor'),\n     path('distribui_kom/', views.distribui_kom, name='distribui_kom'),\n     path('aumenta_dadus_distribuisaun/', views.aumenta_dadus_distribuisaun, name='aumenta_dadus_distribuisaun'),\n     path('senhas/', views.senhas, name='dadus_senhas'),\n     path('aumenta_dadus_senhas/', views.aumenta_dadus_senhas, name='aumenta_dadus_senhas'),\n     path('delete_dadus_senhas/<str:pk>/', views.delete_dadus_senhas, name='delete_dadus_senhas'),",
+        "detail": "admKombustivel.urls",
+        "documentation": {}
+    },
+    {
+        "label": "logi",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def login (request):\n    return render(request, 'templateKombustivel/login/login.html')\ndef dash_kombustivel (request):\n    return render(request, 'templateKombustivel/dash_kombustivel.html')\n#views Distribuitor \ndef dadus_distributor (request):\n    dadus_distributor = Distribuitor.objects.all()\n    context = {'kombustivels': dadus_distributor}\n    return render(request, 'templateKombustivel/distributor/dadus_distributor.html', context)\ndef aumenta_distributor (request):",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "dash_kombustive",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def dash_kombustivel (request):\n    return render(request, 'templateKombustivel/dash_kombustivel.html')\n#views Distribuitor \ndef dadus_distributor (request):\n    dadus_distributor = Distribuitor.objects.all()\n    context = {'kombustivels': dadus_distributor}\n    return render(request, 'templateKombustivel/distributor/dadus_distributor.html', context)\ndef aumenta_distributor (request):\n    form = DistributorForm\n    if request.method == 'POST':",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "dadus_distributo",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def dadus_distributor (request):\n    dadus_distributor = Distribuitor.objects.all()\n    context = {'kombustivels': dadus_distributor}\n    return render(request, 'templateKombustivel/distributor/dadus_distributor.html', context)\ndef aumenta_distributor (request):\n    form = DistributorForm\n    if request.method == 'POST':\n        form = DistributorForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "aumenta_distributo",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def aumenta_distributor (request):\n    form = DistributorForm\n    if request.method == 'POST':\n        form = DistributorForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_distributor')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/distributor/aumenta_distributor.html', context)\n#views distribuisaun kombustivel",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "distribui_ko",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def distribui_kom (request):\n    dadus_distribuisaun = Distribuisaun.objects.all()\n    context = {'distribuisaun': dadus_distribuisaun}\n    return render(request, 'templateKombustivel/kombustivel/distribui_kom.html', context)\ndef aumenta_dadus_distribuisaun (request):\n    form = DistribuisaunForm\n    if request.method == 'POST':\n        form = DistribuisaunForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "aumenta_dadus_distribuisau",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def aumenta_dadus_distribuisaun (request):\n    form = DistribuisaunForm\n    if request.method == 'POST':\n        form = DistribuisaunForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('/distribui_kom')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/kombustivel/aumenta_dadus_distribuisaun.html', context)\n#views senhas",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "senha",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def senhas (request):\n    dadus_senhas = Senhas.objects.all()\n    context = {'kombustivels': dadus_senhas}\n    return render(request, 'templateKombustivel/senhas/senhas.html', context)\ndef aumenta_dadus_senhas (request):\n    form = SenhasForm\n    if request.method == 'POST':\n        form = SenhasForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "aumenta_dadus_senha",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def aumenta_dadus_senhas (request):\n    form = SenhasForm\n    if request.method == 'POST':\n        form = SenhasForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_senhas')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/senhas/aumenta_dadus_senhas.html', context)\ndef delete_dadus_senhas (request, pk):",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_dadus_senha",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def delete_dadus_senhas (request, pk):\n    senhas = Senhas.objects.get(id_senhas=pk)\n    if request.method == 'GET':\n        senhas.delete()\n        return redirect('dadus_senhas')\ndef updateSenhas (request, pk):\n    senhas = Senhas.objects.get(id_senhas=pk)\n    form = SenhasForm(instance=senhas)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "updateSenha",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def updateSenhas (request, pk):\n    senhas = Senhas.objects.get(id_senhas=pk)\n    form = SenhasForm(instance=senhas)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = SenhasForm(request.POST, instance=senhas)\n        if form.is_valid():\n            form.save()\n            return redirect('dadus_senhas')\n    context = {'form': form}",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "dadus_regiona",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def dadus_regional (request):\n    dadus_regional = Regional.objects.all()\n    context = {'kombustivels': dadus_regional}\n    return render(request, 'templateKombustivel/regional/dadus_regional.html', context)\ndef aumenta_dadus_regional (request):\n    form = RegionalForm\n    if request.method == 'POST':\n        form = RegionalForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "aumenta_dadus_regiona",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def aumenta_dadus_regional (request):\n    form = RegionalForm\n    if request.method == 'POST':\n        form = RegionalForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_regional')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/regional/aumenta_dadus_regional.html', context)\ndef delete_dadus_regional (request, pk):",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_dadus_regiona",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def delete_dadus_regional (request, pk):\n    regional = Regional.objects.get(id_regional=pk)\n    if request.method == 'GET':\n        regional.delete()\n        return redirect('dadus_regional')\ndef updateRegional (request, pk):\n    regional = Regional.objects.get(id_regional=pk)\n    form = RegionalForm(instance=regional)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "updateRegiona",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def updateRegional (request, pk):\n    regional = Regional.objects.get(id_regional=pk)\n    form = RegionalForm(instance=regional)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = RegionalForm(request.POST, instance=regional)\n        if form.is_valid():\n            form.save()\n            return redirect('dadus_regional')\n    context = {'form': form}",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "dadus_departament",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def dadus_departamentu (request):\n    dadus_departamentu = Departamentu.objects.all()\n    context = {'kombustivels': dadus_departamentu}\n    return render(request, 'templateKombustivel/departamentu/dadus_departamentu.html', context)\ndef aumenta_dadus_departamentu (request):\n    form = DepartamentuForm\n    if request.method == 'POST':\n        form = DepartamentuForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "aumenta_dadus_departament",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def aumenta_dadus_departamentu (request):\n    form = DepartamentuForm\n    if request.method == 'POST':\n        form = DepartamentuForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_departamentu')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/departamentu/aumenta_dadus_departamentu.html', context)\ndef delete_dadus_departamentu (request, pk):",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_dadus_departament",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def delete_dadus_departamentu (request, pk):\n    departamentu = Departamentu.objects.get(id_departamentu=pk)\n    if request.method == 'GET':\n        departamentu.delete()\n        return redirect('dadus_departamentu')\ndef updateDepartamentu (request, pk):\n    departamentu = Departamentu.objects.get(id_departamentu=pk)\n    form = DepartamentuForm(instance=departamentu)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "updateDepartament",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def updateDepartamentu (request, pk):\n    departamentu = Departamentu.objects.get(id_departamentu=pk)\n    form = DepartamentuForm(instance=departamentu)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = DepartamentuForm(request.POST, instance=departamentu)\n        if form.is_valid():\n            form.save()\n            return redirect('dadus_departamentu')\n    context = {'form': form}",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "dadus_diresau",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def dadus_diresaun (request):\n    dadus_diresaun = Diresaun.objects.all()\n    context = {'kombustivels': dadus_diresaun}\n    return render(request, 'templateKombustivel/diresaun/dadus_diresaun.html', context)\ndef aumenta_dadus_diresaun (request):\n    form = DiresaunForm\n    if request.method == 'POST':\n        form = DiresaunForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "aumenta_dadus_diresau",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def aumenta_dadus_diresaun (request):\n    form = DiresaunForm\n    if request.method == 'POST':\n        form = DiresaunForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_diresaun')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/diresaun/aumenta_dadus_diresaun.html', context)\ndef delete_dadus_diresaun (request, pk):",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_dadus_diresau",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def delete_dadus_diresaun (request, pk):\n    diresaun = Diresaun.objects.get(id_diresaun=pk)\n    if request.method == 'GET':\n        diresaun.delete()\n        return redirect('dadus_diresaun')\ndef updateDiresaun (request, pk):\n    diresaun = Diresaun.objects.get(id_diresaun=pk)\n    form = DiresaunForm(instance=diresaun)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "updateDiresau",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def updateDiresaun (request, pk):\n    diresaun = Diresaun.objects.get(id_diresaun=pk)\n    form = DiresaunForm(instance=diresaun)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = DiresaunForm(request.POST, instance=diresaun)\n        if form.is_valid():\n            form.save()\n            return redirect('dadus_diresaun')\n    context = {'form': form}",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "dadus_tran",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def dadus_trans (request):\n    dadus_transporte = Transporte.objects.all()\n    context = {'transporte': dadus_transporte}\n    return render(request, 'templateKombustivel/transporte/dadus_trans.html', context)\ndef aumenta_dadus_trans (request):\n    form = TransporteForm\n    if request.method == 'POST':\n        form = TransporteForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "aumenta_dadus_tran",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def aumenta_dadus_trans (request):\n    form = TransporteForm\n    if request.method == 'POST':\n        form = TransporteForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_trans')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/transporte/aumenta_dadus_trans.html', context)\ndef delete_dadus_transporte (request, pk):",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_dadus_transport",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def delete_dadus_transporte (request, pk):\n    transporte = Transporte.objects.get(id_transporte=pk)\n    if request.method == 'GET':\n        transporte.delete()\n        return redirect('dadus_trans')\ndef updateTransporte (request, pk):\n    transporte = Transporte.objects.get(id_transporte=pk)\n    form = TransporteForm(instance=transporte)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "updateTransport",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def updateTransporte (request, pk):\n    transporte = Transporte.objects.get(id_transporte=pk)\n    form = TransporteForm(instance=transporte)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = TransporteForm(request.POST, instance=transporte)\n        if form.is_valid():\n            form.save()\n            return redirect('dadus_trans')\n    context = {'form': form}",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "dadus_motorist",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def dadus_motorista (request):\n    dadus_motorista = Motorista.objects.all()\n    context = {'motorista': dadus_motorista}\n    return render(request, 'templateKombustivel/motorista/dadus_motorista.html', context)\ndef aumenta_dadus_motorista (request):\n    form = MotoristaForm\n    if request.method == 'POST':\n        form = MotoristaForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "aumenta_dadus_motorist",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def aumenta_dadus_motorista (request):\n    form = MotoristaForm\n    if request.method == 'POST':\n        form = MotoristaForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_motorista')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/motorista/aumenta_dadus_motorista.html', context)\ndef delete_dadus_motorista (request, pk):",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_dadus_motorist",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def delete_dadus_motorista (request, pk):\n    motorista = Motorista.objects.get(id_motorista=pk)\n    if request.method == 'GET':\n        motorista.delete()\n        return redirect('dadus_motorista')\ndef updateMotorista (request, pk):\n    motorista = Motorista.objects.get(id_motorista=pk)\n    form = MotoristaForm(instance=motorista)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "updateMotorist",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def updateMotorista (request, pk):\n    motorista = Motorista.objects.get(id_motorista=pk)\n    form = MotoristaForm(instance=motorista)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = MotoristaForm(request.POST, instance=motorista)\n        if form.is_valid():\n            form.save()\n            return redirect('dadus_motorista')\n    context = {'form': form}",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "index_admi",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def index_admin (request):\n        return render(request, 'templateKombustivel/admin/index_admin.html')\ndef aumenta_admin (request):\n        return render(request, 'templateKombustivel/admin/aumenta_admin.html')\ndef edit_admin (request):\n        return render(request, 'templateKombustivel/admin/edit_admin.html')",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "aumenta_admi",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def aumenta_admin (request):\n        return render(request, 'templateKombustivel/admin/aumenta_admin.html')\ndef edit_admin (request):\n        return render(request, 'templateKombustivel/admin/edit_admin.html')",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "edit_admi",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def edit_admin (request):\n        return render(request, 'templateKombustivel/admin/edit_admin.html')",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "sis_infpm.asgi",
+        "description": "sis_infpm.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "sis_infpm.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-ehuojgw9&olpbp@3!03t4w562x5%y$s2c_jla_!f3$%j6iy86v'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-ehuojgw9&olpbp@3!03t4w562x5%y$s2c_jla_!f3$%j6iy86v'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'crispy_forms',\n    'crispy_bootstrap5',\n    'django.contrib.admin',\n    'django.contrib.auth',",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'crispy_forms',\n    'crispy_bootstrap5',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'crispy_forms',\n    'crispy_bootstrap5',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'crispy_forms',\n    'crispy_bootstrap5',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # 'admLojistik',",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CRISPY_ALLOWED_TEMPLATE_PACKS",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "CRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"\nCRISPY_TEMPLATE_PACK = \"bootstrap5\"\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CRISPY_TEMPLATE_PACK",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "CRISPY_TEMPLATE_PACK = \"bootstrap5\"\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'sis_infpm.urls'",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "ROOT_URLCONF = 'sis_infpm.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'sis_infpm.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\n# DATABASES = {\n#     'default': {\n#         'ENGINE': 'django.db.backends.mysql',\n#         'NAME': BASE_DIR / 'db.sqlite3',\n#     }\n# }\nDATABASES = {",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'db_lp',\n        'USER': 'root',\n        'PASSWORD': '',\n        'HOST': '127.0.0.1',\n        'PORT': '3306',\n    }\n}",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nMEDIA_ROOT = BASE_DIR / 'media'\nMEDIA_URL = '/media/'\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nMEDIA_ROOT = BASE_DIR / 'media'\nMEDIA_URL = '/media/'\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static'",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nMEDIA_ROOT = BASE_DIR / 'media'\nMEDIA_URL = '/media/'\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static'\n]",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nMEDIA_ROOT = BASE_DIR / 'media'\nMEDIA_URL = '/media/'\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static'\n]\n# Default primary key field type",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "MEDIA_ROOT = BASE_DIR / 'media'\nMEDIA_URL = '/media/'\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static'\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static'\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "STATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static'\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "STATICFILES_DIRS = [\n    BASE_DIR / 'static'\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "sis_infpm.settings",
+        "description": "sis_infpm.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "sis_infpm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "sis_infpm.urls",
+        "description": "sis_infpm.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include(\"admKombustivel.urls\")),\n]",
+        "detail": "sis_infpm.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "sis_infpm.wsgi",
+        "description": "sis_infpm.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "sis_infpm.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sis_infpm.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "manage",
+        "documentation": {}
+    }
+]
