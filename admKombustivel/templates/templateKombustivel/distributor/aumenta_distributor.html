@@ -4,10 +4,11 @@
 
 {% block konteudu %}
 <div class="container">
-    <h2 class='mt-4 mb-4'>Formulariu Prenxe Dadus Distribuitor</h2>
+    {% comment %} <h2 class='mt-4 mb-4'>Formulariu Prenxe Dadus Distribuitor</h2> {% endcomment %}
     <form method="post" novalidate>
         {% csrf_token %}
-        <div class="card">
+        <div class="card mt-4 mb-4">
+        <div class="card-header">Formulariu Prenxe Dadus Distribuisaun</div>
         <div class="card-body">
 
         <div class="row">

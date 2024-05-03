@@ -152,9 +152,10 @@ class MotoristaForm(forms.ModelForm):
 class DistribuisaunForm(forms.ModelForm):
     class Meta:
         model = Distribuisaun
-        fields = ['tipo_kombustivel', 'id_transporte', 'id_senhas', 'id_motorista','fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data']
+        fields = ['tipo_kombustivel', 'kilometrajen', 'id_transporte', 'id_senhas', 'id_motorista','fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data']
         labels = {
              'tipo_kombustivel': 'Tipu Kombustivel',
+             'kilomtrajen': 'Kilometrajen',
              'id_transporte' : 'Transporte',
              'id_senhas': 'Numeru Senhas',
              'id_motorista': 'Motorista',
@@ -163,7 +164,7 @@ class DistribuisaunForm(forms.ModelForm):
              'id_motorista': 'Naran Motorista',
              'ano' : 'Tinan',
              'fulan' : 'Fulan',
-             'data' : 'Loron Ohin'
+             'data' : 'Data Foti Senhas'
         }
      
         # fields = ['cutomer'] #only specific form
@@ -172,6 +173,7 @@ class DistribuisaunForm(forms.ModelForm):
             super().__init__(*args, **kwargs)
             self.helper = FormHelper()
             self.fields['tipo_kombustivel'].required = True
+            self.fields['kilometrajen'].required = False
             self.fields['id_transporte'].required = True
             self.fields['id_senhas'].required = True
             self.fields['id_motorista'].required = True
@@ -181,36 +183,36 @@ class DistribuisaunForm(forms.ModelForm):
             self.fields['data'].required = True
 
 
-            self.helper.layout = Layout(
-                Row(
-                    Column('id_kombustivel', css_class='form-group col-md-6 mb-0'),
-                    Column('id_transporte', css_class='form-group col-md-6 mb-0'),
-                    css_class='form-row'
-                ),
-                Row(
-                    Column('id_senhas', css_class='form-group col-md-6 mb-0'),
-                    Column('id_diresaun', css_class='form-group col-md-6 mb-0'),
-                    css_class='form-row'
-                ),
-                Row(
-                    Column('id_departamentu', css_class='form-group col-md-6 mb-0'),
-                    Column('id_motorista', css_class='form-group col-md-6 mb-0'),
-                    css_class='form-row'
-                ),
-                Row(
-                    Column('fulan', css_class='form-group col-md-6 mb-0'),
-                    Column('ano', css_class='form-group col-md-6 mb-0'),
-                    css_class='form-row'
-                ),
-                Row(
-                    Column('destinasaun', css_class='form-group col-md-6 mb-0'),
-                    Column('data', css_class='form-group col-md-6 mb-0'),
-                    css_class='form-row'
-                ),
-                HTML(""" <center> <img id='output' width='200' /> </center> """),
-                HTML(""" <div class="form-group text-right"><button class="btn btn-sm btn-info" type="submit">Save <i class="fa fa-save"></i></button> """),
-                HTML(""" <span class="btn btn-sm btn-secondary"  onclick=self.history.back()><i class="fa close"></i> Cancel</span></div> """)
-            )
+    #         self.helper.layout = Layout(
+    #             Row(
+    #                 Column('id_kombustivel', css_class='form-group col-md-6 mb-0'),
+    #                 Column('id_transporte', css_class='form-group col-md-6 mb-0'),
+    #                 css_class='form-row'
+    #             ),
+    #             Row(
+    #                 Column('id_senhas', css_class='form-group col-md-6 mb-0'),
+    #                 Column('id_diresaun', css_class='form-group col-md-6 mb-0'),
+    #                 css_class='form-row'
+    #             ),
+    #             Row(
+    #                 Column('id_departamentu', css_class='form-group col-md-6 mb-0'),
+    #                 Column('id_motorista', css_class='form-group col-md-6 mb-0'),
+    #                 css_class='form-row'
+    #             ),
+    #             Row(
+    #                 Column('fulan', css_class='form-group col-md-6 mb-0'),
+    #                 Column('ano', css_class='form-group col-md-6 mb-0'),
+    #                 css_class='form-row'
+    #             ),
+    #             Row(
+    #                 Column('destinasaun', css_class='form-group col-md-6 mb-0'),
+    #                 Column('data', css_class='form-group col-md-6 mb-0'),
+    #                 css_class='form-row'
+    #             ),
+    #             HTML(""" <center> <img id='output' width='200' /> </center> """),
+    #             HTML(""" <div class="form-group text-right"><button class="btn btn-sm btn-info" type="submit">Save <i class="fa fa-save"></i></button> """),
+    #             HTML(""" <span class="btn btn-sm btn-secondary"  onclick=self.history.back()><i class="fa close"></i> Cancel</span></div> """)
+    #         )
 
 #formulario transporte
 class TransporteForm(forms.ModelForm):
@@ -224,12 +226,12 @@ class TransporteForm(forms.ModelForm):
         }
         # fields = ['cutomer'] #only specific form
     
-    # def __init__(self, *args, **kwargs):
-    #         super().__init__(*args, **kwargs)
-    #         self.helper = FormHelper()
-    #         self.fields['nu_matricula'].required = True
-    #         self.fields['categoria'].required = True
-    #         self.fields['tipo_transporte'].required = True
+    def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.helper = FormHelper()
+            self.fields['nu_matricula'].required = False
+            self.fields['categoria'].required = True
+            self.fields['tipo_transporte'].required = True
     #         self.helper.layout = Layout(
     #             Row(
     #                 Column('nu_matricula', css_class='form-group col-md-6 mb-0'),

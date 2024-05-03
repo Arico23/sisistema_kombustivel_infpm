@@ -32,6 +32,7 @@ dadus senhas
                                       <th>Nu</th>
                                       <th>Numeru Senhas</th>
                                       <th>Folin Senhas</th>
+                                      <th>Status</th>
                                       <th>aksaun</th>
                                   </tr>
                               </thead>
@@ -40,6 +41,7 @@ dadus senhas
                                     <th>Nu</th>
                                     <th>Numeru Senhas</th>
                                     <th>Folin Senhas</th>
+                                    <th>Status</th>
                                     <th>aksaun</th>
                                 </tr>
                               </tfoot> 
@@ -49,6 +51,12 @@ dadus senhas
                                         <td>{{ forloop.counter }}</td> <!-- Display field number -->
                                         <td>{{senhas.nu_senhas}}</td>
                                         <td>{{senhas.folin_senhas}}</td>
+                                        <td> 
+                                            {% if senhas.status == 'Seidauk Distribui' %}
+                                            <a class="btn-edit btn btn-primary">{{senhas.status}}</a></td>
+                                            {% else %}
+                                            <a class="btn-edit btn btn-warning">{{senhas.status}}</a></td>
+                                            {% endif %}
                                         <td> 
                                             <a class="btn-edit btn btn-primary" href="{% url 'updateSenhas' senhas.id_senhas %}">Edit</a>
                                             <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_senhas' senhas.id_senhas %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a>

@@ -68,9 +68,9 @@ class admKombustivelAdminFulan(admin.ModelAdmin):
 admin.site.register(Fulan, admKombustivelAdminFulan)
 
 class admKombustivelAdminSenhas(admin.ModelAdmin):
-    list_display = ('id_senhas', 'nu_senhas', 'folin_senhas')
-    list_filter = ('nu_senhas', 'folin_senhas')
-    search_fields = ('nu_senhas', 'folin_senhas')
+    list_display = ('id_senhas', 'nu_senhas', 'folin_senhas', 'status')
+    list_filter = ('nu_senhas', 'folin_senhas', 'status')
+    search_fields = ('nu_senhas', 'folin_senhas', 'status')
 
 #registu model ba admin django
 admin.site.register(Senhas, admKombustivelAdminSenhas)

@@ -36,7 +36,7 @@
 --bs-gray-900: #212529;
 --bs-primary: #0d6efd;
 --bs-secondary: #6c757d;
---bs-success: #198754;
+--bs-success: #d0e6db;
 --bs-info: #0dcaf0;
 --bs-warning: #ffc107;
 --bs-danger: #dc3545;
@@ -62,7 +62,7 @@
 --bs-body-font-weight: 400;
 --bs-body-line-height: 1.5;
 --bs-body-color: #212529;
---bs-body-bg: #757373;
+--bs-body-bg: #dbd8d8;
 --bs-border-width: 1px;
 --bs-border-style: solid;
 --bs-border-color: #dee2e6;
@@ -4244,7 +4244,7 @@ margin-left: var(--bs-card-spacer-x);
 padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
 margin-bottom: 0;
 color: var(--bs-card-cap-color);
-background-color: var(--bs-card-cap-bg);
+background-color: #1496A4;
 border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
 }
 .card-header:first-child {

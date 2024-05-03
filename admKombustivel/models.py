@@ -96,9 +96,13 @@ class Fulan(models.Model):
     #     return self.name
 
 class Senhas(models.Model):
+    STATUS = (
+        ('Seidauk Distribui', 'Seidauk Distribui'),
+        ('Distribui Ona', 'Distribui Ona'))
     id_senhas = models.AutoField(primary_key=True, editable=False)
     nu_senhas = models.CharField(max_length=200)
     folin_senhas = models.FloatField(default=0)
+    status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')
     # def __str__(self):
     #     return f'Kompania: ({self.id_distribuitor.naran_distribuitor}) , Kodigu Senhas: ({self.nu_senhas}), Folin: (${self.folin_senhas})'
     
