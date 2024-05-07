@@ -15,7 +15,7 @@
                 <li><a class="dropdown-item" href="#!">Settings</a></li>
                 <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#!">Logout</a></li>
+                <li><a class="dropdown-item" href="{% url 'login' %}">Logout</a></li>
             </ul>
         </li>
     </ul>
@@ -25,12 +25,12 @@
         <nav class="sb-sidenav accordion sb-sidenav-light bg-success2" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
-                    <div class="sb-sidenav-menu-heading">SJLP-INFPM</div>
+                    <div class="sb-sidenav-menu-heading"><h6>MENU SJK INFPM</h6></div>
                     <a class="nav-link" href="{% url 'dash_kombustivel' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
                         Dashboard
                     </a>
-                    <div class="sb-sidenav-menu-heading">MENU-SJLP-INFPM</div>
+                    {% comment %} <div class="sb-sidenav-menu-heading">MENU-SJLP-INFPM</div> {% endcomment %}
 
                     {% comment %} <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div><i class="fa fa-database" style="margin-right: 0.5rem;"></i></div>
@@ -118,7 +118,7 @@
                     </a>
                     <div class="collapse" id="collapseRelatorio" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-sidenav-light.html">Stock In</a>
+                            <a class="nav-link" href="{% url 'StockIn' %}">Stock In</a>
                             <a class="nav-link" href="layout-sidenav-light.html">Stock Out</a>
                         </nav>
                     </div>

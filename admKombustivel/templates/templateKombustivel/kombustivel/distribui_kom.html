@@ -23,8 +23,14 @@ distribui kombustivel
                       </div>
                       <div class="card-body">
                         {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
-                        <a class="button-add mb-2 btn btn-primary" href="{% url 'aumenta_dadus_distribuisaun' %}">
-                        <i class ="fa fa-plus"></i>Aumenta</a> 
+                        <a class="button-group mb-2 btn btn-primary" href="{% url 'aumenta_dadus_distribuisaun' %}">
+                        <i class ="fa fa-plus"></i>Aumenta</a>
+                        <a class="button-group mb-2 btn btn-success" href="{% url 'aumenta_dadus_distribuisaun' %}">
+                            <i class ="fa fa-plus"></i>Download</a> 
+                        <a class="button-group mb-2 btn btn-danger" href="{% url 'aumenta_dadus_distribuisaun' %}">
+                             <i class ="fa fa-plus"></i>Print</a> 
+                               
+                              
                                       
                         <table id="datatablesSimple">
                               <thead>

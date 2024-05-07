@@ -17,6 +17,14 @@ class DistributorForm(forms.ModelForm):
              'ano': 'Tinan',
         # fields = ['cutomer'] #only specific form
         }
+    def save(self, commit=True):
+        instance = super(DistributorForm, self).save(commit=False)
+        montante_distribuitor = self.cleaned_data.get('montante_distribuitor')
+        # Calculate montante_atual based on montante_distribuitor
+        instance.montante_atual = montante_distribuitor  # Example calculation
+        if commit:
+            instance.save()
+        return instance
 
 #formulario senhas
 class SenhasForm(forms.ModelForm):

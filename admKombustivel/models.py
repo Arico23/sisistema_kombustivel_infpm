@@ -82,6 +82,7 @@ class Distribuitor(models.Model):
     id_distribuitor = models.AutoField(primary_key=True, editable=False)
     naran_distribuitor = models.CharField(max_length=200)
     montante_distribuitor = models.FloatField(default=0) 
+    montante_atual = models.FloatField(default=0) 
     data = models.DateField(default=date.today)
     ano = models.ForeignKey(Tinan, on_delete=models.CASCADE, null=False, blank=False)
 

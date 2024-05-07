@@ -357,8 +357,10 @@ def updateMotorista (request, pk):
     context = {'form': form}
     return render(request, 'templateKombustivel/motorista/update_motorista.html', context)
 
- 
-
+def stockIn (request):
+    stockIn = Distribuitor.objects.all()
+    context = {'kombustivels': stockIn}
+    return render(request, 'templateKombustivel/relatorio/stockIn.html', context)
 
 def index_admin (request):
         return render(request, 'templateKombustivel/admin/index_admin.html')

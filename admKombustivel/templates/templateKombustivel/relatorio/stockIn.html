@@ -2,61 +2,57 @@
 {% load static %}
 
 {% block title %}
-dadus regional
+Relatorio
 {% endblock %}
 
 {% block konteudu %}
 <body class="sb-nav-fixed">
-
     {% include 'templateKombustivel/side-navbar.html' %}
       <div id="layoutSidenav_content">
           <main>
               <div class="container-fluid px-4">
-                {% comment %} <h1 class="mt-4">Dadus Regional</h1> {% endcomment %}
+                {% comment %} <h1 class="mt-4">Dadus Distributor</h1> {% endcomment %}
                 <ol class="breadcrumb mb-4 mt-4">
                     <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Dadus Regional</li>
+                    <li class="breadcrumb-item active">Relatorio Stock In</li>
                 </ol>
                   <div class="card mb-4 mt-4">
                       <div class="card-header">
                         <h3><i class="fas fa-table me-1"></i>
-                        Dadus Regional</h3>
+                         Relatorio Stock In</h3>
                       </div>
-                      <div class="card-body">
-                        {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
-                        {% comment %} <a class="button-add mb-2 btn btn-primary"  href="{% url 'aumenta_dadus_regional' %}">
-                        <i class ="fa fa-plus"></i>Aumenta</a>  {% endcomment %}
-                        <!-- Button trigger modal -->
-<button id="create-task" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Aumenta
-  </button>
+                      <div class="card-body">            
                         <table id="datatablesSimple">
                               <thead>
                                   <tr>
                                       <th>Nu</th>
-                                      <th>Naran Regional</th>
-                                      <th>aksaun</th>
+                                      <th>Naran Distributor</th> 
+                                      <th>Montante Stock</th>
+                                      <th>Data</th>
+                                      <th>Loron</th>                       
                                   </tr>
                               </thead>
                            <tfoot>
                                 <tr>
                                     <th>Nu</th>
-                                    <th>Naran Regional</th>
-                                    <th>aksaun</th>
+                                    <th>Naran Stock</th>
+                                    <th>Montante Distributor</th>
+                                    <th>Lorom</th>
+                                    <th>Ano</th>
                                 </tr>
                               </tfoot> 
                               <tbody>
-                                 {% for regional in kombustivels %}
+                                {% for distributor in kombustivels %}
                                   <tr>
-                                        <td>{{ forloop.counter }}</td> <!-- Display field number -->
-                                        <td>{{regional.naran_regional}}</td>
-                                        <td> 
-                                            <a class="btn-edit btn btn-primary" href="{% url 'updateRegional' regional.id_regional %}">Edit</a>
-                                            <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_regional' regional.id_regional %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a>
-                                        </td>
+                                    <td>{{ forloop.counter }}</td> <!-- Display field number -->
+                                      <td>{{distributor.naran_distribuitor}}</td>
+                                      <td>{{distributor.montante_atual}}</td>
+                                      <td>{{distributor.data}}</td>
+                                      <td>{{distributor.ano}}</td>
                                     </tr>
-                                    {% endfor %}
+                            {% endfor %}
                                   </tr>
+                              
                               </tbody>
                           </table>
                       </div>
@@ -77,18 +73,7 @@ dadus regional
           </footer>
       </div>
   </div>
+       
 </body>
 {% endblock %}
-
-<script>
-  $(document).ready(function() {
-
-    $(".create-task").modalForm({
-        formURL: "{% url 'aumenta_dadus_regional' %}"
-    });
-  
-  });
-</script>
-
-
 
