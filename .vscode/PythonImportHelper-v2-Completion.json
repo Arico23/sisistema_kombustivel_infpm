@@ -74,6 +74,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -83,6 +99,14 @@
     },
     {
         "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
         "importPath": "django.contrib",
         "description": "django.contrib",
         "isExtraImport": true,
@@ -103,6 +127,46 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -218,27 +282,35 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "django.contrib.auth",
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "django.contrib.auth",
         "documentation": {}
     },
     {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
         "documentation": {}
     },
     {
@@ -306,8 +378,17 @@
         "kind": 6,
         "importPath": "admKombustivel.migrations.0003_alter_fulan_id_fulan",
         "description": "admKombustivel.migrations.0003_alter_fulan_id_fulan",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"admKombustivel\", \"0002_distribuisaun_kilometrajen\"),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name=\"fulan\",\n            name=\"id_fulan\",\n            field=models.AutoField(editable=False, primary_key=True, serialize=False),\n        ),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('admKombustivel', '0002_distribuisaun_kilometrajen'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='fulan',\n            name='id_fulan',\n            field=models.AutoField(editable=False, primary_key=True, serialize=False),\n        ),",
         "detail": "admKombustivel.migrations.0003_alter_fulan_id_fulan",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "admKombustivel.migrations.0004_senhas_status",
+        "description": "admKombustivel.migrations.0004_senhas_status",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('admKombustivel', '0003_alter_fulan_id_fulan'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='senhas',\n            name='status',\n            field=models.CharField(choices=[('Seidauk Distribui', 'Seidauk Distribui'), ('Distribui Ona', 'Distribui Ona')], default='Seidauk Distribui', max_length=20),\n        ),",
+        "detail": "admKombustivel.migrations.0004_senhas_status",
         "documentation": {}
     },
     {
@@ -378,7 +459,7 @@
         "kind": 6,
         "importPath": "admKombustivel.admin",
         "description": "admKombustivel.admin",
-        "peekOfCode": "class admKombustivelAdminFulan(admin.ModelAdmin):\n    list_display = ('id_fulan', 'naran_fulan')\n    list_filter = ['naran_fulan']\n    search_fields = ['naran_fulan']\n#registu model ba admin django\nadmin.site.register(Fulan, admKombustivelAdminFulan)\nclass admKombustivelAdminSenhas(admin.ModelAdmin):\n    list_display = ('id_senhas', 'nu_senhas', 'folin_senhas')\n    list_filter = ('nu_senhas', 'folin_senhas')\n    search_fields = ('nu_senhas', 'folin_senhas')",
+        "peekOfCode": "class admKombustivelAdminFulan(admin.ModelAdmin):\n    list_display = ('id_fulan', 'naran_fulan')\n    list_filter = ['naran_fulan']\n    search_fields = ['naran_fulan']\n#registu model ba admin django\nadmin.site.register(Fulan, admKombustivelAdminFulan)\nclass admKombustivelAdminSenhas(admin.ModelAdmin):\n    list_display = ('id_senhas', 'nu_senhas', 'folin_senhas', 'status')\n    list_filter = ('nu_senhas', 'folin_senhas', 'status')\n    search_fields = ('nu_senhas', 'folin_senhas', 'status')",
         "detail": "admKombustivel.admin",
         "documentation": {}
     },
@@ -387,7 +468,7 @@
         "kind": 6,
         "importPath": "admKombustivel.admin",
         "description": "admKombustivel.admin",
-        "peekOfCode": "class admKombustivelAdminSenhas(admin.ModelAdmin):\n    list_display = ('id_senhas', 'nu_senhas', 'folin_senhas')\n    list_filter = ('nu_senhas', 'folin_senhas')\n    search_fields = ('nu_senhas', 'folin_senhas')\n#registu model ba admin django\nadmin.site.register(Senhas, admKombustivelAdminSenhas)\n# class admKombustivelAdminKombustivel(admin.ModelAdmin):\n#     list_display = ('id_kombustivel', 'tipo_kombustivel', 'id_distribuitor', 'ano', 'folin_kombustivel', 'data')\n#     list_filter = ('tipo_kombustivel', 'id_distribuitor', 'ano', 'folin_kombustivel', 'data')\n#     search_fields = ('tipo_kombustivel', 'id_distribuitor', 'ano', 'folin_kombustivel', 'data')",
+        "peekOfCode": "class admKombustivelAdminSenhas(admin.ModelAdmin):\n    list_display = ('id_senhas', 'nu_senhas', 'folin_senhas', 'status')\n    list_filter = ('nu_senhas', 'folin_senhas', 'status')\n    search_fields = ('nu_senhas', 'folin_senhas', 'status')\n#registu model ba admin django\nadmin.site.register(Senhas, admKombustivelAdminSenhas)\n# class admKombustivelAdminKombustivel(admin.ModelAdmin):\n#     list_display = ('id_kombustivel', 'tipo_kombustivel', 'id_distribuitor', 'ano', 'folin_kombustivel', 'data')\n#     list_filter = ('tipo_kombustivel', 'id_distribuitor', 'ano', 'folin_kombustivel', 'data')\n#     search_fields = ('tipo_kombustivel', 'id_distribuitor', 'ano', 'folin_kombustivel', 'data')",
         "detail": "admKombustivel.admin",
         "documentation": {}
     },
@@ -416,6 +497,33 @@
         "description": "admKombustivel.apps",
         "peekOfCode": "class AdmkombustivelConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'admKombustivel'",
         "detail": "admKombustivel.apps",
+        "documentation": {}
+    },
+    {
+        "label": "unauthenticated_user",
+        "kind": 2,
+        "importPath": "admKombustivel.decorators",
+        "description": "admKombustivel.decorators",
+        "peekOfCode": "def unauthenticated_user(view_func):\n    def wrapper_func(request, *args, **kwargs):\n        if request.user.is_authenticated:\n            return redirect('home')\n        else:\n            return view_func(request, *args, **kwargs)\n    return wrapper_func\ndef allowed_users(allowed_roles=[]):\n    def decorator(view_func):\n        def wrapper_func(request, *args, **kwargs):",
+        "detail": "admKombustivel.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "allowed_users",
+        "kind": 2,
+        "importPath": "admKombustivel.decorators",
+        "description": "admKombustivel.decorators",
+        "peekOfCode": "def allowed_users(allowed_roles=[]):\n    def decorator(view_func):\n        def wrapper_func(request, *args, **kwargs):\n            group = None\n            if request.user.groups.exists():\n                group = request.user.groups.all()[0].name\n            if group in allowed_roles:\n                return view_func(request, *args, **kwargs)\n            else:\n                return HttpResponse('You are not authorized to view this page')",
+        "detail": "admKombustivel.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "admin_only",
+        "kind": 2,
+        "importPath": "admKombustivel.decorators",
+        "description": "admKombustivel.decorators",
+        "peekOfCode": "def admin_only(view_func):\n    def wrapper_function(request, *args, **kwargs):\n        group = None\n        if request.user.groups.exists():\n            group = request.user.groups.all()[0].name\n        if group == 'admin':\n            return view_func(request, *args, **kwargs)\n        elif group == 'customer':\n            return redirect('user-page')\n        else:",
+        "detail": "admKombustivel.decorators",
         "documentation": {}
     },
     {
@@ -459,7 +567,25 @@
         "kind": 6,
         "importPath": "admKombustivel.forms",
         "description": "admKombustivel.forms",
-        "peekOfCode": "class DiresaunForm(forms.ModelForm):\n    class Meta:\n        model = Diresaun\n        fields = ['naran_diresaun']\n        labels = {\n             'naran_diresaun': 'Naran Diresaun',\n        # fields = ['cutomer'] #only specific form\n        }\n#formulario Motorista\nclass MotoristaForm(forms.ModelForm):",
+        "peekOfCode": "class DiresaunForm(forms.ModelForm):\n    class Meta:\n        model = Diresaun\n        fields = ['naran_diresaun']\n        labels = {\n             'naran_diresaun': 'Naran Diresaun',\n        # fields = ['cutomer'] #only specific form\n        }\n#formulario Fulan\nclass FulanForm(forms.ModelForm):",
+        "detail": "admKombustivel.forms",
+        "documentation": {}
+    },
+    {
+        "label": "FulanForm",
+        "kind": 6,
+        "importPath": "admKombustivel.forms",
+        "description": "admKombustivel.forms",
+        "peekOfCode": "class FulanForm(forms.ModelForm):\n    class Meta:\n        model = Fulan\n        fields = ['naran_fulan']\n        labels = {\n             'naran_fulan': 'Fulan',\n        # fields = ['cutomer'] #only specific form\n        }\n#formulario Fulan\nclass TinanForm(forms.ModelForm):",
+        "detail": "admKombustivel.forms",
+        "documentation": {}
+    },
+    {
+        "label": "TinanForm",
+        "kind": 6,
+        "importPath": "admKombustivel.forms",
+        "description": "admKombustivel.forms",
+        "peekOfCode": "class TinanForm(forms.ModelForm):\n    class Meta:\n        model = Tinan\n        fields = ['ano']\n        labels = {\n             'ano': 'Tinan',\n        # fields = ['cutomer'] #only specific form\n        }\n#formulario Motorista\nclass MotoristaForm(forms.ModelForm):",
         "detail": "admKombustivel.forms",
         "documentation": {}
     },
@@ -477,7 +603,7 @@
         "kind": 6,
         "importPath": "admKombustivel.forms",
         "description": "admKombustivel.forms",
-        "peekOfCode": "class DistribuisaunForm(forms.ModelForm):\n    class Meta:\n        model = Distribuisaun\n        fields = ['tipo_kombustivel', 'id_transporte', 'id_senhas', 'id_motorista','fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data']\n        labels = {\n             'tipo_kombustivel': 'Tipu Kombustivel',\n             'id_transporte' : 'Transporte',\n             'id_senhas': 'Numeru Senhas',\n             'id_motorista': 'Motorista',\n             'id_diresaun': 'Diresaun',",
+        "peekOfCode": "class DistribuisaunForm(forms.ModelForm):\n    class Meta:\n        model = Distribuisaun\n        fields = ['tipo_kombustivel', 'kilometrajen', 'id_transporte', 'id_senhas', 'id_motorista','fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data']\n        labels = {\n             'tipo_kombustivel': 'Tipu Kombustivel',\n             'kilomtrajen': 'Kilometrajen',\n             'id_transporte' : 'Transporte',\n             'id_senhas': 'Numeru Senhas',\n             'id_motorista': 'Motorista',",
         "detail": "admKombustivel.forms",
         "documentation": {}
     },
@@ -558,7 +684,7 @@
         "kind": 6,
         "importPath": "admKombustivel.models",
         "description": "admKombustivel.models",
-        "peekOfCode": "class Distribuitor(models.Model):     \n    id_distribuitor = models.AutoField(primary_key=True, editable=False)\n    naran_distribuitor = models.CharField(max_length=200)\n    montante_distribuitor = models.FloatField(default=0) \n    data = models.DateField(default=date.today)\n    ano = models.ForeignKey(Tinan, on_delete=models.CASCADE, null=False, blank=False)\n    def __str__(self):\n        return self.naran_distribuitor\nclass Fulan(models.Model):     \n    id_fulan = models.AutoField(primary_key=True, editable=False,)",
+        "peekOfCode": "class Distribuitor(models.Model):     \n    id_distribuitor = models.AutoField(primary_key=True, editable=False)\n    naran_distribuitor = models.CharField(max_length=200)\n    montante_distribuitor = models.FloatField(default=0) \n    data = models.DateField(default=date.today)\n    ano = models.ForeignKey(Tinan, on_delete=models.CASCADE, null=False, blank=False)\n    def __str__(self):\n        return self.naran_distribuitor\nclass Fulan(models.Model):     \n    id_fulan = models.AutoField(primary_key=True, editable=False)",
         "detail": "admKombustivel.models",
         "documentation": {}
     },
@@ -567,7 +693,7 @@
         "kind": 6,
         "importPath": "admKombustivel.models",
         "description": "admKombustivel.models",
-        "peekOfCode": "class Fulan(models.Model):     \n    id_fulan = models.AutoField(primary_key=True, editable=False,)\n    naran_fulan = models.CharField(max_length=20)\n    # def __str__(self):\n    #     return self.name\nclass Senhas(models.Model):\n    id_senhas = models.AutoField(primary_key=True, editable=False)\n    nu_senhas = models.CharField(max_length=200)\n    folin_senhas = models.FloatField(default=0)\n    # def __str__(self):",
+        "peekOfCode": "class Fulan(models.Model):     \n    id_fulan = models.AutoField(primary_key=True, editable=False)\n    naran_fulan = models.CharField(max_length=20)\n    # def __str__(self):\n    #     return self.name\nclass Senhas(models.Model):\n    STATUS = (\n        ('Seidauk Distribui', 'Seidauk Distribui'),\n        ('Distribui Ona', 'Distribui Ona'))\n    id_senhas = models.AutoField(primary_key=True, editable=False)",
         "detail": "admKombustivel.models",
         "documentation": {}
     },
@@ -576,7 +702,7 @@
         "kind": 6,
         "importPath": "admKombustivel.models",
         "description": "admKombustivel.models",
-        "peekOfCode": "class Senhas(models.Model):\n    id_senhas = models.AutoField(primary_key=True, editable=False)\n    nu_senhas = models.CharField(max_length=200)\n    folin_senhas = models.FloatField(default=0)\n    # def __str__(self):\n    #     return f'Kompania: ({self.id_distribuitor.naran_distribuitor}) , Kodigu Senhas: ({self.nu_senhas}), Folin: (${self.folin_senhas})'\n# class Kombustivel(models.Model):\n#     KATEGORY = (\n#         ('Gazolina', 'Gazolina'),\n#         ('Gazoel', 'Gazoel'))   ",
+        "peekOfCode": "class Senhas(models.Model):\n    STATUS = (\n        ('Seidauk Distribui', 'Seidauk Distribui'),\n        ('Distribui Ona', 'Distribui Ona'))\n    id_senhas = models.AutoField(primary_key=True, editable=False)\n    nu_senhas = models.CharField(max_length=200)\n    folin_senhas = models.FloatField(default=0)\n    status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')\n    # def __str__(self):\n    #     return f'Kompania: ({self.id_distribuitor.naran_distribuitor}) , Kodigu Senhas: ({self.nu_senhas}), Folin: (${self.folin_senhas})'",
         "detail": "admKombustivel.models",
         "documentation": {}
     },
@@ -594,16 +720,25 @@
         "kind": 5,
         "importPath": "admKombustivel.urls",
         "description": "admKombustivel.urls",
-        "peekOfCode": "urlpatterns = [\n     path('login/', views.login, name='login'),\n     path('', views.dash_kombustivel, name='dash_kombustivel'),\n     path('dadus_distributor/', views.dadus_distributor, name='dadus_distributor'),\n     path('aumenta_distributor/', views.aumenta_distributor, name='aumenta_distributor'),\n     path('distribui_kom/', views.distribui_kom, name='distribui_kom'),\n     path('aumenta_dadus_distribuisaun/', views.aumenta_dadus_distribuisaun, name='aumenta_dadus_distribuisaun'),\n     path('senhas/', views.senhas, name='dadus_senhas'),\n     path('aumenta_dadus_senhas/', views.aumenta_dadus_senhas, name='aumenta_dadus_senhas'),\n     path('delete_dadus_senhas/<str:pk>/', views.delete_dadus_senhas, name='delete_dadus_senhas'),",
+        "peekOfCode": "urlpatterns = [\n     path('login/', views.loginPage, name='login'),\n     path('logout/', views.logoutUser, name='logout'),\n     path('', views.dash_kombustivel, name='dash_kombustivel'),\n     path('dadus_distributor/', views.dadus_distributor, name='dadus_distributor'),\n     path('aumenta_distributor/', views.aumenta_distributor, name='aumenta_distributor'),\n     path('delete_dadus_distributor/<str:pk>/', views.delete_dadus_distributor, name='delete_dadus_distributor'),\n     path('update_dadus_distributor/<str:pk>/', views.updateDistributor, name='updateDistributor'),\n     path('distribui_kom/', views.distribui_kom, name='distribui_kom'),\n     path('aumenta_dadus_distribuisaun/', views.aumenta_dadus_distribuisaun, name='aumenta_dadus_distribuisaun'),",
         "detail": "admKombustivel.urls",
         "documentation": {}
     },
     {
-        "label": "logi",
+        "label": "loginPage",
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def login (request):\n    return render(request, 'templateKombustivel/login/login.html')\ndef dash_kombustivel (request):\n    return render(request, 'templateKombustivel/dash_kombustivel.html')\n#views Distribuitor \ndef dadus_distributor (request):\n    dadus_distributor = Distribuitor.objects.all()\n    context = {'kombustivels': dadus_distributor}\n    return render(request, 'templateKombustivel/distributor/dadus_distributor.html', context)\ndef aumenta_distributor (request):",
+        "peekOfCode": "def loginPage(request):\n    if request.method == 'POST':\n        username = request.POST.get('username')\n        password= request.POST.get('password')\n        user = authenticate(request, username=username, password=password)\n        if user is not None:\n            login(request, user)\n            return redirect('dash_kombustivel')\n        else:\n            messages.info(request, 'Username or Password is incorrect')",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "logoutUser",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def logoutUser(request):\n    logout(request)\n    return redirect('login')\n@login_required(login_url='login')\ndef dash_kombustivel (request):\n    return render(request, 'templateKombustivel/dash_kombustivel.html')\n#views Distribuitor \n@login_required(login_url='login')\ndef dadus_distributor (request):\n    dadus_distributor = Distribuitor.objects.all()",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -612,7 +747,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def dash_kombustivel (request):\n    return render(request, 'templateKombustivel/dash_kombustivel.html')\n#views Distribuitor \ndef dadus_distributor (request):\n    dadus_distributor = Distribuitor.objects.all()\n    context = {'kombustivels': dadus_distributor}\n    return render(request, 'templateKombustivel/distributor/dadus_distributor.html', context)\ndef aumenta_distributor (request):\n    form = DistributorForm\n    if request.method == 'POST':",
+        "peekOfCode": "def dash_kombustivel (request):\n    return render(request, 'templateKombustivel/dash_kombustivel.html')\n#views Distribuitor \n@login_required(login_url='login')\ndef dadus_distributor (request):\n    dadus_distributor = Distribuitor.objects.all()\n    context = {'kombustivels': dadus_distributor}\n    return render(request, 'templateKombustivel/distributor/dadus_distributor.html', context)\n@login_required(login_url='login')\ndef aumenta_distributor (request):",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -621,7 +756,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def dadus_distributor (request):\n    dadus_distributor = Distribuitor.objects.all()\n    context = {'kombustivels': dadus_distributor}\n    return render(request, 'templateKombustivel/distributor/dadus_distributor.html', context)\ndef aumenta_distributor (request):\n    form = DistributorForm\n    if request.method == 'POST':\n        form = DistributorForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "peekOfCode": "def dadus_distributor (request):\n    dadus_distributor = Distribuitor.objects.all()\n    context = {'kombustivels': dadus_distributor}\n    return render(request, 'templateKombustivel/distributor/dadus_distributor.html', context)\n@login_required(login_url='login')\ndef aumenta_distributor (request):\n    form = DistributorForm\n    if request.method == 'POST':\n        form = DistributorForm(request.POST)\n        if form.is_valid():",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -630,7 +765,25 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def aumenta_distributor (request):\n    form = DistributorForm\n    if request.method == 'POST':\n        form = DistributorForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_distributor')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/distributor/aumenta_distributor.html', context)\n#views distribuisaun kombustivel",
+        "peekOfCode": "def aumenta_distributor (request):\n    form = DistributorForm\n    if request.method == 'POST':\n        form = DistributorForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_distributor')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/distributor/aumenta_distributor.html', context)\n@login_required(login_url='login')",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_dadus_distributo",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def delete_dadus_distributor (request, pk):\n    distributor = Distribuitor.objects.get(id_distribuitor=pk)\n    if request.method == 'GET':\n        distributor.delete()\n        return redirect('dadus_distributor')\n@login_required(login_url='login')\ndef updateDistributor (request, pk):\n    distributor = Distribuitor.objects.get(id_distribuitor=pk)\n    form = DistributorForm(instance=distributor)\n    if request.method == 'POST':",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "updateDistributo",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def updateDistributor (request, pk):\n    distributor = Distribuitor.objects.get(id_distribuitor=pk)\n    form = DistributorForm(instance=distributor)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = DistributorForm(request.POST, instance=distributor)\n        if form.is_valid():\n            form.save()\n            return redirect('dadus_distributor')\n    context = {'form': form}",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -639,7 +792,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def distribui_kom (request):\n    dadus_distribuisaun = Distribuisaun.objects.all()\n    context = {'distribuisaun': dadus_distribuisaun}\n    return render(request, 'templateKombustivel/kombustivel/distribui_kom.html', context)\ndef aumenta_dadus_distribuisaun (request):\n    form = DistribuisaunForm\n    if request.method == 'POST':\n        form = DistribuisaunForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "peekOfCode": "def distribui_kom (request):\n    dadus_distribuisaun = Distribuisaun.objects.all()\n    context = {'distribuisaun': dadus_distribuisaun}\n    return render(request, 'templateKombustivel/kombustivel/distribui_kom.html', context)\n@login_required(login_url='login')\ndef aumenta_dadus_distribuisaun (request):\n    form = DistribuisaunForm\n    if request.method == 'POST':\n        form = DistribuisaunForm(request.POST)\n        if form.is_valid():",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -657,7 +810,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def senhas (request):\n    dadus_senhas = Senhas.objects.all()\n    context = {'kombustivels': dadus_senhas}\n    return render(request, 'templateKombustivel/senhas/senhas.html', context)\ndef aumenta_dadus_senhas (request):\n    form = SenhasForm\n    if request.method == 'POST':\n        form = SenhasForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "peekOfCode": "def senhas (request):\n    dadus_senhas = Senhas.objects.all()\n    context = {'kombustivels': dadus_senhas}\n    return render(request, 'templateKombustivel/senhas/senhas.html', context)\n@login_required(login_url='login')\ndef aumenta_dadus_senhas (request):\n    form = SenhasForm\n    if request.method == 'POST':\n        form = SenhasForm(request.POST)\n        if form.is_valid():",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -666,7 +819,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def aumenta_dadus_senhas (request):\n    form = SenhasForm\n    if request.method == 'POST':\n        form = SenhasForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_senhas')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/senhas/aumenta_dadus_senhas.html', context)\ndef delete_dadus_senhas (request, pk):",
+        "peekOfCode": "def aumenta_dadus_senhas (request):\n    form = SenhasForm\n    if request.method == 'POST':\n        form = SenhasForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_senhas')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/senhas/aumenta_dadus_senhas.html', context)\n@login_required(login_url='login')",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -675,7 +828,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def delete_dadus_senhas (request, pk):\n    senhas = Senhas.objects.get(id_senhas=pk)\n    if request.method == 'GET':\n        senhas.delete()\n        return redirect('dadus_senhas')\ndef updateSenhas (request, pk):\n    senhas = Senhas.objects.get(id_senhas=pk)\n    form = SenhasForm(instance=senhas)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "peekOfCode": "def delete_dadus_senhas (request, pk):\n    senhas = Senhas.objects.get(id_senhas=pk)\n    if request.method == 'GET':\n        senhas.delete()\n        return redirect('dadus_senhas')\n@login_required(login_url='login')  \ndef updateSenhas (request, pk):\n    senhas = Senhas.objects.get(id_senhas=pk)\n    form = SenhasForm(instance=senhas)\n    if request.method == 'POST':",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -693,7 +846,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def dadus_regional (request):\n    dadus_regional = Regional.objects.all()\n    context = {'kombustivels': dadus_regional}\n    return render(request, 'templateKombustivel/regional/dadus_regional.html', context)\ndef aumenta_dadus_regional (request):\n    form = RegionalForm\n    if request.method == 'POST':\n        form = RegionalForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "peekOfCode": "def dadus_regional (request):\n    dadus_regional = Regional.objects.all()\n    context = {'kombustivels': dadus_regional}\n    return render(request, 'templateKombustivel/regional/dadus_regional.html', context)\n@login_required(login_url='login')\ndef aumenta_dadus_regional (request):\n    form = RegionalForm\n    if request.method == 'POST':\n        form = RegionalForm(request.POST)\n        if form.is_valid():",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -702,7 +855,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def aumenta_dadus_regional (request):\n    form = RegionalForm\n    if request.method == 'POST':\n        form = RegionalForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_regional')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/regional/aumenta_dadus_regional.html', context)\ndef delete_dadus_regional (request, pk):",
+        "peekOfCode": "def aumenta_dadus_regional (request):\n    form = RegionalForm\n    if request.method == 'POST':\n        form = RegionalForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_regional')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/regional/aumenta_dadus_regional.html', context)\n@login_required(login_url='login')",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -711,7 +864,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def delete_dadus_regional (request, pk):\n    regional = Regional.objects.get(id_regional=pk)\n    if request.method == 'GET':\n        regional.delete()\n        return redirect('dadus_regional')\ndef updateRegional (request, pk):\n    regional = Regional.objects.get(id_regional=pk)\n    form = RegionalForm(instance=regional)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "peekOfCode": "def delete_dadus_regional (request, pk):\n    regional = Regional.objects.get(id_regional=pk)\n    if request.method == 'GET':\n        regional.delete()\n        return redirect('dadus_regional')\n@login_required(login_url='login')\ndef updateRegional (request, pk):\n    regional = Regional.objects.get(id_regional=pk)\n    form = RegionalForm(instance=regional)\n    if request.method == 'POST':",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -729,7 +882,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def dadus_departamentu (request):\n    dadus_departamentu = Departamentu.objects.all()\n    context = {'kombustivels': dadus_departamentu}\n    return render(request, 'templateKombustivel/departamentu/dadus_departamentu.html', context)\ndef aumenta_dadus_departamentu (request):\n    form = DepartamentuForm\n    if request.method == 'POST':\n        form = DepartamentuForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "peekOfCode": "def dadus_departamentu (request):\n    dadus_departamentu = Departamentu.objects.all()\n    context = {'kombustivels': dadus_departamentu}\n    return render(request, 'templateKombustivel/departamentu/dadus_departamentu.html', context)\n@login_required(login_url='login')\ndef aumenta_dadus_departamentu (request):\n    form = DepartamentuForm\n    if request.method == 'POST':\n        form = DepartamentuForm(request.POST)\n        if form.is_valid():",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -738,7 +891,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def aumenta_dadus_departamentu (request):\n    form = DepartamentuForm\n    if request.method == 'POST':\n        form = DepartamentuForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_departamentu')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/departamentu/aumenta_dadus_departamentu.html', context)\ndef delete_dadus_departamentu (request, pk):",
+        "peekOfCode": "def aumenta_dadus_departamentu (request):\n    form = DepartamentuForm\n    if request.method == 'POST':\n        form = DepartamentuForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_departamentu')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/departamentu/aumenta_dadus_departamentu.html', context)\n@login_required(login_url='login')",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -747,7 +900,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def delete_dadus_departamentu (request, pk):\n    departamentu = Departamentu.objects.get(id_departamentu=pk)\n    if request.method == 'GET':\n        departamentu.delete()\n        return redirect('dadus_departamentu')\ndef updateDepartamentu (request, pk):\n    departamentu = Departamentu.objects.get(id_departamentu=pk)\n    form = DepartamentuForm(instance=departamentu)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "peekOfCode": "def delete_dadus_departamentu (request, pk):\n    departamentu = Departamentu.objects.get(id_departamentu=pk)\n    if request.method == 'GET':\n        departamentu.delete()\n        return redirect('dadus_departamentu')\n@login_required(login_url='login')\ndef updateDepartamentu (request, pk):\n    departamentu = Departamentu.objects.get(id_departamentu=pk)\n    form = DepartamentuForm(instance=departamentu)\n    if request.method == 'POST':",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -765,7 +918,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def dadus_diresaun (request):\n    dadus_diresaun = Diresaun.objects.all()\n    context = {'kombustivels': dadus_diresaun}\n    return render(request, 'templateKombustivel/diresaun/dadus_diresaun.html', context)\ndef aumenta_dadus_diresaun (request):\n    form = DiresaunForm\n    if request.method == 'POST':\n        form = DiresaunForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "peekOfCode": "def dadus_diresaun (request):\n    dadus_diresaun = Diresaun.objects.all()\n    context = {'kombustivels': dadus_diresaun}\n    return render(request, 'templateKombustivel/diresaun/dadus_diresaun.html', context)\n@login_required(login_url='login')\ndef aumenta_dadus_diresaun (request):\n    form = DiresaunForm\n    if request.method == 'POST':\n        form = DiresaunForm(request.POST)\n        if form.is_valid():",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -774,7 +927,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def aumenta_dadus_diresaun (request):\n    form = DiresaunForm\n    if request.method == 'POST':\n        form = DiresaunForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_diresaun')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/diresaun/aumenta_dadus_diresaun.html', context)\ndef delete_dadus_diresaun (request, pk):",
+        "peekOfCode": "def aumenta_dadus_diresaun (request):\n    form = DiresaunForm\n    if request.method == 'POST':\n        form = DiresaunForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_diresaun')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/diresaun/aumenta_dadus_diresaun.html', context)\n@login_required(login_url='login')",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -783,7 +936,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def delete_dadus_diresaun (request, pk):\n    diresaun = Diresaun.objects.get(id_diresaun=pk)\n    if request.method == 'GET':\n        diresaun.delete()\n        return redirect('dadus_diresaun')\ndef updateDiresaun (request, pk):\n    diresaun = Diresaun.objects.get(id_diresaun=pk)\n    form = DiresaunForm(instance=diresaun)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "peekOfCode": "def delete_dadus_diresaun (request, pk):\n    diresaun = Diresaun.objects.get(id_diresaun=pk)\n    if request.method == 'GET':\n        diresaun.delete()\n        return redirect('dadus_diresaun')\n@login_required(login_url='login')    \ndef updateDiresaun (request, pk):\n    diresaun = Diresaun.objects.get(id_diresaun=pk)\n    form = DiresaunForm(instance=diresaun)\n    if request.method == 'POST':",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -797,11 +950,83 @@
         "documentation": {}
     },
     {
+        "label": "dadus_fula",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def dadus_fulan (request):\n    dadus_fulan = Fulan.objects.all()\n    context = {'kombustivels': dadus_fulan}\n    return render(request, 'templateKombustivel/fulan/dadus_fulan.html', context)\n@login_required(login_url='login')\ndef aumenta_dadus_fulan (request):\n    form = FulanForm\n    if request.method == 'POST':\n        form = FulanForm(request.POST)\n        if form.is_valid():",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "aumenta_dadus_fula",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def aumenta_dadus_fulan (request):\n    form = FulanForm\n    if request.method == 'POST':\n        form = FulanForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_fulan')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/fulan/aumenta_dadus_fulan.html', context)\n@login_required(login_url='login')",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_dadus_fula",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def delete_dadus_fulan (request, pk):\n    fulan = Fulan.objects.get(id_fulan=pk)\n    if request.method == 'GET':\n        fulan.delete()\n        return redirect('dadus_fulan')\n@login_required(login_url='login')    \ndef updateFulan (request, pk):\n    fulan = Fulan.objects.get(id_fulan=pk)\n    form = FulanForm(instance=fulan)\n    if request.method == 'POST':",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "updateFula",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def updateFulan (request, pk):\n    fulan = Fulan.objects.get(id_fulan=pk)\n    form = FulanForm(instance=fulan)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = FulanForm(request.POST, instance=fulan)\n        if form.is_valid():\n            form.save()\n            return redirect('dadus_fulan')\n    context = {'form': form}",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "dadus_tina",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def dadus_tinan (request):\n    dadus_tinan = Tinan.objects.all()\n    context = {'kombustivels': dadus_tinan}\n    return render(request, 'templateKombustivel/tinan/dadus_tinan.html', context)\n@login_required(login_url='login')\ndef aumenta_dadus_tinan (request):\n    form = TinanForm\n    if request.method == 'POST':\n        form = TinanForm(request.POST)\n        if form.is_valid():",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "aumenta_dadus_tina",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def aumenta_dadus_tinan (request):\n    form = TinanForm\n    if request.method == 'POST':\n        form = TinanForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_tinan')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/tinan/aumenta_dadus_tinan.html', context)\n@login_required(login_url='login')",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_dadus_tina",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def delete_dadus_tinan (request, pk):\n    tinan = Tinan.objects.get(ano=pk)\n    if request.method == 'GET':\n        tinan.delete()\n        return redirect('dadus_tinan')\n@login_required(login_url='login')   \ndef updateTinan (request, pk):\n    tinan = Tinan.objects.get(ano=pk)\n    form = TinanForm(instance=tinan)\n    if request.method == 'POST':",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "updateTina",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def updateTinan (request, pk):\n    tinan = Tinan.objects.get(ano=pk)\n    form = TinanForm(instance=tinan)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = TinanForm(request.POST, instance=tinan)\n        if form.is_valid():\n            form.save()\n            return redirect('dadus_tinan')\n    context = {'form': form}",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
         "label": "dadus_tran",
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def dadus_trans (request):\n    dadus_transporte = Transporte.objects.all()\n    context = {'transporte': dadus_transporte}\n    return render(request, 'templateKombustivel/transporte/dadus_trans.html', context)\ndef aumenta_dadus_trans (request):\n    form = TransporteForm\n    if request.method == 'POST':\n        form = TransporteForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "peekOfCode": "def dadus_trans (request):\n    dadus_transporte = Transporte.objects.all()\n    context = {'transporte': dadus_transporte}\n    return render(request, 'templateKombustivel/transporte/dadus_trans.html', context)\n@login_required(login_url='login')\ndef aumenta_dadus_trans (request):\n    form = TransporteForm\n    if request.method == 'POST':\n        form = TransporteForm(request.POST)\n        if form.is_valid():",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -810,7 +1035,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def aumenta_dadus_trans (request):\n    form = TransporteForm\n    if request.method == 'POST':\n        form = TransporteForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_trans')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/transporte/aumenta_dadus_trans.html', context)\ndef delete_dadus_transporte (request, pk):",
+        "peekOfCode": "def aumenta_dadus_trans (request):\n    form = TransporteForm\n    if request.method == 'POST':\n        form = TransporteForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_trans')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/transporte/aumenta_dadus_trans.html', context)\n@login_required(login_url='login')",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -819,7 +1044,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def delete_dadus_transporte (request, pk):\n    transporte = Transporte.objects.get(id_transporte=pk)\n    if request.method == 'GET':\n        transporte.delete()\n        return redirect('dadus_trans')\ndef updateTransporte (request, pk):\n    transporte = Transporte.objects.get(id_transporte=pk)\n    form = TransporteForm(instance=transporte)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "peekOfCode": "def delete_dadus_transporte (request, pk):\n    transporte = Transporte.objects.get(id_transporte=pk)\n    if request.method == 'GET':\n        transporte.delete()\n        return redirect('dadus_trans')\n@login_required(login_url='login')\ndef updateTransporte (request, pk):\n    transporte = Transporte.objects.get(id_transporte=pk)\n    form = TransporteForm(instance=transporte)\n    if request.method == 'POST':",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -837,7 +1062,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def dadus_motorista (request):\n    dadus_motorista = Motorista.objects.all()\n    context = {'motorista': dadus_motorista}\n    return render(request, 'templateKombustivel/motorista/dadus_motorista.html', context)\ndef aumenta_dadus_motorista (request):\n    form = MotoristaForm\n    if request.method == 'POST':\n        form = MotoristaForm(request.POST)\n        if form.is_valid():\n           form.save()",
+        "peekOfCode": "def dadus_motorista (request):\n    dadus_motorista = Motorista.objects.all()\n    context = {'motorista': dadus_motorista}\n    return render(request, 'templateKombustivel/motorista/dadus_motorista.html', context)\n@login_required(login_url='login')\ndef aumenta_dadus_motorista (request):\n    form = MotoristaForm\n    if request.method == 'POST':\n        form = MotoristaForm(request.POST)\n        if form.is_valid():",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -846,7 +1071,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def aumenta_dadus_motorista (request):\n    form = MotoristaForm\n    if request.method == 'POST':\n        form = MotoristaForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_motorista')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/motorista/aumenta_dadus_motorista.html', context)\ndef delete_dadus_motorista (request, pk):",
+        "peekOfCode": "def aumenta_dadus_motorista (request):\n    form = MotoristaForm\n    if request.method == 'POST':\n        form = MotoristaForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_motorista')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/motorista/aumenta_dadus_motorista.html', context)\n@login_required(login_url='login')",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -855,7 +1080,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def delete_dadus_motorista (request, pk):\n    motorista = Motorista.objects.get(id_motorista=pk)\n    if request.method == 'GET':\n        motorista.delete()\n        return redirect('dadus_motorista')\ndef updateMotorista (request, pk):\n    motorista = Motorista.objects.get(id_motorista=pk)\n    form = MotoristaForm(instance=motorista)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal",
+        "peekOfCode": "def delete_dadus_motorista (request, pk):\n    motorista = Motorista.objects.get(id_motorista=pk)\n    if request.method == 'GET':\n        motorista.delete()\n        return redirect('dadus_motorista')\n@login_required(login_url='login')    \ndef updateMotorista (request, pk):\n    motorista = Motorista.objects.get(id_motorista=pk)\n    form = MotoristaForm(instance=motorista)\n    if request.method == 'POST':",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -873,7 +1098,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def index_admin (request):\n        return render(request, 'templateKombustivel/admin/index_admin.html')\ndef aumenta_admin (request):\n        return render(request, 'templateKombustivel/admin/aumenta_admin.html')\ndef edit_admin (request):\n        return render(request, 'templateKombustivel/admin/edit_admin.html')",
+        "peekOfCode": "def index_admin (request):\n        return render(request, 'templateKombustivel/admin/index_admin.html')\n@login_required(login_url='login')\ndef aumenta_admin (request):\n        return render(request, 'templateKombustivel/admin/aumenta_admin.html')\n@login_required(login_url='login')\ndef edit_admin (request):\n        return render(request, 'templateKombustivel/admin/edit_admin.html')",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -882,7 +1107,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def aumenta_admin (request):\n        return render(request, 'templateKombustivel/admin/aumenta_admin.html')\ndef edit_admin (request):\n        return render(request, 'templateKombustivel/admin/edit_admin.html')",
+        "peekOfCode": "def aumenta_admin (request):\n        return render(request, 'templateKombustivel/admin/aumenta_admin.html')\n@login_required(login_url='login')\ndef edit_admin (request):\n        return render(request, 'templateKombustivel/admin/edit_admin.html')",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
