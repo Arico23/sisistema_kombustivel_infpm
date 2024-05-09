@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-dadus kombustivel
+Relatorio
 {% endblock %}
 
 {% block konteudu %}
@@ -14,17 +14,14 @@ dadus kombustivel
                 {% comment %} <h1 class="mt-4">Dadus Distributor</h1> {% endcomment %}
                 <ol class="breadcrumb mb-4 mt-4">
                     <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Dadus Distribuitor</li>
+                    <li class="breadcrumb-item active">Relatorio Stock In</li>
                 </ol>
                   <div class="card mb-4 mt-4">
                       <div class="card-header">
                         <h3><i class="fas fa-table me-1"></i>
-                         Dadus Distribuitor</h3>
+                         Relatorio Stock In</h3>
                       </div>
-                      <div class="card-body">
-                        <a class="button-add mb-2 btn btn-primary " data-toggle="modal" data-target="aumenta" href="{% url 'aumenta_distributor' %}">
-                        <i class ="fa fa-plus"></i>Aumenta</a> 
-                                      
+                      <div class="card-body">            
                         <table id="datatablesSimple">
                               <thead>
                                   <tr>
@@ -32,20 +29,16 @@ dadus kombustivel
                                       <th>Naran Distributor</th> 
                                       <th>Montante Stock</th>
                                       <th>Data</th>
-                                      <th>Loron</th> 
-                                      <th>Status</th>                         
-                                      <th>aksaun</th>
+                                      <th>Loron</th>                       
                                   </tr>
                               </thead>
                            <tfoot>
                                 <tr>
                                     <th>Nu</th>
-                                    <th>Naran Stock</th>
-                                    <th>Montante Distributor</th>
+                                    <th>Naran Distributor</th>
+                                    <th>Montante  Stock</th>
                                     <th>Lorom</th>
                                     <th>Ano</th>
-                                    <th>Status</th>
-                                    <th>aksaun</th>
                                 </tr>
                               </tfoot> 
                               <tbody>
@@ -53,18 +46,19 @@ dadus kombustivel
                                   <tr>
                                     <td>{{ forloop.counter }}</td> <!-- Display field number -->
                                       <td>{{distributor.naran_distribuitor}}</td>
-                                      <td>{{distributor.montante_distribuitor}}</td>
+                                      <td>{{distributor.montante_atual}}</td>
                                       <td>{{distributor.data}}</td>
                                       <td>{{distributor.ano}}</td>
-                                      <td> <a class="btn-edit btn btn-primary" href="">iha</a>
-                                      </td>
-                                      <td> <a class="btn-edit btn btn-primary" href="{% url 'updateDistributor' distributor.id_distribuitor %}">Edit</a>
-                                        <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_distributor' distributor.id_distribuitor %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a> 
-                                      </td>
                                     </tr>
                             {% endfor %}
                                   </tr>
-                              
+                                  <tr>
+                                    <th>Total</th>
+                                    <th></th>
+                                    <th>800</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
                               </tbody>
                           </table>
                       </div>

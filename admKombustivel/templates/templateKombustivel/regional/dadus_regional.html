@@ -2,11 +2,12 @@
 {% load static %}
 
 {% block title %}
-dadus senhas
+dadus regional
 {% endblock %}
 
 {% block konteudu %}
 <body class="sb-nav-fixed">
+
     {% include 'templateKombustivel/side-navbar.html' %}
       <div id="layoutSidenav_content">
           <main>
@@ -23,9 +24,12 @@ dadus senhas
                       </div>
                       <div class="card-body">
                         {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
-                        <a class="button-add mb-2 btn btn-primary" href="{% url 'aumenta_dadus_regional' %}">
-                        <i class ="fa fa-plus"></i>Aumenta</a> 
-                                      
+                        {% comment %} <a class="button-add mb-2 btn btn-primary"  href="{% url 'aumenta_dadus_regional' %}">
+                        <i class ="fa fa-plus"></i>Aumenta</a>  {% endcomment %}
+                        <!-- Button trigger modal -->
+<button id="create-task" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Aumenta
+  </button>
                         <table id="datatablesSimple">
                               <thead>
                                   <tr>
@@ -73,7 +77,18 @@ dadus senhas
           </footer>
       </div>
   </div>
-       
 </body>
 {% endblock %}
+
+<script>
+  $(document).ready(function() {
+
+    $(".create-task").modalForm({
+        formURL: "{% url 'aumenta_dadus_regional' %}"
+    });
+  
+  });
+</script>
+
+
 

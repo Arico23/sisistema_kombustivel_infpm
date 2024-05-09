@@ -1,4 +1,4 @@
-<nav class="sb-topnav navbar navbar-expand navbar-light bg-success2">
+<nav class="sb-topnav navbar navbar-expand navbar-light bg-success2 shadow-sm p-3">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" href="">Pajina Administrador</a>
     <!-- Sidebar Toggle-->
@@ -15,7 +15,9 @@
                 <li><a class="dropdown-item" href="#!">Settings</a></li>
                 <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                 <li><hr class="dropdown-divider" /></li>
+              
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+
             </ul>
         </li>
     </ul>
@@ -25,12 +27,12 @@
         <nav class="sb-sidenav accordion sb-sidenav-light bg-success2" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
-                    <div class="sb-sidenav-menu-heading">SJLP-INFPM</div>
-                    <a class="nav-link" href="{% url 'dash_kombustivel' %}">
+                    <div class="sb-sidenav-menu-heading"><h6>MENU SJK INFPM</h6></div>
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dash_kombustivel' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
                         Dashboard
                     </a>
-                    <div class="sb-sidenav-menu-heading">MENU-SJLP-INFPM</div>
+                    {% comment %} <div class="sb-sidenav-menu-heading">MENU-SJLP-INFPM</div> {% endcomment %}
 
                     {% comment %} <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div><i class="fa fa-database" style="margin-right: 0.5rem;"></i></div>
@@ -49,51 +51,51 @@
                                 Distribuisaun</a>
                         </nav>
                     </div> {% endcomment %}
-                    <a class="nav-link" href="{% url 'dadus_distributor' %}">
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_distributor' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
                         Dadus Distributor
                     </a>
-                    <a class="nav-link" href="{% url 'distribui_kom' %}">
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'distribui_kom' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
                         Dadus Distribuisaun
                     </a>
-                    <a class="nav-link" href="{% url 'dadus_senhas' %}">
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_senhas' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
                         Dadus Senhas
                     </a>
 
-                    <a class="nav-link" href="{% url 'dadus_regional' %}">
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_regional' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
                         Dadus Regional
                     </a>
 
-                    <a class="nav-link" href="{% url 'dadus_diresaun' %}">
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_diresaun' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
                         Dadus Diresaun
                     </a>
 
-                    <a class="nav-link" href="{% url 'dadus_departamentu' %}">
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_departamentu' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
                         Dadus Departamentu
                     </a>
 
-                    <a class="nav-link" href="{% url 'dadus_trans' %}">
-                        <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_trans' %}">
+                        <div><i class="fa fa-car" style="margin-right: 0.5rem;"></i></div>
                         Dadus Transporte
                     </a>
-                    <a class="nav-link" href="{% url 'dadus_motorista' %}">
-                        <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_motorista' %}">
+                        <div><i class="fa fa-male" style="margin-right: 0.5rem;"></i></div>
                         Dadus Motorista
                     </a>
 
 
-                    <a class="nav-link" href="{% url 'dadus_tinan' %}">
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_tinan' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
                         Dadus Tinan
                     </a>
 
-                    <a class="nav-link" href="{% url 'dadus_fulan' %}">
-                        <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_fulan' %}">
+                        <div><i class="fa fa-adjust" style="margin-right: 0.5rem;"></i></div>
                         Dadus Fulan
                     </a>
 
@@ -111,15 +113,15 @@
                                 Dadus Distribuitor</a>
                         </nav>
                     </div> {% endcomment %}
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRelatorio" aria-expanded="false" aria-controls="collapseLayouts">
+                    <a class="nav-link collapsed btn btn-sm btn-ba-hover" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRelatorio" aria-expanded="false" aria-controls="collapseLayouts">
                         <div><i class="fa fa-database" style="margin-right: 0.5rem;"></i></div>
                         RELATORIO
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseRelatorio" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-sidenav-light.html">Stock In</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">Stock Out</a>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'StockIn' %}">Stock In</a>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="layout-sidenav-light.html">Stock Out</a>
                         </nav>
                     </div>
 

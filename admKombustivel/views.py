@@ -413,9 +413,13 @@ def updateMotorista (request, pk):
             form.save()
             return redirect('dadus_motorista')
     context = {'form': form}
-    return render(request, 'templateKombustivel/motorista/update_motorista.html', context)
+    return render(request, 'templateKombustivel/motorista/update_motorista.html', context) 
 
- 
+@login_required(login_url='login')
+def stockIn (request):
+    stockIn = Distribuitor.objects.all()
+    context = {'kombustivels': stockIn}
+    return render(request, 'templateKombustivel/relatorio/stockIn.html', context)
 
 @login_required(login_url='login')
 def index_admin (request):
