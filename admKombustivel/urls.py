@@ -1,7 +1,8 @@
 from django.urls import path
 from . import views
 urlpatterns = [
-     path('login/', views.login, name='login'),
+     path('login/', views.loginPage, name='login'),
+     path('logout/', views.logoutUser, name='logout'),
      path('', views.dash_kombustivel, name='dash_kombustivel'),
      path('dadus_distributor/', views.dadus_distributor, name='dadus_distributor'),
      path('aumenta_distributor/', views.aumenta_distributor, name='aumenta_distributor'),
