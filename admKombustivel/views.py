@@ -19,7 +19,7 @@ def loginPage(request):
             login(request, user)
             return redirect('dash_kombustivel')
         else:
-            messages.info(request, 'Username or Password is incorrect')
+            messages.info(request, 'Username ou Password la loos')
                 
         
     context = {}
@@ -80,7 +80,7 @@ def updateDistributor (request, pk):
 @login_required(login_url='login')
 def distribui_kom (request):
     dadus_distribuisaun = Distribuisaun.objects.all()
-    context = {'distribuisaun': dadus_distribuisaun}
+    context = {'kombustivels': dadus_distribuisaun}
     return render(request, 'templateKombustivel/kombustivel/distribui_kom.html', context)
 
 
@@ -91,10 +91,32 @@ def aumenta_dadus_distribuisaun (request):
         form = DistribuisaunForm(request.POST)
         if form.is_valid():
            form.save()
-           return redirect('/distribui_kom')
+           return redirect('distribui_kom')
          
     context = {'form': form}
     return render(request, 'templateKombustivel/kombustivel/aumenta_dadus_distribuisaun.html', context)
+
+@login_required(login_url='login')
+def delete_dadus_distribuisaun (request, pk):
+    distribuisaun = Distribuisaun.objects.get(id_distribuisaun=pk)
+    if request.method == 'GET':
+        distribuisaun.delete()
+        return redirect('distribui_kom')
+    
+@login_required(login_url='login')
+def updateDistribuisaun (request, pk):
+    distribuisaun = Distribuisaun.objects.get(id_distribuisaun=pk)
+    form = DistribuisaunForm(instance=distribuisaun)
+    
+    if request.method == 'POST':
+        # print('Printing Post', request.POST) print result form iha terminal
+        form = DistribuisaunForm(request.POST, instance=distribuisaun)
+        if form.is_valid():
+            form.save()
+            return redirect('distribui_kom')
+    context = {'form': form}
+    return render(request, 'templateKombustivel/kombustivel/update_dadus_distribuisaun.html', context)
+
 
 #views senhas
 @login_required(login_url='login')

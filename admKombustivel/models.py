@@ -27,7 +27,7 @@ class Transporte(models.Model):
     tipo_transporte = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.nu_matricula
+        return self.tipo_transporte
         
     
 class Regional(models.Model):     
@@ -93,8 +93,8 @@ class Fulan(models.Model):
     id_fulan = models.AutoField(primary_key=True, editable=False)
     naran_fulan = models.CharField(max_length=20)
     
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.naran_fulan
 
 class Senhas(models.Model):
     STATUS = (
@@ -104,6 +104,9 @@ class Senhas(models.Model):
     nu_senhas = models.CharField(max_length=200)
     folin_senhas = models.FloatField(default=0)
     status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')
+    
+    def __str__(self):
+        return self.nu_senhas
     # def __str__(self):
     #     return f'Kompania: ({self.id_distribuitor.naran_distribuitor}) , Kodigu Senhas: ({self.nu_senhas}), Folin: (${self.folin_senhas})'
     

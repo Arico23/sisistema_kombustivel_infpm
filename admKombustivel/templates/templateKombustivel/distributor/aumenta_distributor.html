@@ -3,12 +3,13 @@
 {% load crispy_forms_tags %}
 
 {% block konteudu %}
+{% include 'templateKombustivel/side-navbar.html' %}
 <div class="container">
     {% comment %} <h2 class='mt-4 mb-4'>Formulariu Prenxe Dadus Distribuitor</h2> {% endcomment %}
     <form method="post" novalidate>
         {% csrf_token %}
         <div class="card mt-4 mb-4">
-        <h3><div class="card-header">Formulariu Prenxe Dadus Distribuisaun</div></h3>
+        <h3><div class="card-header">Formulariu Prenxe Dadus Distributor</div></h3>
         <div class="card-body">
 
         <div class="row">

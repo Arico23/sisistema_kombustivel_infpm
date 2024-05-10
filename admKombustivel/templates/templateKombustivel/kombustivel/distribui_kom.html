@@ -24,14 +24,7 @@ distribui kombustivel
                       <div class="card-body">
                         {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
                         <a class="button-group mb-2 btn btn-primary" href="{% url 'aumenta_dadus_distribuisaun' %}">
-                        <i class ="fa fa-plus"></i>Aumenta</a>
-                        <a class="button-group mb-2 btn btn-success" href="{% url 'aumenta_dadus_distribuisaun' %}">
-                            <i class ="fa fa-plus"></i>Download</a> 
-                        <a class="button-group mb-2 btn btn-danger" href="{% url 'aumenta_dadus_distribuisaun' %}">
-                             <i class ="fa fa-plus"></i>Print</a> 
-                               
-                              
-                                      
+                        <i class ="fa fa-plus"></i>Distribui Kombustivel</a>                                      
                         <table id="datatablesSimple">
                               <thead>
                                   <tr>
@@ -40,14 +33,14 @@ distribui kombustivel
                                       <th>Modelu Transporte</th>
                                       <th>kategoria</th>
                                       <th>Nu-Matrikula</th>
-                                      <th>Nu-senhas</th>
                                       <th>Kilometrajen</th>
+                                      <th>Nu-senhas</th>
+                                      <th>Folin Senhas</th>
+                                      <th>Folin Unitariu</th>
+                                      <th>Tipo Kombustivel</th>
                                       <th>Pessoal Foti Senhas</th>
                                       <th>Diresaun</th>
                                       <th>Departamentu</th>
-                                      <th>Tipo Kombustivel</th>
-                                      <th>Folin Senhas</th>
-                                      <th>Folin Unitariu</th>
                                       <th>Destinasaun</th>
                                       <th>aksaun</th>
                                   </tr>
@@ -59,39 +52,41 @@ distribui kombustivel
                                     <th>Modelo Transporte</th>
                                     <th>kategoria</th>
                                     <th>Nu-Matrikula</th>
-                                    <th>Nu-Senhas</th>
                                     <th>Kilometrajen</th>
+                                    <th>Nu-Senhas</th>
+                                    <th>Folin Senhas</th>
+                                    <th>Folin Unitariu</th>
+                                    <th>Tipo Kombustivel</th>
                                     <th>Pessoal Foti Senhas</th>
                                     <th>Diresaun</th>
                                     <th>Departamentu</th>
-                                    <th>Tipo Kombustivel</th>
-                                    <th>Folin Senhas</th>
-                                    <th>Folin Unitariu</th>
                                     <th>Destinasaun</th>
                                     <th>aksaun</th>
                                 </tr>
                               </tfoot> 
                               <tbody>
+                                {% for distribuisaun in kombustivels %}
                                   <tr>
-                                      <td>1</td>
-                                      <td>23-04-24</td>
-                                      <td>toyota a4</td>
-                                      <td>kareta</td>
-                                      <td>5656577</td>
-                                      <td>65533</td>
-                                      <td>540</td>
-                                      <td>eurico</td>
-                                      <td>apfrh</td>
-                                      <td>arh</td>
-                                      <td>gazoel</td>
-                                      <td>$320</td>
-                                      <td>$320</td>
-                                      <td>dili baucau</td>
+                                      <td>{{ forloop.counter }}</td>
+                                      <td>{{distribuisaun.data}}</td>
+                                      <td>{{distribuisaun.id_transporte.tipo_transporte}}</td>
+                                      <td>{{distribuisaun.id_transporte.categoria}}</td>
+                                      <td>{{distribuisaun.id_transporte.nu_matricula}}</td>
+                                      <td>{{distribuisaun.kilometrajen}}</td>
+                                      <td>{{distribuisaun.id_senhas.nu_senhas}}</td>
+                                      <td>{{distribuisaun.id_senhas.folin_senhas}}</td>
+                                      <td>{{distribuisaun.folin_utilitariu}}</td>
+                                      <td>{{distribuisaun.tipo_kombustivel}}</td>
+                                      <td>{{distribuisaun.id_motorista.id_departamentu}}</td>
+                                      <td>{{distribuisaun.id_motorista.id_diresaun}}</td>
+                                      <td>{{distribuisaun.id_motorista.id_regional}}</td>
+                                      <td>{{distribuisaun.destinasaun}}</td>
                                       <td>
-                                        <a class="btn-edit btn btn-primary" href="">Edit</a>
-                                        <a class="btn-Delete btn btn-danger" href="">Delete</a>
+                                        <a class="btn-edit btn btn-primary" href="{% url 'updateDistribuisaun' distribuisaun.id_distribuisaun %}">Edit</a>
+                                        <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_distribuisaun' distribuisaun.id_distribuisaun %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a> 
                                       </td>
                                     </tr>
+                                    {% endfor %}
                                   </tr>
                               
                               </tbody>
