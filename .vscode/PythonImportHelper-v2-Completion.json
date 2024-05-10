@@ -778,7 +778,7 @@
         "kind": 6,
         "importPath": "admKombustivel.models",
         "description": "admKombustivel.models",
-        "peekOfCode": "class Senhas(models.Model):\n    STATUS = (\n        ('Seidauk Distribui', 'Seidauk Distribui'),\n        ('Distribui Ona', 'Distribui Ona'))\n    id_senhas = models.AutoField(primary_key=True, editable=False)\n    nu_senhas = models.CharField(max_length=200)\n    folin_senhas = models.FloatField(default=0)\n    status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')\n    def __str__(self):\n        return self.nu_senhas",
+        "peekOfCode": "class Senhas(models.Model):\n    STATUS = (\n        ('Seidauk Distribui', 'Seidauk Distribui'),\n        ('Distribui Ona', 'Distribui Ona'))\n    id_senhas = models.AutoField(primary_key=True, editable=False)\n    nu_senhas = models.CharField(max_length=200)\n    folin_senhas = models.FloatField(default=0)\n    status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')\n    def __str__(self):\n         return f'({self.nu_senhas}) - (${self.folin_senhas})'",
         "detail": "admKombustivel.models",
         "documentation": {}
     },
