@@ -106,7 +106,7 @@ class Senhas(models.Model):
     status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')
     
     def __str__(self):
-        return self.nu_senhas
+         return f'({self.nu_senhas}) - (${self.folin_senhas})'
     # def __str__(self):
     #     return f'Kompania: ({self.id_distribuitor.naran_distribuitor}) , Kodigu Senhas: ({self.nu_senhas}), Folin: (${self.folin_senhas})'
     
@@ -143,4 +143,4 @@ class Distribuisaun(models.Model):
     data = models.DateField(default=date.today)
    
     def __str__(self):
-        return self.id_distribuisaun
+        return self.id_senhas.nu_senhas
