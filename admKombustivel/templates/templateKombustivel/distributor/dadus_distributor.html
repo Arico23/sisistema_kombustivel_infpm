@@ -1,5 +1,6 @@
 {% extends 'templateKombustivel/base.html' %}
 {% load static %}
+{% load auth_extras %}
 
 {% block title %}
 dadus kombustivel
@@ -22,8 +23,10 @@ dadus kombustivel
                          Dadus Distribuitor</h3>
                       </div>
                       <div class="card-body">
+                        {% if request.user|has_group:"manejarial" %}
                         <a class="button-add mb-2 btn btn-primary " data-toggle="modal" data-target="aumenta" href="{% url 'aumenta_distributor' %}">
                         <i class ="fa fa-plus"></i>Aumenta</a> 
+                        {% endif %}
                                       
                         <table id="datatablesSimple">
                               <thead>
