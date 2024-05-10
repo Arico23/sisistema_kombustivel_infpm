@@ -1,0 +1,114 @@
+{% extends 'templateKombustivel/base.html' %}
+{% load static %}
+
+{% block title %}
+distribui kombustivel
+{% endblock %}
+
+{% block konteudu %}
+<body class="sb-nav-fixed">
+    {% include 'templateKombustivel/side-navbar.html' %}
+      <div id="layoutSidenav_content">
+          <main>
+              <div class="container-fluid px-4">
+                {% comment %} <h1 class="mt-4">Tabela Distribuisaun</h1> {% endcomment %}
+                <ol class="breadcrumb mb-4 mt-4">
+                    <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Dadus Distribuisaun</li>
+                </ol>
+                  <div class="card mb-4 mt-4">
+                      <div class="card-header">
+                        <h3><i class="fas fa-table me-1"></i>
+                        Dadus Pessoal neebe foti kombustivel</h3>
+                      </div>
+                      <div class="card-body">
+                        <a class="button-group mb-2 btn btn-primary" href="">
+                            <i class ="fa fa-plus"></i>Download</a>
+                            <a class="button-group mb-2 btn btn-success" href="">
+                            <i class ="fa fa-plus"></i>Print</a> 
+                            <a class="button-group mb-2 btn btn-danger" href="">
+                            <i class ="fa fa-plus"></i>Excel</a>                                    
+                        <table id="datatablesSimple">
+                              <thead>
+                                  <tr>
+                                      <th>Nu</th>
+                                      <th>Data foti senhas</th>
+                                      <th>Modelu Transporte</th>
+                                      <th>kategoria</th>
+                                      <th>Nu-Matrikula</th>
+                                      <th>Kilometrajen</th>
+                                      <th>Nu-senhas</th>
+                                      <th>Folin Senhas</th>
+                                      <th>Folin Unitariu</th>
+                                      <th>Tipo Kombustivel</th>
+                                      <th>Pessoal Foti Senhas</th>
+                                      <th>Diresaun</th>
+                                      <th>Departamentu</th>
+                                      <th>Destinasaun</th>
+                                      <th>aksaun</th>
+                                  </tr>
+                              </thead>
+                           <tfoot>
+                                <tr>
+                                    <th>Nu</th>
+                                    <th>Data Foti Senhas</th>
+                                    <th>Modelo Transporte</th>
+                                    <th>kategoria</th>
+                                    <th>Nu-Matrikula</th>
+                                    <th>Kilometrajen</th>
+                                    <th>Nu-Senhas</th>
+                                    <th>Folin Senhas</th>
+                                    <th>Folin Unitariu</th>
+                                    <th>Tipo Kombustivel</th>
+                                    <th>Pessoal Foti Senhas</th>
+                                    <th>Diresaun</th>
+                                    <th>Departamentu</th>
+                                    <th>Destinasaun</th>
+                                    <th>aksaun</th>
+                                </tr>
+                              </tfoot> 
+                              <tbody>
+                                {% for distribuisaun in kombustivels %}
+                                  <tr>
+                                      <td>{{ forloop.counter }}</td>
+                                      <td>{{distribuisaun.data}}</td>
+                                      <td>{{distribuisaun.id_transporte.tipo_transporte}}</td>
+                                      <td>{{distribuisaun.id_transporte.categoria}}</td>
+                                      <td>{{distribuisaun.id_transporte.nu_matricula}}</td>
+                                      <td>{{distribuisaun.kilometrajen}}</td>
+                                      <td>{{distribuisaun.id_senhas.nu_senhas}}</td>
+                                      <td>{{distribuisaun.id_senhas.folin_senhas}}</td>
+                                      <td>{{distribuisaun.folin_utilitariu}}</td>
+                                      <td>{{distribuisaun.tipo_kombustivel}}</td>
+                                      <td>{{distribuisaun.id_motorista.id_departamentu}}</td>
+                                      <td>{{distribuisaun.id_motorista.id_diresaun}}</td>
+                                      <td>{{distribuisaun.id_motorista.id_regional}}</td>
+                                      <td>{{distribuisaun.destinasaun}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                  </tr>
+                              
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </main>
+          <footer class="py-4 bg-light mt-auto">
+              <div class="container-fluid px-4">
+                  <div class="d-flex align-items-center justify-content-between small">
+                      <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                      <div>
+                          <a href="#">Privacy Policy</a>
+                          &middot;
+                          <a href="#">Terms &amp; Conditions</a>
+                      </div>
+                  </div>
+              </div>
+          </footer>
+      </div>
+  </div>
+       
+</body>
+{% endblock %}
+

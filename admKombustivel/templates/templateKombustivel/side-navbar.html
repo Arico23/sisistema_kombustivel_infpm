@@ -88,7 +88,7 @@
                     </a>
 
 
-                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_tinan' %}">
+                    {% comment %} <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_tinan' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
                         Dadus Tinan
                     </a>
@@ -96,7 +96,7 @@
                     <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_fulan' %}">
                         <div><i class="fa fa-adjust" style="margin-right: 0.5rem;"></i></div>
                         Dadus Fulan
-                    </a>
+                    </a> {% endcomment %}
 
 {% comment %} 
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsedistribuitor" aria-expanded="false" aria-controls="collapseLayouts">
@@ -120,25 +120,9 @@
                     <div class="collapse" id="collapseRelatorio" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'StockIn' %}">Stock In</a>
-                            <a class="nav-link btn btn-sm btn-ba-hover" href="layout-sidenav-light.html">Stock Out</a>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'StockOut' %}">Stock Out</a>
                         </nav>
                     </div>
-
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseutilizador" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div><i class="fa fa-database" style="margin-right: 0.5rem;"></i></div>
-                        UTILIZADOR
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseutilizador" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-
-                            <a class="nav-link" href="">
-                                <div><i class="fas fa-folder" style="margin-right: 0.5rem;"></i></div>
-                                Dadus Utilizador
-                            </a>
-                        </nav>
-                    </div>
-                  
                     
 
                      {% comment %} <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">

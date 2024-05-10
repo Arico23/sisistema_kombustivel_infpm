@@ -295,90 +295,90 @@ def updateDiresaun (request, pk):
     return render(request, 'templateKombustivel/diresaun/update_diresaun.html', context)
 
 #views fulan
-@login_required(login_url='login')
-def dadus_fulan (request):
-    dadus_fulan = Fulan.objects.all()
-    context = {'kombustivels': dadus_fulan}
-    return render(request, 'templateKombustivel/fulan/dadus_fulan.html', context)
+# @login_required(login_url='login')
+# def dadus_fulan (request):
+#     dadus_fulan = Fulan.objects.all()
+#     context = {'kombustivels': dadus_fulan}
+#     return render(request, 'templateKombustivel/fulan/dadus_fulan.html', context)
 
-@login_required(login_url='login')
-@manejarial_only
-def aumenta_dadus_fulan (request):
-    form = FulanForm
-    if request.method == 'POST':
-        form = FulanForm(request.POST)
-        if form.is_valid():
-           form.save()
-           return redirect('dadus_fulan')
+# @login_required(login_url='login')
+# @manejarial_only
+# def aumenta_dadus_fulan (request):
+#     form = FulanForm
+#     if request.method == 'POST':
+#         form = FulanForm(request.POST)
+#         if form.is_valid():
+#            form.save()
+#            return redirect('dadus_fulan')
         
-    context = {'form': form}
-    return render(request, 'templateKombustivel/fulan/aumenta_dadus_fulan.html', context)
+#     context = {'form': form}
+#     return render(request, 'templateKombustivel/fulan/aumenta_dadus_fulan.html', context)
 
 
-@login_required(login_url='login')
-@manejarial_only
-def delete_dadus_fulan (request, pk):
-    fulan = Fulan.objects.get(id_fulan=pk)
-    if request.method == 'GET':
-        fulan.delete()
-        return redirect('dadus_fulan')
+# @login_required(login_url='login')
+# @manejarial_only
+# def delete_dadus_fulan (request, pk):
+#     fulan = Fulan.objects.get(id_fulan=pk)
+#     if request.method == 'GET':
+#         fulan.delete()
+#         return redirect('dadus_fulan')
 
-@login_required(login_url='login')    
-@manejarial_only
-def updateFulan (request, pk):
-    fulan = Fulan.objects.get(id_fulan=pk)
-    form = FulanForm(instance=fulan)
+# @login_required(login_url='login')    
+# @manejarial_only
+# def updateFulan (request, pk):
+#     fulan = Fulan.objects.get(id_fulan=pk)
+#     form = FulanForm(instance=fulan)
     
-    if request.method == 'POST':
-        # print('Printing Post', request.POST) print result form iha terminal
-        form = FulanForm(request.POST, instance=fulan)
-        if form.is_valid():
-            form.save()
-            return redirect('dadus_fulan')
-    context = {'form': form}
-    return render(request, 'templateKombustivel/fulan/update_fulan.html', context)
+#     if request.method == 'POST':
+#         # print('Printing Post', request.POST) print result form iha terminal
+#         form = FulanForm(request.POST, instance=fulan)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('dadus_fulan')
+#     context = {'form': form}
+#     return render(request, 'templateKombustivel/fulan/update_fulan.html', context)
 
-#views fulan
-@login_required(login_url='login')
-def dadus_tinan (request):
-    dadus_tinan = Tinan.objects.all()
-    context = {'kombustivels': dadus_tinan}
-    return render(request, 'templateKombustivel/tinan/dadus_tinan.html', context)
+# #views fulan
+# @login_required(login_url='login')
+# def dadus_tinan (request):
+#     dadus_tinan = Tinan.objects.all()
+#     context = {'kombustivels': dadus_tinan}
+#     return render(request, 'templateKombustivel/tinan/dadus_tinan.html', context)
 
-@login_required(login_url='login')
-@manejarial_only
-def aumenta_dadus_tinan (request):
-    form = TinanForm
-    if request.method == 'POST':
-        form = TinanForm(request.POST)
-        if form.is_valid():
-           form.save()
-           return redirect('dadus_tinan')
-    context = {'form': form}
-    return render(request, 'templateKombustivel/tinan/aumenta_dadus_tinan.html', context)
+# @login_required(login_url='login')
+# @manejarial_only
+# def aumenta_dadus_tinan (request):
+#     form = TinanForm
+#     if request.method == 'POST':
+#         form = TinanForm(request.POST)
+#         if form.is_valid():
+#            form.save()
+#            return redirect('dadus_tinan')
+#     context = {'form': form}
+#     return render(request, 'templateKombustivel/tinan/aumenta_dadus_tinan.html', context)
 
-@login_required(login_url='login')
-@manejarial_only
-def delete_dadus_tinan (request, pk):
-    tinan = Tinan.objects.get(ano=pk)
-    if request.method == 'GET':
-        tinan.delete()
-        return redirect('dadus_tinan')
+# @login_required(login_url='login')
+# @manejarial_only
+# def delete_dadus_tinan (request, pk):
+#     tinan = Tinan.objects.get(ano=pk)
+#     if request.method == 'GET':
+#         tinan.delete()
+#         return redirect('dadus_tinan')
  
-@login_required(login_url='login')  
-@manejarial_only
-def updateTinan (request, pk):
-    tinan = Tinan.objects.get(ano=pk)
-    form = TinanForm(instance=tinan)
+# @login_required(login_url='login')  
+# @manejarial_only
+# def updateTinan (request, pk):
+#     tinan = Tinan.objects.get(ano=pk)
+#     form = TinanForm(instance=tinan)
     
-    if request.method == 'POST':
-        # print('Printing Post', request.POST) print result form iha terminal
-        form = TinanForm(request.POST, instance=tinan)
-        if form.is_valid():
-            form.save()
-            return redirect('dadus_tinan')
-    context = {'form': form}
-    return render(request, 'templateKombustivel/tinan/update_tinan.html', context)
+#     if request.method == 'POST':
+#         # print('Printing Post', request.POST) print result form iha terminal
+#         form = TinanForm(request.POST, instance=tinan)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('dadus_tinan')
+#     context = {'form': form}
+#     return render(request, 'templateKombustivel/tinan/update_tinan.html', context)
 
 @login_required(login_url='login')
 def dadus_trans (request):
@@ -464,11 +464,17 @@ def updateMotorista (request, pk):
             return redirect('dadus_motorista')
     context = {'form': form}
     return render(request, 'templateKombustivel/motorista/update_motorista.html', context) 
-
+#Viewa StockIn
 @login_required(login_url='login')
 def stockIn (request):
     stockIn = Distribuitor.objects.all()
     context = {'kombustivels': stockIn}
     return render(request, 'templateKombustivel/relatorio/stockIn.html', context)
+#Views StockOut
+@login_required(login_url='login')
+def stockOut (request):
+    stockOut = Distribuisaun.objects.all()
+    context = {'kombustivels': stockOut}
+    return render(request, 'templateKombustivel/relatorio/stockOut.html', context)
 
 
