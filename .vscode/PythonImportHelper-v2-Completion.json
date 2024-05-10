@@ -580,7 +580,7 @@
         "kind": 2,
         "importPath": "admKombustivel.decorators",
         "description": "admKombustivel.decorators",
-        "peekOfCode": "def unauthenticated_user(view_func):\n    def wrapper_func(request, *args, **kwargs):\n        if request.user.is_authenticated:\n            return redirect('home')\n        else:\n            return view_func(request, *args, **kwargs)\n    return wrapper_func\ndef allowed_users(allowed_roles=[]):\n    def decorator(view_func):\n        def wrapper_func(request, *args, **kwargs):",
+        "peekOfCode": "def unauthenticated_user(view_func):\n    def wrapper_func(request, *args, **kwargs):\n        if request.user.is_authenticated:\n            return redirect('dash_kombustivel')\n        else:\n            return view_func(request, *args, **kwargs)\n    return wrapper_func\ndef allowed_users(allowed_roles=[]):\n    def decorator(view_func):\n        def wrapper_func(request, *args, **kwargs):",
         "detail": "admKombustivel.decorators",
         "documentation": {}
     },
