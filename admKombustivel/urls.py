@@ -45,7 +45,4 @@ urlpatterns = [
      path('delete_dadus_motorista/<str:pk>/', views.delete_dadus_motorista, name='delete_dadus_motorista'),
      path('update_motorista/<str:pk>/', views.updateMotorista, name='updateMotorista'),
      path('stockIn/', views.stockIn, name='StockIn'),
-     path('aumenta_admin/', views.aumenta_admin, name='aumenta_admin'),  
-     path('edit_admin/', views.edit_admin, name='edit_admin'),
-
 ]

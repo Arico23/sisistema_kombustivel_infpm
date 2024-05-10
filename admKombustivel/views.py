@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .decorators import unauthenticated_user
+from .decorators import manejarial_only, unauthenticated_user
 
 @unauthenticated_user
 def loginPage(request):
@@ -42,6 +42,7 @@ def dadus_distributor (request):
     return render(request, 'templateKombustivel/distributor/dadus_distributor.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def aumenta_distributor (request):
     form = DistributorForm
     if request.method == 'POST':
@@ -54,6 +55,7 @@ def aumenta_distributor (request):
     return render(request, 'templateKombustivel/distributor/aumenta_distributor.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def delete_dadus_distributor (request, pk):
     distributor = Distribuitor.objects.get(id_distribuitor=pk)
     if request.method == 'GET':
@@ -61,6 +63,7 @@ def delete_dadus_distributor (request, pk):
         return redirect('dadus_distributor')
 
 @login_required(login_url='login')
+@manejarial_only
 def updateDistributor (request, pk):
     distributor = Distribuitor.objects.get(id_distribuitor=pk)
     form = DistributorForm(instance=distributor)
@@ -85,6 +88,7 @@ def distribui_kom (request):
 
 
 @login_required(login_url='login')
+@manejarial_only
 def aumenta_dadus_distribuisaun (request):
     form = DistribuisaunForm
     if request.method == 'POST':
@@ -126,6 +130,7 @@ def senhas (request):
     return render(request, 'templateKombustivel/senhas/senhas.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def aumenta_dadus_senhas (request):
     form = SenhasForm
     if request.method == 'POST':
@@ -138,6 +143,7 @@ def aumenta_dadus_senhas (request):
     return render(request, 'templateKombustivel/senhas/aumenta_dadus_senhas.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def delete_dadus_senhas (request, pk):
     senhas = Senhas.objects.get(id_senhas=pk)
     if request.method == 'GET':
@@ -145,6 +151,7 @@ def delete_dadus_senhas (request, pk):
         return redirect('dadus_senhas')
   
 @login_required(login_url='login')  
+@manejarial_only
 def updateSenhas (request, pk):
     senhas = Senhas.objects.get(id_senhas=pk)
     form = SenhasForm(instance=senhas)
@@ -166,6 +173,7 @@ def dadus_regional (request):
     return render(request, 'templateKombustivel/regional/dadus_regional.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def aumenta_dadus_regional (request):
     form = RegionalForm
     if request.method == 'POST':
@@ -178,6 +186,7 @@ def aumenta_dadus_regional (request):
     return render(request, 'templateKombustivel/regional/aumenta_dadus_regional.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def delete_dadus_regional (request, pk):
     regional = Regional.objects.get(id_regional=pk)
     if request.method == 'GET':
@@ -185,6 +194,7 @@ def delete_dadus_regional (request, pk):
         return redirect('dadus_regional')
 
 @login_required(login_url='login')
+@manejarial_only
 def updateRegional (request, pk):
     regional = Regional.objects.get(id_regional=pk)
     form = RegionalForm(instance=regional)
@@ -206,6 +216,7 @@ def dadus_departamentu (request):
     return render(request, 'templateKombustivel/departamentu/dadus_departamentu.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def aumenta_dadus_departamentu (request):
     form = DepartamentuForm
     if request.method == 'POST':
@@ -218,6 +229,7 @@ def aumenta_dadus_departamentu (request):
     return render(request, 'templateKombustivel/departamentu/aumenta_dadus_departamentu.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def delete_dadus_departamentu (request, pk):
     departamentu = Departamentu.objects.get(id_departamentu=pk)
     if request.method == 'GET':
@@ -225,6 +237,7 @@ def delete_dadus_departamentu (request, pk):
         return redirect('dadus_departamentu')
 
 @login_required(login_url='login')
+@manejarial_only
 def updateDepartamentu (request, pk):
     departamentu = Departamentu.objects.get(id_departamentu=pk)
     form = DepartamentuForm(instance=departamentu)
@@ -245,6 +258,7 @@ def dadus_diresaun (request):
     return render(request, 'templateKombustivel/diresaun/dadus_diresaun.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def aumenta_dadus_diresaun (request):
     form = DiresaunForm
     if request.method == 'POST':
@@ -258,6 +272,7 @@ def aumenta_dadus_diresaun (request):
 
 
 @login_required(login_url='login')
+@manejarial_only
 def delete_dadus_diresaun (request, pk):
     diresaun = Diresaun.objects.get(id_diresaun=pk)
     if request.method == 'GET':
@@ -265,6 +280,7 @@ def delete_dadus_diresaun (request, pk):
         return redirect('dadus_diresaun')
 
 @login_required(login_url='login')    
+@manejarial_only
 def updateDiresaun (request, pk):
     diresaun = Diresaun.objects.get(id_diresaun=pk)
     form = DiresaunForm(instance=diresaun)
@@ -286,6 +302,7 @@ def dadus_fulan (request):
     return render(request, 'templateKombustivel/fulan/dadus_fulan.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def aumenta_dadus_fulan (request):
     form = FulanForm
     if request.method == 'POST':
@@ -299,6 +316,7 @@ def aumenta_dadus_fulan (request):
 
 
 @login_required(login_url='login')
+@manejarial_only
 def delete_dadus_fulan (request, pk):
     fulan = Fulan.objects.get(id_fulan=pk)
     if request.method == 'GET':
@@ -306,6 +324,7 @@ def delete_dadus_fulan (request, pk):
         return redirect('dadus_fulan')
 
 @login_required(login_url='login')    
+@manejarial_only
 def updateFulan (request, pk):
     fulan = Fulan.objects.get(id_fulan=pk)
     form = FulanForm(instance=fulan)
@@ -327,6 +346,7 @@ def dadus_tinan (request):
     return render(request, 'templateKombustivel/tinan/dadus_tinan.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def aumenta_dadus_tinan (request):
     form = TinanForm
     if request.method == 'POST':
@@ -338,13 +358,15 @@ def aumenta_dadus_tinan (request):
     return render(request, 'templateKombustivel/tinan/aumenta_dadus_tinan.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def delete_dadus_tinan (request, pk):
     tinan = Tinan.objects.get(ano=pk)
     if request.method == 'GET':
         tinan.delete()
         return redirect('dadus_tinan')
  
-@login_required(login_url='login')   
+@login_required(login_url='login')  
+@manejarial_only
 def updateTinan (request, pk):
     tinan = Tinan.objects.get(ano=pk)
     form = TinanForm(instance=tinan)
@@ -365,6 +387,7 @@ def dadus_trans (request):
     return render(request, 'templateKombustivel/transporte/dadus_trans.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def aumenta_dadus_trans (request):
     form = TransporteForm
     if request.method == 'POST':
@@ -377,6 +400,7 @@ def aumenta_dadus_trans (request):
     return render(request, 'templateKombustivel/transporte/aumenta_dadus_trans.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def delete_dadus_transporte (request, pk):
     transporte = Transporte.objects.get(id_transporte=pk)
     if request.method == 'GET':
@@ -384,6 +408,7 @@ def delete_dadus_transporte (request, pk):
         return redirect('dadus_trans')
  
 @login_required(login_url='login')
+@manejarial_only
 def updateTransporte (request, pk):
     transporte = Transporte.objects.get(id_transporte=pk)
     form = TransporteForm(instance=transporte)
@@ -405,6 +430,7 @@ def dadus_motorista (request):
     return render(request, 'templateKombustivel/motorista/dadus_motorista.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def aumenta_dadus_motorista (request):
     form = MotoristaForm
     if request.method == 'POST':
@@ -417,13 +443,15 @@ def aumenta_dadus_motorista (request):
     return render(request, 'templateKombustivel/motorista/aumenta_dadus_motorista.html', context)
 
 @login_required(login_url='login')
+@manejarial_only
 def delete_dadus_motorista (request, pk):
     motorista = Motorista.objects.get(id_motorista=pk)
     if request.method == 'GET':
         motorista.delete()
         return redirect('dadus_motorista')
 
-@login_required(login_url='login')    
+@login_required(login_url='login')   
+@manejarial_only
 def updateMotorista (request, pk):
     motorista = Motorista.objects.get(id_motorista=pk)
     form = MotoristaForm(instance=motorista)
@@ -443,15 +471,4 @@ def stockIn (request):
     context = {'kombustivels': stockIn}
     return render(request, 'templateKombustivel/relatorio/stockIn.html', context)
 
-@login_required(login_url='login')
-def index_admin (request):
-        return render(request, 'templateKombustivel/admin/index_admin.html')
-
-@login_required(login_url='login')
-def aumenta_admin (request):
-        return render(request, 'templateKombustivel/admin/aumenta_admin.html')
-
-@login_required(login_url='login')
-def edit_admin (request):
-        return render(request, 'templateKombustivel/admin/edit_admin.html')
 
