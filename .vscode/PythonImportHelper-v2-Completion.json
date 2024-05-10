@@ -679,7 +679,7 @@
         "kind": 6,
         "importPath": "admKombustivel.forms",
         "description": "admKombustivel.forms",
-        "peekOfCode": "class DistribuisaunForm(forms.ModelForm):\n    class Meta:\n        model = Distribuisaun\n        fields = ['tipo_kombustivel', 'kilometrajen', 'id_transporte', 'id_senhas', 'id_motorista','fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data']\n        labels = {\n             'tipo_kombustivel': 'Tipu Kombustivel',\n             'kilomtrajen': 'Kilometrajen',\n             'id_transporte' : 'Transporte',\n             'id_senhas': 'Numeru Senhas',\n             'id_motorista': 'Motorista',",
+        "peekOfCode": "class DistribuisaunForm(forms.ModelForm):\n    class Meta:\n        model = Distribuisaun\n        fields = ['tipo_kombustivel', 'kilometrajen', 'id_transporte', 'id_senhas', 'id_motorista','fulan', 'ano', 'destinasaun', 'folin_utilitariu', 'data']\n        labels = {\n             'tipo_kombustivel': 'Tipu Kombustivel',\n             'kilomtrajen': 'Kilometrajen',\n             'id_transporte' : 'Transporte',\n             'id_senhas': 'Folin Senhas',\n             'id_motorista': 'Motorista',",
         "detail": "admKombustivel.forms",
         "documentation": {}
     },
@@ -769,7 +769,7 @@
         "kind": 6,
         "importPath": "admKombustivel.models",
         "description": "admKombustivel.models",
-        "peekOfCode": "class Fulan(models.Model):     \n    id_fulan = models.AutoField(primary_key=True, editable=False)\n    naran_fulan = models.CharField(max_length=20)\n    # def __str__(self):\n    #     return self.name\nclass Senhas(models.Model):\n    STATUS = (\n        ('Seidauk Distribui', 'Seidauk Distribui'),\n        ('Distribui Ona', 'Distribui Ona'))\n    id_senhas = models.AutoField(primary_key=True, editable=False)",
+        "peekOfCode": "class Fulan(models.Model):     \n    id_fulan = models.AutoField(primary_key=True, editable=False)\n    naran_fulan = models.CharField(max_length=20)\n    def __str__(self):\n        return self.naran_fulan\nclass Senhas(models.Model):\n    STATUS = (\n        ('Seidauk Distribui', 'Seidauk Distribui'),\n        ('Distribui Ona', 'Distribui Ona'))\n    id_senhas = models.AutoField(primary_key=True, editable=False)",
         "detail": "admKombustivel.models",
         "documentation": {}
     },
@@ -778,7 +778,7 @@
         "kind": 6,
         "importPath": "admKombustivel.models",
         "description": "admKombustivel.models",
-        "peekOfCode": "class Senhas(models.Model):\n    STATUS = (\n        ('Seidauk Distribui', 'Seidauk Distribui'),\n        ('Distribui Ona', 'Distribui Ona'))\n    id_senhas = models.AutoField(primary_key=True, editable=False)\n    nu_senhas = models.CharField(max_length=200)\n    folin_senhas = models.FloatField(default=0)\n    status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')\n    # def __str__(self):\n    #     return f'Kompania: ({self.id_distribuitor.naran_distribuitor}) , Kodigu Senhas: ({self.nu_senhas}), Folin: (${self.folin_senhas})'",
+        "peekOfCode": "class Senhas(models.Model):\n    STATUS = (\n        ('Seidauk Distribui', 'Seidauk Distribui'),\n        ('Distribui Ona', 'Distribui Ona'))\n    id_senhas = models.AutoField(primary_key=True, editable=False)\n    nu_senhas = models.CharField(max_length=200)\n    folin_senhas = models.FloatField(default=0)\n    status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')\n    def __str__(self):\n        return self.nu_senhas",
         "detail": "admKombustivel.models",
         "documentation": {}
     },
@@ -805,7 +805,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def loginPage(request):\n    if request.method == 'POST':\n        username = request.POST.get('username')\n        password= request.POST.get('password')\n        user = authenticate(request, username=username, password=password)\n        if user is not None:\n            login(request, user)\n            return redirect('dash_kombustivel')\n        else:\n            messages.info(request, 'Username or Password is incorrect')",
+        "peekOfCode": "def loginPage(request):\n    if request.method == 'POST':\n        username = request.POST.get('username')\n        password= request.POST.get('password')\n        user = authenticate(request, username=username, password=password)\n        if user is not None:\n            login(request, user)\n            return redirect('dash_kombustivel')\n        else:\n            messages.info(request, 'Username ou Password la loos')",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -868,7 +868,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def distribui_kom (request):\n    dadus_distribuisaun = Distribuisaun.objects.all()\n    context = {'distribuisaun': dadus_distribuisaun}\n    return render(request, 'templateKombustivel/kombustivel/distribui_kom.html', context)\n@login_required(login_url='login')\n@manejarial_only\ndef aumenta_dadus_distribuisaun (request):\n    form = DistribuisaunForm\n    if request.method == 'POST':\n        form = DistribuisaunForm(request.POST)",
+        "peekOfCode": "def distribui_kom (request):\n    dadus_distribuisaun = Distribuisaun.objects.all()\n    context = {'kombustivels': dadus_distribuisaun}\n    return render(request, 'templateKombustivel/kombustivel/distribui_kom.html', context)\n@login_required(login_url='login')\n@manejarial_only\ndef aumenta_dadus_distribuisaun (request):\n    form = DistribuisaunForm\n    if request.method == 'POST':\n        form = DistribuisaunForm(request.POST)",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -877,7 +877,25 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def aumenta_dadus_distribuisaun (request):\n    form = DistribuisaunForm\n    if request.method == 'POST':\n        form = DistribuisaunForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('/distribui_kom')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/kombustivel/aumenta_dadus_distribuisaun.html', context)\n#views senhas",
+        "peekOfCode": "def aumenta_dadus_distribuisaun (request):\n    form = DistribuisaunForm\n    if request.method == 'POST':\n        form = DistribuisaunForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('distribui_kom')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/kombustivel/aumenta_dadus_distribuisaun.html', context)\n@login_required(login_url='login')",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_dadus_distribuisau",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def delete_dadus_distribuisaun (request, pk):\n    distribuisaun = Distribuisaun.objects.get(id_distribuisaun=pk)\n    if request.method == 'GET':\n        distribuisaun.delete()\n        return redirect('distribui_kom')\n@login_required(login_url='login')\ndef updateDistribuisaun (request, pk):\n    distribuisaun = Distribuisaun.objects.get(id_distribuisaun=pk)\n    form = DistribuisaunForm(instance=distribuisaun)\n    if request.method == 'POST':",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "updateDistribuisau",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def updateDistribuisaun (request, pk):\n    distribuisaun = Distribuisaun.objects.get(id_distribuisaun=pk)\n    form = DistribuisaunForm(instance=distribuisaun)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = DistribuisaunForm(request.POST, instance=distribuisaun)\n        if form.is_valid():\n            form.save()\n            return redirect('distribui_kom')\n    context = {'form': form}",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
