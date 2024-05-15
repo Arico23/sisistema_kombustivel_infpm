@@ -100,8 +100,11 @@ def distribui_kom (request):
 
     for dist_tuple in total_dist:
         total += dist_tuple[0]
-
-    context = {'kombustivels': dadus_distribuisaun, 'dist':total}
+   
+    paginator = Paginator(dadus_distribuisaun,5)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    context = {'kombustivels': dadus_distribuisaun, 'page_obj': page_obj, 'total_montante': total}
     return render(request, 'templateKombustivel/kombustivel/distribui_kom.html', context)
 
 
@@ -501,13 +504,13 @@ def stockIn (request):
 @login_required(login_url='login')
 def stockOut (request):
     stockOut = Distribuisaun.objects.all()
-    total_dist = Distribuisaun.objects.values_list('folin_senhas') 
+    total_dist = Distribuisaun.objects.values_list('id_senhas__folin_senhas') 
     total = 0
 
     for dist_tuple in total_dist:
         total += dist_tuple[0]
    
-    paginator = Paginator(stockOut, 7)
+    paginator = Paginator(stockOut, 5)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
     context = {'kombustivels': stockOut, 'page_obj': page_obj, 'total_montante': total}
