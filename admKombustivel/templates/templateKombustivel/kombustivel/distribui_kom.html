@@ -22,75 +22,84 @@ distribui kombustivel
                         Dadus Pessoal neebe foti kombustivel</h3>
                       </div>
                       <div class="card-body">
-                        {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
-                        <a class="button-group mb-2 btn btn-primary" href="{% url 'aumenta_dadus_distribuisaun' %}">
-                        <i class ="fa fa-plus"></i>Distribui Kombustivel</a>                                      
-                        <table id="datatablesSimple">
-                              <thead>
-                                  <tr>
-                                      <th>Nu</th>
-                                      <th>Data foti senhas</th>
-                                      <th>Modelu Transporte</th>
-                                      <th>kategoria</th>
-                                      <th>Nu-Matrikula</th>
-                                      <th>Kilometrajen</th>
-                                      <th>Nu-senhas</th>
-                                      <th>Folin Senhas</th>
-                                      <th>Folin Unitariu</th>
-                                      <th>Tipo Kombustivel</th>
-                                      <th>Pessoal Foti Senhas</th>
-                                      <th>Diresaun</th>
-                                      <th>Departamentu</th>
-                                      <th>Destinasaun</th>
-                                      <th>aksaun</th>
-                                  </tr>
-                              </thead>
-                           <tfoot>
-                                <tr>
-                                    <th>Nu</th>
-                                    <th>Data Foti Senhas</th>
-                                    <th>Modelo Transporte</th>
-                                    <th>kategoria</th>
-                                    <th>Nu-Matrikula</th>
-                                    <th>Kilometrajen</th>
-                                    <th>Nu-Senhas</th>
-                                    <th>Folin Senhas</th>
-                                    <th>Folin Unitariu</th>
-                                    <th>Tipo Kombustivel</th>
-                                    <th>Pessoal Foti Senhas</th>
-                                    <th>Diresaun</th>
-                                    <th>Departamentu</th>
-                                    <th>Destinasaun</th>
-                                    <th>aksaun</th>
-                                </tr>
-                              </tfoot> 
-                              <tbody>
-                                {% for distribuisaun in kombustivels %}
-                                  <tr>
-                                      <td>{{ forloop.counter }}</td>
-                                      <td>{{distribuisaun.data}}</td>
-                                      <td>{{distribuisaun.id_transporte.tipo_transporte}}</td>
-                                      <td>{{distribuisaun.id_transporte.categoria}}</td>
-                                      <td>{{distribuisaun.id_transporte.nu_matricula}}</td>
-                                      <td>{{distribuisaun.kilometrajen}}</td>
-                                      <td>{{distribuisaun.id_senhas.nu_senhas}}</td>
-                                      <td>{{distribuisaun.id_senhas.folin_senhas}}</td>
-                                      <td>{{distribuisaun.folin_utilitariu}}</td>
-                                      <td>{{distribuisaun.tipo_kombustivel}}</td>
-                                      <td>{{distribuisaun.id_motorista.id_departamentu}}</td>
-                                      <td>{{distribuisaun.id_motorista.id_diresaun}}</td>
-                                      <td>{{distribuisaun.id_motorista.id_regional}}</td>
-                                      <td>{{distribuisaun.destinasaun}}</td>
-                                      <td>
-                                        <a class="btn-edit btn btn-primary" href="{% url 'updateDistribuisaun' distribuisaun.id_distribuisaun %}">Edit</a>
-                                        <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_distribuisaun' distribuisaun.id_distribuisaun %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a> 
-                                      </td>
-                                    </tr>
-                                    {% endfor %}
-                                  </tr>
-                              
-                              </tbody>
-                          </table>
+                            {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
+                            <a class="button-group mb-2 btn btn-primary" href="{% url 'aumenta_dadus_distribuisaun' %}">
+                            <i class ="fa fa-plus"></i>Distribui Kombustivel</a>
+                            <input type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Buka dadus distribuisaun.." class="form-control" style="width: 200px; float: right; clear: both;">
+                                <div class="table-responsive">             
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Nu</th>
+                                                <th>Data foti senhas</th>
+                                                <th>Modelu Transporte</th>
+                                                <th>kategoria</th>
+                                                <th>Nu-Matrikula</th>
+                                                <th>Kilometrajen</th>
+                                                <th>Nu-senhas</th>
+                                                <th>Folin Senhas</th>
+                                                <th>Folin Unitariu</th>
+                                                <th>Tipo Kombustivel</th>
+                                                <th>Pessoal Foti Senhas</th>
+                                                <th>Diresaun</th>
+                                                <th>Departamentu</th>
+                                                <th>Destinasaun</th>
+                                                <th>aksaun</th>
+                                            </tr>
+                                        </thead>
+                                    
+                                        <tbody>
+                                            {% for distribuisaun in page_obj %}
+                                            <tr>
+                                                <td>{{ forloop.counter }}</td>
+                                                <td>{{distribuisaun.data}}</td>
+                                                <td>{{distribuisaun.id_transporte.tipo_transporte}}</td>
+                                                <td>{{distribuisaun.id_transporte.categoria}}</td>
+                                                <td>{{distribuisaun.id_transporte.nu_matricula}}</td>
+                                                <td>{{distribuisaun.kilometrajen}}</td>
+                                                <td>{{distribuisaun.id_senhas.nu_senhas}}</td>
+                                                <td>{{distribuisaun.id_senhas.folin_senhas}}</td>
+                                                <td>{{distribuisaun.folin_utilitariu}}</td>
+                                                <td>{{distribuisaun.tipo_kombustivel}}</td>
+                                                <td>{{distribuisaun.id_motorista.naran_motorista}}</td>
+                                                <td>{{distribuisaun.id_motorista.id_diresaun}}</td>
+                                                <td>{{distribuisaun.id_motorista.id_departamentu}}</td>
+                                                <td>{{distribuisaun.destinasaun}}</td>
+                                                <td>
+                                                    <a class="btn-edit btn btn-primary" href="{% url 'updateDistribuisaun' distribuisaun.id_distribuisaun %}">Edit</a>
+                                                    <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_distribuisaun' distribuisaun.id_distribuisaun %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a> 
+                                                </td>
+                                            </tr>  
+                                            {% endfor %}
+                                                <tr style="background-color:#f0f0f0;">
+                                                    <td colspan="7"><b>Total: </b></td>
+                                                    <td style="background-color: #c9c9c9;"><b> ${{ total_montante }}<b></td>
+                                                    <td colspan="12"></td>
+                                                </tr>                        
+                                        </tbody>
+                                    </table>
+                                        <div class="pagination justify-content-left mt-2">
+                                            <ul class="pagination">
+                                                {% if page_obj.has_previous %}
+                                                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                                    
+                                                {% endif %}
+                                                
+                                                <li class="page-item active" aria-current="page">
+                                                    <span class="page-link">
+                                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                                        <span class="sr-only">(current)</span>
+                                                    </span>
+                                                </li>
+                                                
+                                                {% if page_obj.has_next %}
+                                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                </div>
                       </div>
                   </div>
               </div>
@@ -111,5 +120,30 @@ distribui kombustivel
   </div>
        
 </body>
+<script>
+    function liveSearch() {
+        // Get the search input element and its value
+        let input = document.getElementById('searchInput');
+        let filter = input.value.toLowerCase();
+        // Get the table and its rows
+        let table = document.getElementById('distributorTable');
+        let rows = table.getElementsByTagName('tr');
+
+        // Loop through the rows and hide those that don't match the search query
+        for (let i = 1; i < rows.length; i++) { // Start at 1 to skip the header row
+            let cells = rows[i].getElementsByTagName('td');
+            let match = false;
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[j]) {
+                    if (cells[j].innerText.toLowerCase().indexOf(filter) > -1) {
+                        match = true;
+                        break;
+                    }
+                }
+            }
+            rows[i].style.display = match ? '' : 'none';
+        }
+    }
+</script>
 {% endblock %}
 

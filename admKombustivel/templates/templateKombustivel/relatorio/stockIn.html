@@ -1,11 +1,13 @@
 {% extends 'templateKombustivel/base.html' %}
 {% load static %}
+{% load auth_extras %}
 
 {% block title %}
-Relatorio Stock In
+dadus kombustivel
 {% endblock %}
 
 {% block konteudu %}
+
 <body class="sb-nav-fixed">
     {% include 'templateKombustivel/side-navbar.html' %}
       <div id="layoutSidenav_content">
@@ -14,60 +16,67 @@ Relatorio Stock In
                 {% comment %} <h1 class="mt-4">Dadus Distributor</h1> {% endcomment %}
                 <ol class="breadcrumb mb-4 mt-4">
                     <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Relatorio Stock In</li>
+                    <li class="breadcrumb-item active">Dadus Distribuitor</li>
                 </ol>
                   <div class="card mb-4 mt-4">
                       <div class="card-header">
                         <h3><i class="fas fa-table me-1"></i>
-                         Relatorio Stock In</h3>
+                         Dadus Distribuitor</h3>
                       </div>
                       <div class="card-body">
-                        <a class="button-group mb-2 btn btn-primary" href="">
-                          <i class ="fa fa-plus"></i>Download</a>
-                          <a class="button-group mb-2 btn btn-success" href="">
-                              <i class ="fa fa-plus"></i>Print</a> 
-                          <a class="button-group mb-2 btn btn-danger" href="">
-                               <i class ="fa fa-plus"></i>Excel</a> 
-                                          
-                        <table id="datatablesSimple">
-                              <thead>
-                                  <tr>
-                                      <th>Nu</th>
-                                      <th>Naran Distributor</th> 
-                                      <th>Montante Stock</th>
-                                      <th>Data</th>
-                                      <th>Loron</th>                       
-                                  </tr>
-                              </thead>
-                           <tfoot>
+                        {% if request.user|has_group:"manejarial" %}
+                        <input type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Buka dadus Distributor" class="form-control mb-2"style="width: 200px; float: right; clear: both;">
+                        {% endif %}
+                    
+                        <table class="table table-bordered" id="distributorTable">
+                            <thead>
                                 <tr>
                                     <th>Nu</th>
                                     <th>Naran Distributor</th>
-                                    <th>Montante  Stock</th>
-                                    <th>Lorom</th>
-                                    <th>Ano</th>
+                                    <th>Montante Stock</th>
+                                    <th>Data</th>
+                                    <th>Loron</th>
                                 </tr>
-                              </tfoot> 
-                              <tbody>
-                                {% for distributor in kombustivels %}
-                                  <tr>
-                                    <td>{{ forloop.counter }}</td> <!-- Display field number -->
-                                      <td>{{distributor.naran_distribuitor}}</td>
-                                      <td>{{distributor.montante_atual}}</td>
-                                      <td>{{distributor.data}}</td>
-                                      <td>{{distributor.ano}}</td>
-                                    </tr>
-                            {% endfor %}
-                                  </tr>
-                                  <tr>
-                                    <th>Total</th>
-                                    <th></th>
-                                    <th>800</th>
-                                    <th></th>
-                                    <th></th>
+                            </thead>
+                            <tbody>
+                                {% for distributor in page_obj %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ distributor.naran_distribuitor }}</td>
+                                    <td>$ {{ distributor.montante_distribuitor }}</td>
+                                    <td>{{ distributor.data }}</td>
+                                    <td>{{ distributor.ano }}</td>
                                 </tr>
-                              </tbody>
-                          </table>
+                                {% endfor %}
+                                <tr style="background-color:#f0f0f0;">
+                                    <td colspan="2"><b>Total: </b></td>
+                                    <td style="background-color: #c9c9c9;"><b> ${{ total_montante }}<b></td>
+                                    <td colspan="4"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagination justify-content-left mt-2">
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                       
+                                {% endif %}
+                                
+                                <li class="page-item active" aria-current="page">
+                                    <span class="page-link">
+                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                        <span class="sr-only">(current)</span>
+                                    </span>
+                                </li>
+                                
+                                {% if page_obj.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+    
                       </div>
                   </div>
               </div>
@@ -85,8 +94,34 @@ Relatorio Stock In
               </div>
           </footer>
       </div>
-  </div>
-       
+  </div>      
 </body>
+
+
+<script>
+    function liveSearch() {
+        // Get the search input element and its value
+        let input = document.getElementById('searchInput');
+        let filter = input.value.toLowerCase();
+        // Get the table and its rows
+        let table = document.getElementById('distributorTable');
+        let rows = table.getElementsByTagName('tr');
+
+        // Loop through the rows and hide those that don't match the search query
+        for (let i = 1; i < rows.length; i++) { // Start at 1 to skip the header row
+            let cells = rows[i].getElementsByTagName('td');
+            let match = false;
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[j]) {
+                    if (cells[j].innerText.toLowerCase().indexOf(filter) > -1) {
+                        match = true;
+                        break;
+                    }
+                }
+            }
+            rows[i].style.display = match ? '' : 'none';
+        }
+    }
+</script>
 {% endblock %}
 

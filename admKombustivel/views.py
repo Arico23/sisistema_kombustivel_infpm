@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm, DepartamentuForm, DiresaunForm, FulanForm, TinanForm
 from .models import *
 from django.contrib import messages
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -38,7 +39,18 @@ def dash_kombustivel (request):
 @login_required(login_url='login')
 def dadus_distributor (request):
     dadus_distributor = Distribuitor.objects.all()
-    context = {'kombustivels': dadus_distributor}
+   
+    total_dist = Distribuitor.objects.values_list('montante_distribuitor') 
+    total = 0
+
+    for dist_tuple in total_dist:
+        total += dist_tuple[0]
+   
+
+    paginator = Paginator(dadus_distributor, 5)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    context = {'kombustivels': dadus_distributor, 'page_obj': page_obj, 'total_montante': total}
     return render(request, 'templateKombustivel/distributor/dadus_distributor.html', context)
 
 @login_required(login_url='login')
@@ -83,7 +95,13 @@ def updateDistributor (request, pk):
 @login_required(login_url='login')
 def distribui_kom (request):
     dadus_distribuisaun = Distribuisaun.objects.all()
-    context = {'kombustivels': dadus_distribuisaun}
+    total_dist = Distribuisaun.objects.values_list('id_senhas__folin_senhas') 
+    total = 0
+
+    for dist_tuple in total_dist:
+        total += dist_tuple[0]
+
+    context = {'kombustivels': dadus_distribuisaun, 'dist':total}
     return render(request, 'templateKombustivel/kombustivel/distribui_kom.html', context)
 
 
@@ -468,13 +486,31 @@ def updateMotorista (request, pk):
 @login_required(login_url='login')
 def stockIn (request):
     stockIn = Distribuitor.objects.all()
-    context = {'kombustivels': stockIn}
+    total_dist = Distribuitor.objects.values_list('montante_distribuitor') 
+    total = 0
+
+    for dist_tuple in total_dist:
+        total += dist_tuple[0]
+   
+    paginator = Paginator(stockIn, 5)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    context = {'kombustivels': stockIn, 'page_obj': page_obj, 'total_montante': total}
     return render(request, 'templateKombustivel/relatorio/stockIn.html', context)
 #Views StockOut
 @login_required(login_url='login')
 def stockOut (request):
     stockOut = Distribuisaun.objects.all()
-    context = {'kombustivels': stockOut}
+    total_dist = Distribuisaun.objects.values_list('folin_senhas') 
+    total = 0
+
+    for dist_tuple in total_dist:
+        total += dist_tuple[0]
+   
+    paginator = Paginator(stockOut, 7)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    context = {'kombustivels': stockOut, 'page_obj': page_obj, 'total_montante': total}
     return render(request, 'templateKombustivel/relatorio/stockOut.html', context)
 
 

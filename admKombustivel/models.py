@@ -107,24 +107,10 @@ class Senhas(models.Model):
     
     def __str__(self):
          return f'({self.nu_senhas}) - (${self.folin_senhas})'
+    
     # def __str__(self):
     #     return f'Kompania: ({self.id_distribuitor.naran_distribuitor}) , Kodigu Senhas: ({self.nu_senhas}), Folin: (${self.folin_senhas})'
-    
-# class Kombustivel(models.Model):
-#     KATEGORY = (
-#         ('Gazolina', 'Gazolina'),
-#         ('Gazoel', 'Gazoel'))   
-    
-#     id_kombustivel= models.AutoField(primary_key=True, editable=False)
-#     tipo_kombustivel = models.CharField(max_length=20, choices = KATEGORY)
-#     id_distribuitor = models.ForeignKey(Distribuitor, on_delete=models.CASCADE, null=True, blank=True)
-#     ano = models.ForeignKey(Tinan, on_delete=models.CASCADE, null=False, blank=False)
-#     folin_kombustivel = models.FloatField(default=0)
-#     data = models.DateField(default=date.today)
-  
-#     def __str__(self):
-#         return f'{self.id_distribuitor.naran_distribuitor} - {self.tipo_kombustivel}'
-    
+
 class Distribuisaun(models.Model):
     KATEGORY = (
         ('Gazolina', 'Gazolina'),
@@ -133,7 +119,7 @@ class Distribuisaun(models.Model):
     id_distribuisaun = models.AutoField(primary_key=True, editable=False)
     tipo_kombustivel = models.CharField(max_length=20, choices = KATEGORY)
     kilometrajen = models.CharField(max_length=200, default=0)   
-    id_transporte = models.ForeignKey(Transporte, on_delete=models.CASCADE, null=False, blank=False)
+    id_transporte = models.ForeignKey(Transporte, on_delete=models.CASCADE ,null=False, blank=False)
     id_senhas = models.ForeignKey(Senhas, on_delete=models.CASCADE, null=False, blank=False)
     id_motorista = models.ForeignKey(Motorista, on_delete=models.CASCADE, null=False, blank=False)
     fulan = models.ForeignKey(Fulan, on_delete=models.CASCADE, null=False, blank=False)

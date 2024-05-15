@@ -45,7 +45,6 @@ distribui kombustivel
                                       <th>Diresaun</th>
                                       <th>Departamentu</th>
                                       <th>Destinasaun</th>
-                                      <th>aksaun</th>
                                   </tr>
                               </thead>
                            <tfoot>
@@ -64,30 +63,27 @@ distribui kombustivel
                                     <th>Diresaun</th>
                                     <th>Departamentu</th>
                                     <th>Destinasaun</th>
-                                    <th>aksaun</th>
                                 </tr>
                               </tfoot> 
                               <tbody>
                                 {% for distribuisaun in kombustivels %}
                                   <tr>
-                                      <td>{{ forloop.counter }}</td>
-                                      <td>{{distribuisaun.data}}</td>
-                                      <td>{{distribuisaun.id_transporte.tipo_transporte}}</td>
-                                      <td>{{distribuisaun.id_transporte.categoria}}</td>
-                                      <td>{{distribuisaun.id_transporte.nu_matricula}}</td>
-                                      <td>{{distribuisaun.kilometrajen}}</td>
-                                      <td>{{distribuisaun.id_senhas.nu_senhas}}</td>
-                                      <td>{{distribuisaun.id_senhas.folin_senhas}}</td>
-                                      <td>{{distribuisaun.folin_utilitariu}}</td>
-                                      <td>{{distribuisaun.tipo_kombustivel}}</td>
-                                      <td>{{distribuisaun.id_motorista.id_departamentu}}</td>
-                                      <td>{{distribuisaun.id_motorista.id_diresaun}}</td>
-                                      <td>{{distribuisaun.id_motorista.id_regional}}</td>
-                                      <td>{{distribuisaun.destinasaun}}</td>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{distribuisaun.data}}</td>
+                                    <td>{{distribuisaun.id_transporte.tipo_transporte}}</td>
+                                    <td>{{distribuisaun.id_transporte.categoria}}</td>
+                                    <td>{{distribuisaun.id_transporte.nu_matricula}}</td>
+                                    <td>{{distribuisaun.kilometrajen}}</td>
+                                    <td>{{distribuisaun.id_senhas.nu_senhas}}</td>
+                                    <td>{{distribuisaun.id_senhas.folin_senhas}}</td>
+                                    <td>{{distribuisaun.folin_utilitariu}}</td>
+                                    <td>{{distribuisaun.tipo_kombustivel}}</td>
+                                    <td>{{distribuisaun.id_motorista.naran_motorista}}</td>
+                                    <td>{{distribuisaun.id_motorista.id_diresaun}}</td>
+                                    <td>{{distribuisaun.id_motorista.id_departamentu}}</td>
+                                    <td>{{distribuisaun.destinasaun}}</td>
                                     </tr>
-                                    {% endfor %}
-                                  </tr>
-                              
+                                    {% endfor %}                             
                               </tbody>
                           </table>
                       </div>

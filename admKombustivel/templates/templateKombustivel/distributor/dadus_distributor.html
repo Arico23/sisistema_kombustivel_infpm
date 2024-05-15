@@ -7,6 +7,7 @@ dadus kombustivel
 {% endblock %}
 
 {% block konteudu %}
+
 <body class="sb-nav-fixed">
     {% include 'templateKombustivel/side-navbar.html' %}
       <div id="layoutSidenav_content">
@@ -25,51 +26,67 @@ dadus kombustivel
                       <div class="card-body">
                         {% if request.user|has_group:"manejarial" %}
                         <a class="button-add mb-2 btn btn-primary " data-toggle="modal" data-target="aumenta" href="{% url 'aumenta_distributor' %}">
-                        <i class ="fa fa-plus"></i>Aumenta</a> 
+                        <i class ="fa fa-plus"></i>Aumenta</a>
+                        <input type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Search for distributors.." class="form-control" style="width: 200px; float: right; clear: both;">
                         {% endif %}
-                                      
-                        <table id="datatablesSimple">
-                              <thead>
-                                  <tr>
-                                      <th>Nu</th>
-                                      <th>Naran Distributor</th> 
-                                      <th>Montante Stock</th>
-                                      <th>Data</th>
-                                      <th>Loron</th> 
-                                      <th>Status</th>                         
-                                      <th>aksaun</th>
-                                  </tr>
-                              </thead>
-                           <tfoot>
+                    
+                        <table class="table table-bordered" id="distributorTable">
+                            <thead>
                                 <tr>
                                     <th>Nu</th>
-                                    <th>Naran Stock</th>
-                                    <th>Montante Distributor</th>
-                                    <th>Lorom</th>
-                                    <th>Ano</th>
+                                    <th>Naran Distributor</th>
+                                    <th>Montante Stock</th>
+                                    <th>Data</th>
                                     <th>Status</th>
                                     <th>aksaun</th>
                                 </tr>
-                              </tfoot> 
-                              <tbody>
-                                {% for distributor in kombustivels %}
-                                  <tr>
-                                    <td>{{ forloop.counter }}</td> <!-- Display field number -->
-                                      <td>{{distributor.naran_distribuitor}}</td>
-                                      <td>{{distributor.montante_distribuitor}}</td>
-                                      <td>{{distributor.data}}</td>
-                                      <td>{{distributor.ano}}</td>
-                                      <td> <a class="btn-edit btn btn-primary" href="">iha</a>
-                                      </td>
-                                      <td> <a class="btn-edit btn btn-primary" href="{% url 'updateDistributor' distributor.id_distribuitor %}">Edit</a>
-                                        <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_distributor' distributor.id_distribuitor %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a> 
-                                      </td>
-                                    </tr>
-                            {% endfor %}
-                                  </tr>
-                              
-                              </tbody>
-                          </table>
+                            </thead>
+                            <tbody>
+                                {% for distributor in page_obj %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ distributor.naran_distribuitor }}</td>
+                                    <td>${{ distributor.montante_distribuitor }}</td>
+                                    <td>{{ distributor.data }}</td>
+                                    {% comment %} <td>{{ distributor.ano }}</td> {% endcomment %}
+                                    <td>
+                                        <a class="btn-edit btn btn-primary" href="">iha</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn-edit btn btn-primary" href="{% url 'updateDistributor' distributor.id_distribuitor %}">Edit</a>
+                                        <a class="btn-delete btn btn-danger" href="{% url 'delete_dadus_distributor' distributor.id_distribuitor %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                <tr style="background-color:#f0f0f0;">
+                                    <td colspan="2"><b>Total: </b></td>
+                                    <td style="background-color: #c9c9c9;"><b> ${{ total_montante }}<b></td>
+                                    <td colspan="4"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagination justify-content-left mt-2">
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                       
+                                {% endif %}
+                                
+                                <li class="page-item active" aria-current="page">
+                                    <span class="page-link">
+                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                        <span class="sr-only">(current)</span>
+                                    </span>
+                                </li>
+                                
+                                {% if page_obj.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+    
                       </div>
                   </div>
               </div>
@@ -87,8 +104,34 @@ dadus kombustivel
               </div>
           </footer>
       </div>
-  </div>
-       
+  </div>      
 </body>
+
+
+<script>
+    function liveSearch() {
+        // Get the search input element and its value
+        let input = document.getElementById('searchInput');
+        let filter = input.value.toLowerCase();
+        // Get the table and its rows
+        let table = document.getElementById('distributorTable');
+        let rows = table.getElementsByTagName('tr');
+
+        // Loop through the rows and hide those that don't match the search query
+        for (let i = 1; i < rows.length; i++) { // Start at 1 to skip the header row
+            let cells = rows[i].getElementsByTagName('td');
+            let match = false;
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[j]) {
+                    if (cells[j].innerText.toLowerCase().indexOf(filter) > -1) {
+                        match = true;
+                        break;
+                    }
+                }
+            }
+            rows[i].style.display = match ? '' : 'none';
+        }
+    }
+</script>
 {% endblock %}
 
