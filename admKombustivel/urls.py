@@ -46,4 +46,5 @@ urlpatterns = [
      path('update_motorista/<str:pk>/', views.updateMotorista, name='updateMotorista'),
      path('stockIn/', views.stockIn, name='StockIn'),
      path('stockOut/', views.stockOut, name='StockOut'),
+     path('stockAtual/', views.stockAtual, name='StockAtual'),
 ]

@@ -516,4 +516,15 @@ def stockOut (request):
     context = {'kombustivels': stockOut, 'page_obj': page_obj, 'total_montante': total}
     return render(request, 'templateKombustivel/relatorio/stockOut.html', context)
 
+@login_required(login_url='login')
+def stockAtual (request):
+    stock_atual = Distribuisaun.objects.all()
+    total_dist = Distribuisaun.objects.values_list('id_senhas__folin_senhas') 
+    total = 0
+
+    for dist_tuple in total_dist:
+        total += dist_tuple[0]
+   
+    context = {'kombustivels': stock_atual,'total_montante': total}
+    return render(request, 'templateKombustivel/dash_kombustivel.html', context)
 
