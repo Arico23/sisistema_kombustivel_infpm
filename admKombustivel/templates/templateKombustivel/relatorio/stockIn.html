@@ -10,91 +10,87 @@ dadus kombustivel
 
 <body class="sb-nav-fixed">
     {% include 'templateKombustivel/side-navbar.html' %}
-      <div id="layoutSidenav_content">
-          <main>
-              <div class="container-fluid px-4">
-                {% comment %} <h1 class="mt-4">Dadus Distributor</h1> {% endcomment %}
-                <ol class="breadcrumb mb-4 mt-4">
-                    <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Dadus Distribuitor</li>
-                </ol>
-                  <div class="card mb-4 mt-4">
-                      <div class="card-header">
-                        <h3><i class="fas fa-table me-1"></i>
-                         Relatorio Stock In</h3>
-                      </div>
-                      <div class="card-body">
-                        {% if request.user|has_group:"manejarial" %}
-                        <input type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Buka dadus Distributor" class="form-control mb-2"style="width: 200px; float: right; clear: both;">
-                        {% endif %}
-                    
-                        <table class="table table-bordered" id="distributorTable">
-                            <thead>
-                                <tr>
-                                    <th>Nu</th>
-                                    <th>Naran Distributor</th>
-                                    <th>Montante Stock</th>
-                                    <th>Data</th>
-                                    <th>Loron</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for distributor in page_obj %}
-                                <tr>
-                                    <td>{{ forloop.counter }}</td>
-                                    <td>{{ distributor.naran_distribuitor }}</td>
-                                    <td>$ {{ distributor.montante_distribuitor }}</td>
-                                    <td>{{ distributor.data }}</td>
-                                    <td>{{ distributor.ano }}</td>
-                                </tr>
-                                {% endfor %}
-                                <tr style="background-color:#f0f0f0;">
-                                    <td colspan="2"><b>Total: </b></td>
-                                    <td style="background-color: #c9c9c9;"><b> ${{ total_montante }}<b></td>
-                                    <td colspan="4"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="pagination justify-content-left mt-2">
-                            <ul class="pagination">
-                                {% if page_obj.has_previous %}
-                                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
-                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
-                       
-                                {% endif %}
-                                
-                                <li class="page-item active" aria-current="page">
-                                    <span class="page-link">
-                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-                                        <span class="sr-only">(current)</span>
-                                    </span>
-                                </li>
-                                
-                                {% if page_obj.has_next %}
-                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
-                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
-                                {% endif %}
-                            </ul>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                    {% comment %} <h1 class="mt-4">Dadus Distributor</h1> {% endcomment %}
+                    <ol class="breadcrumb mb-4 mt-4">
+                        <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Dadus Distribuitor</li>
+                    </ol>
+                <div class="card mb-4 mt-4">
+                    <div class="card-header"><h3><i class="fas fa-table me-1"></i>Relatorio Stock In</h3></div>
+                        <div class="card-body">
+                            {% if request.user|has_group:"manejarial" %}
+                            <input type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Buka dadus Distributor" class="form-control mb-2"style="width: 200px; float: right; clear: both;">
+                            {% endif %}
+                                    
+                                <table class="table table-bordered" id="distributorTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Nu</th>
+                                            <th>Naran Distributor</th>
+                                            <th>Montante Stock</th>
+                                            <th>Data</th>
+                                            <th>Loron</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for distributor in page_obj %}
+                                        <tr>
+                                            <td>{{ forloop.counter }}</td>
+                                            <td>{{ distributor.naran_distribuitor }}</td>
+                                            <td>$ {{ distributor.montante_distribuitor }}</td>
+                                            <td>{{ distributor.data }}</td>
+                                            <td>{{ distributor.ano }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                        <tr style="background-color:#f0f0f0;">
+                                            <td colspan="2"><b>Total: </b></td>
+                                            <td style="background-color: #c9c9c9;"><b> ${{ total_montante }}<b></td>
+                                            <td colspan="4"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="pagination justify-content-left mt-2">
+                                <ul class="pagination">
+                                    {% if page_obj.has_previous %}
+                                        <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                                        
+                                    {% endif %}
+                                                    
+                                    <li class="page-item active" aria-current="page">
+                                        <span class="page-link">
+                                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                            <span class="sr-only">(current)</span>
+                                        </span>
+                                    </li>
+                                                    
+                                    {% if page_obj.has_next %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+                                     {% endif %}
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
                         </div>
-    
-                      </div>
-                  </div>
-              </div>
-          </main>
-          <footer class="py-4 bg-light mt-auto">
-              <div class="container-fluid px-4">
-                  <div class="d-flex align-items-center justify-content-between small">
-                      <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                      <div>
-                          <a href="#">Privacy Policy</a>
-                          &middot;
-                          <a href="#">Terms &amp; Conditions</a>
-                      </div>
-                  </div>
-              </div>
-          </footer>
-      </div>
-  </div>      
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>      
 </body>
 
 

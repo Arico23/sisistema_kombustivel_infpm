@@ -147,7 +147,17 @@ def updateDistribuisaun (request, pk):
 @login_required(login_url='login')
 def senhas (request):
     dadus_senhas = Senhas.objects.all()
-    context = {'kombustivels': dadus_senhas}
+    total_dist = Senhas.objects.values_list('folin_senhas') 
+    total = 0
+
+    for dist_tuple in total_dist:
+        total += dist_tuple[0]
+   
+
+    paginator = Paginator(dadus_senhas, 5)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    context = {'kombustivels': dadus_senhas, 'page_obj': page_obj, 'total_montante': total}
     return render(request, 'templateKombustivel/senhas/senhas.html', context)
 
 @login_required(login_url='login')
@@ -518,7 +528,7 @@ def stockOut (request):
 
 @login_required(login_url='login')
 def stockAtual (request):
-    stock_atual = Distribuisaun.objects.all()
+    stock_atual = Distribuisaun.objects.count()
     total_dist = Distribuisaun.objects.values_list('id_senhas__folin_senhas') 
     total = 0
 
