@@ -26,10 +26,14 @@
         <nav class="sb-sidenav accordion sb-sidenav-light bg-success2" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
-                    <div class="sb-sidenav-menu-heading"><h6>MENU SJK INFPM</h6></div>
+                    <div class="sb-sidenav-menu-heading "><h6>MENU SJK INFPM</h6></div>
+                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'home' %}">
+                        <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
+                        Pajina Inisiu
+                    </a>
                     <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dash_kombustivel' %}">
                         <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
-                        Dashboard
+                        Monitor
                     </a>
                     {% comment %} <div class="sb-sidenav-menu-heading">MENU-SJLP-INFPM</div> {% endcomment %}
 
@@ -119,8 +123,10 @@
                     </a>
                     <div class="collapse" id="collapseRelatorio" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'StockIn' %}">Stock In</a>
-                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'StockOut' %}">Stock Out</a>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'StockIn' %}"> <div><i class="fa fa-database" style="margin-right: 0.5rem;"></i></div>
+                                Stock In</a>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'StockOut' %}"> <div><i class="fa fa-database" style="margin-right: 0.5rem;"></i></div>
+                                Stock Out</a>
                         </nav>
                     </div>
                     

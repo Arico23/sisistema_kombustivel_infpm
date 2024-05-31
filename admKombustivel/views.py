@@ -32,6 +32,11 @@ def logoutUser(request):
     return redirect('login')
 
 @login_required(login_url='login')
+def home (request):
+    return render(request, 'templateKombustivel/home.html')
+
+
+@login_required(login_url='login')
 def dash_kombustivel (request):
     return render(request, 'templateKombustivel/dash_kombustivel.html')
 

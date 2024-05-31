@@ -3,7 +3,8 @@ from . import views
 urlpatterns = [
      path('login/', views.loginPage, name='login'),
      path('logout/', views.logoutUser, name='logout'),
-     path('', views.dash_kombustivel, name='dash_kombustivel'),
+     path('', views.home, name='home'),
+     path('dash_kombustivel/', views.dash_kombustivel, name='dash_kombustivel'),
      path('dadus_distributor/', views.dadus_distributor, name='dadus_distributor'),
      path('aumenta_distributor/', views.aumenta_distributor, name='aumenta_distributor'),
      path('delete_dadus_distributor/<str:pk>/', views.delete_dadus_distributor, name='delete_dadus_distributor'),
