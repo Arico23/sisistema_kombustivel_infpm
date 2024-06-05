@@ -105,6 +105,9 @@ class Senhas(models.Model):
     folin_senhas = models.FloatField(default=0)
     status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')
     
+    def __int__(self):
+        return self.id_senhas
+    
     def __str__(self):
          return f'({self.nu_senhas}) - (${self.folin_senhas})'
     

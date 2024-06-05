@@ -152,6 +152,8 @@ class DistribuisaunForm(forms.ModelForm):
             self.fields['destinasaun'].required = True
             self.fields['data'].required = True
 
+            # Filter the choices for the related field to only show Senhas with status as "non-distributed"
+            self.fields['id_senhas'].queryset = Senhas.objects.filter(status='Seidauk Distribui')
 
             self.helper.layout = Layout(
                 Row(
@@ -184,6 +186,19 @@ class DistribuisaunForm(forms.ModelForm):
                 HTML(""" <span class="btn btn-sm btn-secondary"  onclick=self.history.back()><i class="fa close"></i> Cancel</span></div> """)
             )
 
+    def save(self, commit=True):
+        instance = super(DistribuisaunForm, self).save(commit=False)
+        
+        # Update the status of the related Senhas object to "distributed"
+        senhas_instance = instance.id_senhas
+        senhas_instance.status = 'Distribui ona'
+        senhas_instance.save()
+        
+        if commit:
+            instance.save()
+        
+        return instance
+
 #formulario transporte
 class TransporteForm(forms.ModelForm):
     class Meta:
@@ -195,6 +210,8 @@ class TransporteForm(forms.ModelForm):
              'tipo_transporte' : 'Modelu Transporte',
         }
         # fields = ['cutomer'] #only specific form
+        
+        
     
     def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)

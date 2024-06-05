@@ -778,7 +778,7 @@
         "kind": 6,
         "importPath": "admKombustivel.models",
         "description": "admKombustivel.models",
-        "peekOfCode": "class Senhas(models.Model):\n    STATUS = (\n        ('Seidauk Distribui', 'Seidauk Distribui'),\n        ('Distribui Ona', 'Distribui Ona'))\n    id_senhas = models.AutoField(primary_key=True, editable=False)\n    nu_senhas = models.CharField(max_length=200)\n    folin_senhas = models.FloatField(default=0)\n    status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')\n    def __str__(self):\n         return f'({self.nu_senhas}) - (${self.folin_senhas})'",
+        "peekOfCode": "class Senhas(models.Model):\n    STATUS = (\n        ('Seidauk Distribui', 'Seidauk Distribui'),\n        ('Distribui Ona', 'Distribui Ona'))\n    id_senhas = models.AutoField(primary_key=True, editable=False)\n    nu_senhas = models.CharField(max_length=200)\n    folin_senhas = models.FloatField(default=0)\n    status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')\n    def __int__(self):\n        return self.id_senhas",
         "detail": "admKombustivel.models",
         "documentation": {}
     },
@@ -886,7 +886,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def delete_dadus_distribuisaun (request, pk):\n    distribuisaun = Distribuisaun.objects.get(id_distribuisaun=pk)\n    if request.method == 'GET':\n        distribuisaun.delete()\n        return redirect('distribui_kom')\n@login_required(login_url='login')\ndef updateDistribuisaun (request, pk):\n    distribuisaun = Distribuisaun.objects.get(id_distribuisaun=pk)\n    form = DistribuisaunForm(instance=distribuisaun)\n    if request.method == 'POST':",
+        "peekOfCode": "def delete_dadus_distribuisaun (request, pk):\n    distribuisaun = Distribuisaun.objects.get(id_distribuisaun=pk)\n    senhas = Senhas.objects.get(id_senhas=distribuisaun.id_senhas)\n    if request.method == 'GET':\n         # Update the related Senhas status to \"non-distributed\"\n        senhas_instance = senhas \n        senhas_instance.status = 'Seidauk Distribui'\n        senhas_instance.save()\n        distribuisaun.delete()\n        return redirect('distribui_kom')",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
