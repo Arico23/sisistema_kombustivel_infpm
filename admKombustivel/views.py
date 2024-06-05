@@ -58,7 +58,9 @@ def aumenta_distributor (request):
 @manejarial_only
 def delete_dadus_distributor (request, pk):
     distributor = Distribuitor.objects.get(id_distribuitor=pk)
+   
     if request.method == 'GET':
+ 
         distributor.delete()
         return redirect('dadus_distributor')
 
@@ -103,7 +105,12 @@ def aumenta_dadus_distribuisaun (request):
 @login_required(login_url='login')
 def delete_dadus_distribuisaun (request, pk):
     distribuisaun = Distribuisaun.objects.get(id_distribuisaun=pk)
+    senhas = Senhas.objects.get(id_senhas=distribuisaun.id_senhas)
     if request.method == 'GET':
+         # Update the related Senhas status to "non-distributed"
+        senhas_instance = senhas 
+        senhas_instance.status = 'Seidauk Distribui'
+        senhas_instance.save()
         distribuisaun.delete()
         return redirect('distribui_kom')
     
