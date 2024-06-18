@@ -1,9 +1,11 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, ValidationError
 from django.views.generic import CreateView
 from django import forms
+import pprint
 from .models import *
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column, Button, HTML
+from pprint import pprint
 
 #formulario distribuitor
 class DistributorForm(forms.ModelForm):
@@ -30,12 +32,32 @@ class DistributorForm(forms.ModelForm):
 class SenhasForm(forms.ModelForm):
     class Meta:
         model = Senhas
-        fields = ['nu_senhas', 'folin_senhas']
+        fields = ['nu_senhas', 'folin_senhas', 'id_distributor']
         labels = {
-             'nu_senhas': 'Numeru Senhas',
-             'folin senhas': 'Folin Senhas',
-        # fields = ['cutomer'] #only specific form
+            'nu_senhas': 'Numeru Senhas',
+            'folin_senhas': 'Folin Senhas',
+            'id_distributor': 'Distributor'
         }
+    
+    def clean(self):
+        cleaned_data = super().clean()
+        folin_senhas = cleaned_data.get('folin_senhas')
+        id_distributor = cleaned_data.get('id_distributor')
+        
+
+        if id_distributor and folin_senhas is not None:
+            # Retrieve the related Distributor instance
+            distributor = Distribuitor.objects.get(id_distribuitor=id_distributor.id_distribuitor)
+            
+            # Check if folin_senhas is below montante_senhas
+            if folin_senhas > distributor.montante_atual:
+                raise ValidationError(
+                    f'Folin Senhas ({folin_senhas}) labele menus liu husi montante atual ({distributor.montante_atual}) husi distributor neebe hili.'
+                )
+
+        return cleaned_data
+        
+
 
 #formulario Regional
 class RegionalForm(forms.ModelForm):
@@ -192,7 +214,10 @@ class DistribuisaunForm(forms.ModelForm):
         # Update the status of the related Senhas object to "distributed"
         senhas_instance = instance.id_senhas
         senhas_instance.status = 'Distribui ona'
+        distributor_instance = instance.id_senhas.id_distributor
+        distributor_instance.montante_atual = distributor_instance.montante_atual - senhas_instance.folin_senhas
         senhas_instance.save()
+        distributor_instance.save()
         
         if commit:
             instance.save()

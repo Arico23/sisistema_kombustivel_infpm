@@ -7,6 +7,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .decorators import manejarial_only, unauthenticated_user
+from datetime import date
+from dateutil.relativedelta import relativedelta
+from pprint import pprint
+ 
 
 @unauthenticated_user
 def loginPage(request):
@@ -18,7 +22,7 @@ def loginPage(request):
             
         if user is not None:
             login(request, user)
-            return redirect('dash_kombustivel')
+            return redirect('home')
         else:
             messages.info(request, 'Username ou Password la loos')
                 
@@ -38,14 +42,55 @@ def home (request):
 
 @login_required(login_url='login')
 def dash_kombustivel (request):
-    return render(request, 'templateKombustivel/dash_kombustivel.html')
+    
+    #Get total stock in
+    stockIn = Distribuitor.objects.all()
+    total_dist = Distribuitor.objects.values_list('montante_distribuitor') 
+    total_stock_in = 0
+
+    for dist_tuple in total_dist:
+        total_stock_in += dist_tuple[0]
+      
+    #Get total stock out  
+    dadus_distribuisaun = Distribuisaun.objects.all()
+    total_dist = Distribuisaun.objects.values_list('id_senhas__folin_senhas') 
+    total_stock_out = 0
+
+    for dist_tuple in total_dist:
+        total_stock_out += dist_tuple[0]
+        
+    #Get total transporte
+    total_trans = Transporte.objects.count()   
+    total_motor = Motorista.objects.count()
+    
+    #Get total Distributor
+    total_distributor = Distribuitor.objects.count()
+    
+    #Get Total Senhas 
+    total_senhas = Senhas.objects.count()
+    
+    #Get all the distribuited data by month
+    today = date.today()
+    six_months = today - relativedelta(months=6)
+    distrubuisaun_query = Distribuisaun.objects.values_list('id_senhas__folin_senhas').filter(data__gte = six_months)
+    distrubuisaun_list = list(distrubuisaun_query)
+    
+    distributed_six_months = []
+    for i in distrubuisaun_list:
+        for item in i:
+            distributed_six_months.append(item)    
+    
+    context = {'total_stock_in':total_stock_in, 'total_stock_out': total_stock_out, 'total_trans':total_trans,
+               'total_motor':total_motor, 'total_distributor': total_distributor, 'total_senhas':total_senhas, 'dist_month': distributed_six_months}
+    
+    return render(request, 'templateKombustivel/dash_kombustivel.html', context)
 
 #views Distribuitor 
 @login_required(login_url='login')
 def dadus_distributor (request):
     dadus_distributor = Distribuitor.objects.all()
    
-    total_dist = Distribuitor.objects.values_list('montante_distribuitor') 
+    total_dist = Distribuitor.objects.values_list('montante_atual') 
     total = 0
 
     for dist_tuple in total_dist:

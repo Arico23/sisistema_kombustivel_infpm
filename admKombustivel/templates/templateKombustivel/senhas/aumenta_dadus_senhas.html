@@ -20,11 +20,27 @@
             {{ form.folin_senhas | as_crispy_field }}
           </div>
  
+          <div class="col-6">
+            {{ form.id_distributor | as_crispy_field }}
+          </div>
+
         </div>
         <button type="submit" class="btn btn-success">Rai Dadus</button>
         <a href="#" class="btn btn-warning">Kansela</a> 
     </div>
     </div>
+
+    {% if form.errors %}
+        <script>
+            let errorMessages = [];
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    errorMessages.push('{{ error|escapejs }}');
+                {% endfor %}
+            {% endfor %}
+            alert(errorMessages.join('\n'));
+        </script>
+    {% endif %}
  
    
       </form>
