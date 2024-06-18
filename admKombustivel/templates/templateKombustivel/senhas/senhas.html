@@ -31,6 +31,7 @@ dadus senhas
                                       <th>Nu</th>
                                       <th>Numeru Senhas</th>
                                       <th>Folin Senhas</th>
+                                      <th>Distributor</th>
                                       <th>Status</th>
                                       <th>aksaun</th>
                                   </tr>
@@ -40,6 +41,7 @@ dadus senhas
                                     <th>Nu</th>
                                     <th>Numeru Senhas</th>
                                     <th>Folin Senhas</th>
+                                    <th>Distributor</th>
                                     <th>Status</th>
                                     <th>aksaun</th>
                                 </tr>
@@ -50,6 +52,7 @@ dadus senhas
                                         <td>{{ forloop.counter }}</td> <!-- Display field number -->
                                         <td>{{senhas.nu_senhas}}</td>
                                         <td>{{senhas.folin_senhas}}</td>
+                                        <td>{{senhas.id_distributor}}</td>
                                         <td> 
                                             {% if senhas.status == 'Seidauk Distribui' %}
                                             <a class="btn-edit btn btn-primary">{{senhas.status}}</a></td>

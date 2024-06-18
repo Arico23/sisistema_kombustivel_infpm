@@ -101,6 +101,7 @@ class Senhas(models.Model):
         ('Seidauk Distribui', 'Seidauk Distribui'),
         ('Distribui Ona', 'Distribui Ona'))
     id_senhas = models.AutoField(primary_key=True, editable=False)
+    id_distributor = models.ForeignKey(Distribuitor, on_delete=models.CASCADE, null=False, blank=False)
     nu_senhas = models.CharField(max_length=200)
     folin_senhas = models.FloatField(default=0)
     status = models.CharField(max_length=20 ,choices = STATUS, default='Seidauk Distribui')
