@@ -23,7 +23,7 @@ distribui kombustivel
                       </div>
                       <div class="card-body">
                             <div class="form-group">
-                                <a class="button-group mb-2 btn btn-primary" href="">
+                                <a class="button-group mb-2 btn btn-primary" id="exportBtn">
                                     <i class ="fa fa-plus"></i>Download</a>
                                     <label for="date">Data Hahu</label>
                                     <input type="date">
@@ -34,7 +34,7 @@ distribui kombustivel
                             {% comment %} <button class="add-data mb-4">Tambah Data</button> {% endcomment %}
 
                                 <div class="table-responsive">             
-                                    <table class="table table-bordered" id="distribuisaunTable">
+                                    <table id="distribuisaunStockOut" class="table table-bordered">
                                         <thead>
                                             <tr>
                                                 <th>Nu</th>
@@ -80,28 +80,29 @@ distribui kombustivel
                                                 </tr>                        
                                         </tbody>
                                     </table>
-                                        <div class="pagination justify-content-left mt-2">
-                                            <ul class="pagination">
-                                                {% if page_obj.has_previous %}
-                                                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
-                                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
-                                    
-                                                {% endif %}
-                                                
-                                                <li class="page-item active" aria-current="page">
-                                                    <span class="page-link">
-                                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-                                                        <span class="sr-only">(current)</span>
-                                                    </span>
-                                                </li>
-                                                
-                                                {% if page_obj.has_next %}
-                                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
-                                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
-                                                {% endif %}
-                                            </ul>
-                                        </div>
+                                    <div class="pagination justify-content-left mt-2">
+                                        <ul class="pagination">
+                                            {% if page_obj.has_previous %}
+                                                <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                                                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                                            {% endif %}
+                                            
+                                            <li class="page-item active" aria-current="page">
+                                                <span class="page-link">
+                                                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                                    <span class="sr-only">(current)</span>
+                                                </span>
+                                            </li>
+                                            
+                                            {% if page_obj.has_next %}
+                                                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                                                <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
                                 </div>
+                            
+
                   </div>
               </div>
           </main>
@@ -145,6 +146,31 @@ distribui kombustivel
             rows[i].style.display = match ? '' : 'none';
         }
     }
+
+
+
+        function exportTableToExcel(tableID, filename = 'table_data.xlsx') {
+            // Get the table element
+            let table = document.getElementById(tableID);
+            let wb = XLSX.utils.book_new();
+            let ws = XLSX.utils.table_to_sheet(table);
+        
+            // Add the sheet to the workbook
+            XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+        
+            // Write the workbook and download it
+            XLSX.writeFile(wb, filename);
+        }
+        
+        // Add event listener to your export button (if you have one)
+        document.getElementById('exportBtn').addEventListener('click', function () {
+            exportTableToExcel('distribuisaunStockOut');
+        });
+        </script
+        
+
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
 {% endblock %}
 

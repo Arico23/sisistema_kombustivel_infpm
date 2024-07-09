@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm, DepartamentuForm, DiresaunForm, FulanForm, TinanForm
+from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm, DepartamentuForm, DiresaunForm, FulanForm, TinanForm, UserProfileForm
 from .models import *
 from django.contrib import messages
 from django.core.paginator import Paginator
@@ -10,7 +10,7 @@ from .decorators import manejarial_only, unauthenticated_user
 from datetime import date
 from dateutil.relativedelta import relativedelta
 from pprint import pprint
- 
+from django.contrib.auth.models import User
 
 @unauthenticated_user
 def loginPage(request):
@@ -36,9 +36,22 @@ def logoutUser(request):
     return redirect('login')
 
 @login_required(login_url='login')
+def user_profile(request):
+    utilizador = User.objects.get(username=request.user.username)
+    form = UserProfileForm(instance=utilizador)
+    
+    if request.method == 'POST':
+        # print('Printing Post', request.POST) print result form iha terminal
+        form = UserProfileForm(request.POST, instance=utilizador)
+        if form.is_valid():
+            form.save()
+            return redirect('update_user')
+    context = {'form': form}
+    return render(request, 'templateKombustivel/login/user_profile.html', context)
+
+@login_required(login_url='login')
 def home (request):
     return render(request, 'templateKombustivel/home.html')
-
 
 @login_required(login_url='login')
 def dash_kombustivel (request):
