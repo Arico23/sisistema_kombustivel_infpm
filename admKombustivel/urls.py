@@ -48,4 +48,5 @@ urlpatterns = [
      path('stockIn/', views.stockIn, name='StockIn'),
      path('stockOut/', views.stockOut, name='StockOut'),
      path('stockAtual/', views.stockAtual, name='StockAtual'),
+     path('update_user/', views.user_profile, name='update_user'),
 ]

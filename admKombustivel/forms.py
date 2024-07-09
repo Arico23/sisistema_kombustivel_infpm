@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.forms import ModelForm, ValidationError
 from django.views.generic import CreateView
 from django import forms
@@ -262,6 +263,70 @@ class TransporteForm(forms.ModelForm):
 #         model = Distribuisaun
 #         fields =  '__all__' #all field in the models
 #         # fields = ['cutomer'] #only specific form
+
+
+# Form to change username and password of utilizador
+class UserProfileForm(forms.ModelForm):
+    old_password = forms.CharField(label='Password Tuan', widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ['username', 'password']
+        labels = {
+            'username': 'Username',
+            'password': 'Password Foun'
+        }
+        widgets = {
+            'password': forms.PasswordInput()
+        }
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.fields['username'].required = True
+        self.fields['password'].required = True
+        self.helper.layout = Layout(
+            Row(
+                Column('username', css_class='form-group col-md-12 mb-0'),
+                css_class='form-row'
+            ),
+            Row(
+                Column('old_password', css_class='form-group col-md-12 mb-0'),
+                css_class='form-row'
+            ),
+            Row(
+                Column('password', css_class='form-group col-md-12 mb-0'),
+                css_class='form-row'
+            ),
+            HTML(""" <div class="form-group text-right"><button class="btn btn-sm btn-info" type="submit">Renova <i class="fa fa-save"></i></button> """),
+            HTML(""" <span class="btn btn-sm btn-secondary"  onclick=self.history.back()><i class="fa close"></i>Kansela</span></div> """)
+        )
+        
+    def clean_password(self):
+        password = self.cleaned_data.get('password')
+        # Add password validation logic here if needed
+        return password
+    
+    def clean(self):
+        cleaned_data = super().clean()
+        old_password = cleaned_data.get('old_password')
+        user = self.instance
+        if not user.check_password(old_password):
+            raise forms.ValidationError('Password Tuan Sala.')
+        return cleaned_data
+    
+    def save(self, commit=True):
+        instance = super(UserProfileForm, self).save(commit=False)
+        
+        # Update the username and password of the utilizador object
+        instance.username = self.cleaned_data['username']
+        instance.set_password(self.cleaned_data['password'])
+        
+        if commit:
+            instance.save()
+        
+        return instance
+
 
     
     

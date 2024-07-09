@@ -290,7 +290,31 @@
         "documentation": {}
     },
     {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
         "label": "ModelForm",
+        "importPath": "django.forms",
+        "description": "django.forms",
+        "isExtraImport": true,
+        "detail": "django.forms",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationError",
         "importPath": "django.forms",
         "description": "django.forms",
         "isExtraImport": true,
@@ -765,7 +789,7 @@
         "kind": 6,
         "importPath": "admKombustivel.forms",
         "description": "admKombustivel.forms",
-        "peekOfCode": "class SenhasForm(forms.ModelForm):\n    class Meta:\n        model = Senhas\n        fields = ['nu_senhas', 'folin_senhas', 'id_distributor']\n        labels = {\n             'nu_senhas': 'Numeru Senhas',\n             'folin senhas': 'Folin Senhas',\n             'id_distributor': 'Distributor'\n        # fields = ['cutomer'] #only specific form\n        }",
+        "peekOfCode": "class SenhasForm(forms.ModelForm):\n    class Meta:\n        model = Senhas\n        fields = ['nu_senhas', 'folin_senhas', 'id_distributor']\n        labels = {\n            'nu_senhas': 'Numeru Senhas',\n            'folin_senhas': 'Folin Senhas',\n            'id_distributor': 'Distributor'\n        }\n    def clean(self):",
         "detail": "admKombustivel.forms",
         "documentation": {}
     },
@@ -838,6 +862,15 @@
         "importPath": "admKombustivel.forms",
         "description": "admKombustivel.forms",
         "peekOfCode": "class TransporteForm(forms.ModelForm):\n    class Meta:\n        model = Transporte\n        fields = ['nu_matricula', 'categoria', 'tipo_transporte']\n        labels = {\n             'nu_matrikula': 'Numeru Matrikula Transporte',\n             'categoria' : 'Kategoria Transporte',\n             'tipo_transporte' : 'Modelu Transporte',\n        }\n        # fields = ['cutomer'] #only specific form",
+        "detail": "admKombustivel.forms",
+        "documentation": {}
+    },
+    {
+        "label": "UserProfileForm",
+        "kind": 6,
+        "importPath": "admKombustivel.forms",
+        "description": "admKombustivel.forms",
+        "peekOfCode": "class UserProfileForm(forms.ModelForm):\n    old_password = forms.CharField(label='Password Tuan', widget=forms.PasswordInput())\n    class Meta:\n        model = User\n        fields = ['username', 'password']\n        labels = {\n            'username': 'Username',\n            'password': 'Password Foun'\n        }\n        widgets = {",
         "detail": "admKombustivel.forms",
         "documentation": {}
     },
@@ -963,7 +996,16 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def logoutUser(request):\n    logout(request)\n    return redirect('login')\n@login_required(login_url='login')\ndef home (request):\n    return render(request, 'templateKombustivel/home.html')\n@login_required(login_url='login')\ndef dash_kombustivel (request):\n    #Get total stock in\n    stockIn = Distribuitor.objects.all()",
+        "peekOfCode": "def logoutUser(request):\n    logout(request)\n    return redirect('login')\n@login_required(login_url='login')\ndef user_profile(request):\n    utilizador = User.objects.get(username=request.user.username)\n    form = UserProfileForm(instance=utilizador)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = UserProfileForm(request.POST, instance=utilizador)",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "user_profile",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def user_profile(request):\n    utilizador = User.objects.get(username=request.user.username)\n    form = UserProfileForm(instance=utilizador)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = UserProfileForm(request.POST, instance=utilizador)\n        if form.is_valid():\n            form.save()\n            return redirect('update_user')\n    context = {'form': form}",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
