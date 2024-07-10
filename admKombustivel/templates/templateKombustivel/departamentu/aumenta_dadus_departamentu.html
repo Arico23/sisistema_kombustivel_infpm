@@ -5,23 +5,38 @@
 
 {% block konteudu %}
 {% include 'templateKombustivel/side-navbar.html' %}
-<div class="container">
-    {% comment %} <h2 class='mt-4 mb-4'>Formulariu Prenxe Dadus Departamentu</h2> {% endcomment %}
-    <form method="post" novalidate>
-        {% csrf_token %}
-        <div class="card  mt-4 mb-4">
-        <h3><div class="card-header">Formulariu Prenxe Dadus Departamentu</div></h3>
-        <div class="card-body">
+<body class="sb-nav-fixed">
+  
+  <div id="layoutSidenav_content">
 
-          <div class="col-6">
-            {{ form.naran_departamentu | as_crispy_field }}
-          </div>
-        <button type="submit" class="btn btn-success">Rai Dadus</button>
-        <a href="{% url 'dadus_departamentu' %}" class="btn btn-warning">Kansela</a> 
+    <main>
+      <div class="container">
+        {% comment %} <h2 class='mt-4 mb-4'>Formulariu Prenxe Dadus Departamentu</h2> {% endcomment %}
+        <form method="post" novalidate>
+            {% csrf_token %}
+            <div class="card  mt-4 mb-4">
+            <h3><div class="card-header">Formulariu Prenxe Dadus Departamentu</div></h3>
+            <div class="card-body">
+    
+              <div class="col-6">
+                {{ form.naran_departamentu | as_crispy_field }}
+              </div>
+            <button type="submit" class="btn btn-success">Rai Dadus</button>
+            <a href="{% url 'dadus_departamentu' %}" class="btn btn-warning">Kansela</a> 
+        </div>
+        </div>
+     
+       
+          </form>
     </div>
-    </div>
- 
+    </main>
+  
+    {% include 'templateKombustivel/footer.html' %}
    
-      </form>
-</div>
+  
+  </div>
+
+</body>
+
+
 {% endblock konteudu%}
