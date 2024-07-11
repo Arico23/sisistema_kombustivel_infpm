@@ -157,7 +157,9 @@ class DistribuisaunForm(forms.ModelForm):
              'id_motorista': 'Naran Motorista',
              'ano' : 'Tinan',
              'fulan' : 'Fulan',
-             'data' : 'Data Foti Senhas'
+             'data' : 'Data Foti Senhas',
+             'folin_utilitariu' : 'Folin Unitariu',
+             
         }
      
         # fields = ['cutomer'] #only specific form
@@ -174,6 +176,7 @@ class DistribuisaunForm(forms.ModelForm):
             self.fields['ano'].required = True
             self.fields['destinasaun'].required = True
             self.fields['data'].required = True
+            self.fields['folin_utilitariu'].required = False
 
             # Filter the choices for the related field to only show Senhas with status as "non-distributed"
             self.fields['id_senhas'].queryset = Senhas.objects.filter(status='Seidauk Distribui')
