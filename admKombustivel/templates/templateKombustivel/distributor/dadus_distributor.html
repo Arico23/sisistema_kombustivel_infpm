@@ -50,7 +50,11 @@ dadus kombustivel
                                     <td>{{ distributor.data }}</td>
                                     {% comment %} <td>{{ distributor.ano }}</td> {% endcomment %}
                                     <td>
-                                        <a class="btn-edit btn btn-primary" href="">iha</a>
+                                    {% if distributor.montante_atual > 0 %}
+                                        <a class="btn-edit btn btn-primary">iha</a>
+                                        {% else %}
+                                         <a class="btn-edit btn btn-warning">laiha</a>
+                                    {% endif %}
                                     </td>
                                     <td>
                                         <a class="btn-edit btn btn-primary" href="{% url 'updateDistributor' distributor.id_distribuitor %}">Edit</a>
@@ -91,18 +95,7 @@ dadus kombustivel
                   </div>
               </div>
           </main>
-          <footer class="py-4 bg-light mt-auto">
-              <div class="container-fluid px-4">
-                  <div class="d-flex align-items-center justify-content-between small">
-                      <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                      <div>
-                          <a href="#">Privacy Policy</a>
-                          &middot;
-                          <a href="#">Terms &amp; Conditions</a>
-                      </div>
-                  </div>
-              </div>
-          </footer>
+          {% include 'templateKombustivel/footer.html' %}
       </div>
   </div>      
 </body>

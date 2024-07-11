@@ -20,6 +20,10 @@ class DistributorForm(forms.ModelForm):
              'ano': 'Tinan',
         # fields = ['cutomer'] #only specific form
         }
+        widgets = {
+            'data': forms.TextInput(attrs={'readonly': 'readonly', 'style': 'background-color: lightgray;'})
+        }
+        
     def save(self, commit=True):
         instance = super(DistributorForm, self).save(commit=False)
         montante_distribuitor = self.cleaned_data.get('montante_distribuitor')
@@ -161,8 +165,13 @@ class DistribuisaunForm(forms.ModelForm):
              'folin_utilitariu' : 'Folin Unitariu',
              
         }
+        widgets = {
+            'data': forms.TextInput(attrs={'readonly': 'readonly', 'style': 'background-color: lightgray;'})
+        }
      
         # fields = ['cutomer'] #only specific form
+    
+   
     
     def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
