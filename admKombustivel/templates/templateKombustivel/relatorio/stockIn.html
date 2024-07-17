@@ -22,7 +22,15 @@ dadus kombustivel
                     <div class="card-header"><h3><i class="fas fa-table me-1"></i>Relatorio Stock In</h3></div>
                         <div class="card-body">
                             {% if request.user|has_group:"manejarial" %}
-                            <input type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Buka dadus Distributor" class="form-control mb-2"style="width: 200px; float: right; clear: both;">
+                            <div class="form-group">
+                                <a class="button-group mb-2 btn btn-primary" id="exportBtn">
+                                    <i class ="fa fa-plus"></i>Download</a>
+                                    <label for="date">Data Hahu</label>
+                                    <input type="date">
+                                    <label for="date">Data ikus</label>
+                                    <input type="date">
+                                    <input type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Buka dadus distribuisaun.." class="form-control" style="width: 200px; float: right; clear: both;">
+                            </div>
                             {% endif %}
                                     
                                 <table class="table table-bordered" id="distributorTable">
@@ -32,7 +40,6 @@ dadus kombustivel
                                             <th>Naran Distributor</th>
                                             <th>Montante Stock</th>
                                             <th>Data</th>
-                                            <th>Loron</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -42,7 +49,7 @@ dadus kombustivel
                                             <td>{{ distributor.naran_distribuitor }}</td>
                                             <td>$ {{ distributor.montante_distribuitor }}</td>
                                             <td>{{ distributor.data }}</td>
-                                            <td>{{ distributor.ano }}</td>
+                                           
                                         </tr>
                                     {% endfor %}
                                         <tr style="background-color:#f0f0f0;">
@@ -107,6 +114,26 @@ dadus kombustivel
             rows[i].style.display = match ? '' : 'none';
         }
     }
+
+    function exportTableToExcel(tableID, filename = 'Relatoriu_Stock_In.xlsx') {
+        // Get the table element
+        let table = document.getElementById(tableID);
+        let wb = XLSX.utils.book_new();
+        let ws = XLSX.utils.table_to_sheet(table);
+    
+        // Add the sheet to the workbook
+        XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+    
+        // Write the workbook and download it
+        XLSX.writeFile(wb, filename);
+    }
+    
+    // Add event listener to your export button (if you have one)
+    document.getElementById('exportBtn').addEventListener('click', function () {
+        exportTableToExcel('distributorTable');
+    });
+    </script
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 {% endblock %}
 

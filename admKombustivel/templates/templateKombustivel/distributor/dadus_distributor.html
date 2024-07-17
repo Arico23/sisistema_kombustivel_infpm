@@ -26,7 +26,7 @@ dadus kombustivel
                       <div class="card-body">
                         {% if request.user|has_group:"manejarial" %}
                         <a class="button-add mb-2 btn btn-primary " data-toggle="modal" data-target="aumenta" href="{% url 'aumenta_distributor' %}">
-                        <i class ="fa fa-plus"></i>Aumenta</a>
+                        <i class ="fa fa-plus"></i>Aumenta Distributor</a>
                         <input type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Search for distributors.." class="form-control" style="width: 200px; float: right; clear: both;">
                         {% endif %}
                     

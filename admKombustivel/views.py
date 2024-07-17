@@ -71,16 +71,28 @@ def dash_kombustivel (request):
 
     for dist_tuple in total_dist:
         total_stock_out += dist_tuple[0]
-        
+         
     #Get total transporte
     total_trans = Transporte.objects.count()   
     total_motor = Motorista.objects.count()
     
     #Get total Distributor
     total_distributor = Distribuitor.objects.count()
+
+    #Get total stock_atual
+    stock_atual = Distribuitor.objects.all()
+    total_dist = Distribuitor.objects.values_list('montante_atual') 
+    stock_atual = 0
+
+    for dist_tuple in total_dist:
+        stock_atual += dist_tuple[0]
+      
     
     #Get Total Senhas 
     total_senhas = Senhas.objects.count()
+
+    #Get total_motorista_foti_mina
+    total_motorista_foti_mina = Distribuisaun.objects.count()
     
     #Get all the distribuited data by month
     today = date.today()
@@ -94,7 +106,7 @@ def dash_kombustivel (request):
             distributed_six_months.append(item)    
     
     context = {'total_stock_in':total_stock_in, 'total_stock_out': total_stock_out, 'total_trans':total_trans,
-               'total_motor':total_motor, 'total_distributor': total_distributor, 'total_senhas':total_senhas, 'dist_month': distributed_six_months}
+               'total_motor':total_motor, 'stock_atual': stock_atual, 'total_motorista_foti_mina': total_motorista_foti_mina, 'total_distributor': total_distributor, 'total_senhas':total_senhas, 'dist_month': distributed_six_months}
     
     return render(request, 'templateKombustivel/dash_kombustivel.html', context)
 
