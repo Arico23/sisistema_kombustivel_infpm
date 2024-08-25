@@ -5,6 +5,9 @@
 
 {% block konteudu %}
 {% include 'templateKombustivel/side-navbar.html' %}
+<body class="sb-nav-fixed">
+  <div id="layoutSidenav_content">
+  <main>
 <div class="container">
     <form method="post" novalidate>
         {% csrf_token %}
@@ -23,4 +26,8 @@
    
       </form>
 </div>
+</main>
+{% include 'templateKombustivel/footer.html' %}
+</div>
+</body>
 {% endblock konteudu%}

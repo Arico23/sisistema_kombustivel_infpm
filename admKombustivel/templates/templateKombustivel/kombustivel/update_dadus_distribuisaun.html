@@ -3,6 +3,10 @@
 {% load crispy_forms_tags %}
 
 {% block konteudu %}
+{% include 'templateKombustivel/side-navbar.html' %}
+<body class="sb-nav-fixed">
+<div id="layoutSidenav_content">
+<main>
 <div class="container">
     <div class='card mt-4'>
         <h3><div class="card-header">Formulariu Update Dadus Distribuisaun</div></h3>
@@ -11,4 +15,8 @@
         </div>
     </div>
 </div>
+</main>
+{% include 'templateKombustivel/footer.html' %}
+</div>
+</body>
 {% endblock konteudu%}

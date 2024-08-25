@@ -13,9 +13,9 @@ Dashboard Kombustivel
       <div id="layoutSidenav_content">
           <main>
               <div class="container-fluid px-4">
-                  <h1 class="mt-2 text-center" >SISTEMA JESTAUN KOMBUSTIVEL INFPM</h1>
                   <ol class="breadcrumb mb-4">
-                      <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item mt-4"><a href="{% url 'home' %}">Pajina Inisiu</a></li>
+                    <li class="breadcrumb-item active mt-4">Monitoring</li>
                   </ol>
                   <div class="col-xl-12">
                     <div class="card mb-4">
@@ -58,7 +58,7 @@ Dashboard Kombustivel
                       <div class="col-xl-3 col-md-6">
                           <div class="card shadow-lg bg-danger text-white mb-4">
                               <div class="card-body">Total Transporte</div>
-                              <div class="card-body"><h3>{{ total_trans }}</h3></div>
+                              <div class="card-body"><h4><i class="fa fa-car"></i> {{ total_trans }}</h4></div>
                               <div class="card-footer d-flex align-items-center justify-content-between">
                                   <a class="small text-white stretched-link" href="{% url 'dadus_trans' %}">Hare Detalhu</a>
                                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -68,7 +68,7 @@ Dashboard Kombustivel
                       <div class="col-xl-3 col-md-6">
                         <div class="card shadow-lg bg-danger text-white mb-4">
                             <div class="card-body">Total Motorista</div>
-                            <div class="card-body"><h3>{{ total_motor }}</h3></div>
+                            <div class="card-body"><h4><i class="fa fa-male" aria-hidden="true"></i> {{ total_motor }}</h4></div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <a class="small text-white stretched-link" href="{% url 'dadus_motorista' %}">Hare Detalhu</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -77,8 +77,8 @@ Dashboard Kombustivel
                     </div>
                     <div class="col-xl-3 col-md-6">
                         <div class="card shadow-lg bg-warning text-white mb-4">
-                            <div class="card-body">Total Pessoal Foti Kombustivel</div>
-                            <div class="card-body"><h4>{{total_motorista_foti_mina }}</h4></div>
+                            <div class="card-body">Pessoal Foti Kombustivel</div>
+                            <div class="card-body"><h4><i class="fa fa-male" aria-hidden="true"></i> {{total_motorista_foti_mina }}</h4></div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <a class="small text-white stretched-link" href="{% url 'distribui_kom' %}">Hare Detalhu</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -88,7 +88,7 @@ Dashboard Kombustivel
                     <div class="col-xl-3 col-md-6">
                           <div class="card shadow-lg bg-warning text-white mb-4">
                               <div class="card-body">Total Distributor</div>
-                              <div class="card-body"><h3>{{ total_distributor }}</h3></div>
+                              <div class="card-body"><h4><i class="fa fa-male" aria-hidden="true"></i> {{ total_distributor }}</h4></div>
                               <div class="card-footer d-flex align-items-center justify-content-between">
                                   <a class="small text-white stretched-link" href="{% url 'dadus_distributor' %}">Hare Detalhu</a>
                                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -98,7 +98,7 @@ Dashboard Kombustivel
                       <div class="col-xl-3 col-md-6">
                         <div class="card shadow-lg bg-warning text-white mb-4">
                             <div class="card-body">Totsl Senhas</div>
-                            <div class="card-body"><h3>{{ total_senhas }}</h3></div>
+                            <div class="card-body"><h4><i class="fa fa-credit-card" aria-hidden="true"></i> {{ total_senhas }}</h4></div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <a class="small text-white stretched-link" href="{% url 'dadus_senhas' %}">Hare Detalhu</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>

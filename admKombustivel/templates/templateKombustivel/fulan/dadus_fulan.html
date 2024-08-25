@@ -47,8 +47,8 @@ dadus senhas
                                         <td>{{ forloop.counter }}</td> <!-- Display field number -->
                                         <td>{{fulan.naran_fulan}}</td>
                                         <td> 
-                                            <a class="btn-edit btn btn-primary" href="{% url 'updateFulan' fulan.id_fulan %}">Edit</a>
-                                            <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_fulan' fulan.id_fulan %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a>
+                                            <a class="btn-edit btn btn-primary" href="{% url 'updateFulan' fulan.id_fulan %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                            <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_fulan' fulan.id_fulan %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')"><i class="fa fa-trash" aria-hidden="true"></a>
                                         </td>
                                     </tr>
                                     {% endfor %}

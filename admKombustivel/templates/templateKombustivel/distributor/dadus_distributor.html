@@ -15,7 +15,7 @@ dadus kombustivel
               <div class="container-fluid px-4">
                 {% comment %} <h1 class="mt-4">Dadus Distributor</h1> {% endcomment %}
                 <ol class="breadcrumb mb-4 mt-4">
-                    <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Pajina Inisiu</a></li>
                     <li class="breadcrumb-item active">Dadus Distribuitor</li>
                 </ol>
                   <div class="card mb-4 mt-4">
@@ -57,8 +57,8 @@ dadus kombustivel
                                     {% endif %}
                                     </td>
                                     <td>
-                                        <a class="btn-edit btn btn-primary" href="{% url 'updateDistributor' distributor.id_distribuitor %}">Edit</a>
-                                        <a class="btn-delete btn btn-danger" href="{% url 'delete_dadus_distributor' distributor.id_distribuitor %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a>
+                                        <a class="btn-edit btn btn-primary" href="{% url 'updateDistributor' distributor.id_distribuitor %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                        <a class="btn-delete btn btn-danger" href="{% url 'delete_dadus_distributor' distributor.id_distribuitor %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                     </td>
                                 </tr>
                                 {% endfor %}
@@ -90,7 +90,6 @@ dadus kombustivel
                                 {% endif %}
                             </ul>
                         </div>
-    
                       </div>
                   </div>
               </div>

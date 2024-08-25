@@ -13,7 +13,7 @@ distribui kombustivel
               <div class="container-fluid px-4">
                 {% comment %} <h1 class="mt-4">Tabela Distribuisaun</h1> {% endcomment %}
                 <ol class="breadcrumb mb-4 mt-4">
-                    <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Pajina Inisiu</a></li>
                     <li class="breadcrumb-item active">Dadus Distribuisaun</li>
                 </ol>
                   <div class="card mb-4 mt-4">
@@ -56,18 +56,18 @@ distribui kombustivel
                                                 <td>{{distribuisaun.id_transporte.tipo_transporte}}</td>
                                                 <td>{{distribuisaun.id_transporte.categoria}}</td>
                                                 <td>{{distribuisaun.id_transporte.nu_matricula}}</td>
-                                                <td>{{distribuisaun.kilometrajen}}</td>
+                                                <td>{{distribuisaun.kilometrajen}} km</td>
                                                 <td>{{distribuisaun.id_senhas.nu_senhas}}</td>
-                                                <td>{{distribuisaun.id_senhas.folin_senhas}}</td>
-                                                <td>{{distribuisaun.folin_utilitariu}}</td>
+                                                <td>$ {{distribuisaun.id_senhas.folin_senhas}}</td>
+                                                <td>$ {{distribuisaun.folin_utilitariu}}</td>
                                                 <td>{{distribuisaun.tipo_kombustivel}}</td>
                                                 <td>{{distribuisaun.id_motorista.naran_motorista}}</td>
                                                 <td>{{distribuisaun.id_motorista.id_diresaun}}</td>
                                                 <td>{{distribuisaun.id_motorista.id_departamentu}}</td>
                                                 <td>{{distribuisaun.destinasaun}}</td>
                                                 <td>
-                                                    <a class="btn-edit btn btn-primary" href="{% url 'updateDistribuisaun' distribuisaun.id_distribuisaun %}">Edit</a>
-                                                    <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_distribuisaun' distribuisaun.id_distribuisaun %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a> 
+                                                    <a class="btn-edit btn btn-primary" href="{% url 'updateDistribuisaun' distribuisaun.id_distribuisaun %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                    <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_distribuisaun' distribuisaun.id_distribuisaun %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')"><i class="fa fa-trash" aria-hidden="true"></i></a> 
                                                 </td>
                                             </tr>  
                                             {% endfor %}

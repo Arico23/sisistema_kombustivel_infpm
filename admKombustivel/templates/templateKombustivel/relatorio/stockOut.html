@@ -13,8 +13,8 @@ distribui kombustivel
               <div class="container-fluid px-4">
                 {% comment %} <h1 class="mt-4">Tabela Distribuisaun</h1> {% endcomment %}
                 <ol class="breadcrumb mb-4 mt-4">
-                    <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Dadus Distribuisaun</li>
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Pajina Inisiu</a></li>
+                    <li class="breadcrumb-item active">Relatorio Stock Out</li>
                 </ol>
                   <div class="card mb-4 mt-4">
                       <div class="card-header">
@@ -62,10 +62,10 @@ distribui kombustivel
                                                 <td>{{distribuisaun.id_transporte.tipo_transporte}}</td>
                                                 <td>{{distribuisaun.id_transporte.categoria}}</td>
                                                 <td>{{distribuisaun.id_transporte.nu_matricula}}</td>
-                                                <td>{{distribuisaun.kilometrajen}}</td>
+                                                <td>{{distribuisaun.kilometrajen}} Km </td>
                                                 <td>{{distribuisaun.id_senhas.nu_senhas}}</td>
-                                                <td>{{distribuisaun.id_senhas.folin_senhas}}</td>
-                                                <td>{{distribuisaun.folin_utilitariu}}</td>
+                                                <td>$ {{distribuisaun.id_senhas.folin_senhas}}</td>
+                                                <td>$ {{distribuisaun.folin_utilitariu}}</td>
                                                 <td>{{distribuisaun.tipo_kombustivel}}</td>
                                                 <td>{{distribuisaun.id_motorista.naran_motorista}}</td>
                                                 <td>{{distribuisaun.id_motorista.id_diresaun}}</td>

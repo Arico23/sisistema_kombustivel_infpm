@@ -8,7 +8,7 @@ var chart_data = document.getElementById("data_chart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["Janeiru", "Fevereiru", "marsu", "April", "May", "June"],
     datasets: [{
       label: "Revenue",
       backgroundColor: "rgba(2,117,216,1)",

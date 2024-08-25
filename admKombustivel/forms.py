@@ -43,6 +43,10 @@ class SenhasForm(forms.ModelForm):
             'folin_senhas': 'Folin Senhas',
             'id_distributor': 'Distributor'
         }
+        placeholder = {
+            'nu_senhas': 'prense numeru senhas',
+            'folin senhas': 'prense numeru senhas'  
+        }
     
     def clean(self):
         cleaned_data = super().clean()
@@ -80,7 +84,7 @@ class DepartamentuForm(forms.ModelForm):
         model = Departamentu
         fields = ['naran_departamentu']
         labels = {
-             'naran_departamentu': 'Naran Departamentu',
+             'naran_departamentu': 'Naran Departamentu'
         # fields = ['cutomer'] #only specific form
         }
 #formulario Diresaun
@@ -126,8 +130,8 @@ class MotoristaForm(forms.ModelForm):
             self.helper = FormHelper()
             self.fields['naran_motorista'].required = True
             self.fields['sexo'].required = True
-            self.fields['id_departamentu'].required = True
-            self.fields['id_diresaun'].required = True
+            self.fields['id_departamentu'].required = False
+            self.fields['id_diresaun'].required = True 
             self.fields['id_regional'].required = True
             self.helper.layout = Layout(
                 Row(
@@ -143,8 +147,7 @@ class MotoristaForm(forms.ModelForm):
                 ),
                 HTML(""" <div class="form-group text-right"><button class="btn btn-sm btn-info" type="submit">Save <i class="fa fa-save"></i></button> """),
                 HTML(""" <span class="btn btn-sm btn-secondary"  onclick=self.history.back()><i class="fa close"></i> Cancel</span></div> """)
-            )
-            
+            )  
 #formulario distribuisaun kombustivel
 class DistribuisaunForm(forms.ModelForm):
     class Meta:

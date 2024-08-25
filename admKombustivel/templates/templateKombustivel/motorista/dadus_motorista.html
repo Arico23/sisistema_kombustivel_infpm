@@ -12,7 +12,7 @@ dadus kombustivel
           <main>
               <div class="container-fluid px-4">
                 <ol class="breadcrumb mb-4 mt-4">
-                    <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Pajina Inisiu</a></li>
                     <li class="breadcrumb-item active">Dadus Motorista</li>
                 </ol>
                   <div class="card mb-4 mt-4">
@@ -58,8 +58,8 @@ dadus kombustivel
                                       <td>{{motorista.id_diresaun}}</td>
                                       <td>{{motorista.id_regional}}</td>
                                       <td> 
-                                        <a class="btn-edit btn btn-primary" href="{% url 'updateMotorista' motorista.id_motorista %}">Edit</a>
-                                        <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_motorista' motorista.id_motorista %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a>
+                                        <a class="btn-edit btn btn-primary" href="{% url 'updateMotorista' motorista.id_motorista %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                        <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_motorista' motorista.id_motorista %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                       </td>
                                     </tr>
                             {% endfor %}

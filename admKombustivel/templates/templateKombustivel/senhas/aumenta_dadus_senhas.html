@@ -5,6 +5,9 @@
 
 {% block konteudu %}
 {% include 'templateKombustivel/side-navbar.html' %}
+<body class="sb-nav-fixed">
+<div id="layoutSidenav_content">
+<main>
 <div class="container">
     <form method="post" novalidate>
         {% csrf_token %}
@@ -26,9 +29,13 @@
 
         </div>
         <button type="submit" class="btn btn-success">Rai Dadus</button>
-        <a href="#" class="btn btn-warning">Kansela</a> 
+        <a href="{% url 'dadus_senhas' %}" class="btn btn-warning">Kansela</a> 
     </div>
     </div>
+  </main>
+  {% include 'templateKombustivel/footer.html' %}
+  </div>
+  </body>
 
     {% if form.errors %}
         <script>

@@ -13,7 +13,7 @@ dadus senhas
               <div class="container-fluid px-4">
                 {% comment %} <h1 class="mt-4">Dadus Regional</h1> {% endcomment %}
                 <ol class="breadcrumb mb-4 mt-4">
-                    <li class="breadcrumb-item"><a href="{% url 'dash_kombustivel' %}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Pajina Inisiu</a></li>
                     <li class="breadcrumb-item active">Dadus Departamentu</li>
                 </ol>
                   <div class="card mb-4 mt-4">
@@ -47,8 +47,8 @@ dadus senhas
                                         <td>{{ forloop.counter }}</td> <!-- Display field number -->
                                         <td>{{departamentu.naran_departamentu}}</td>
                                         <td> 
-                                            <a class="btn-edit btn btn-primary" href="{% url 'updateDepartamentu' departamentu.id_departamentu %}">Edit</a>
-                                            <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_departamentu' departamentu.id_departamentu %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')">Delete</a>
+                                            <a class="btn-edit btn btn-primary" href="{% url 'updateDepartamentu' departamentu.id_departamentu %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                            <a class="btn-Delete btn btn-danger" href="{% url 'delete_dadus_departamentu' departamentu.id_departamentu %}" onclick="return confirm('Ita boot hakarak apaga dadus ida nee?')"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                         </td>
                                     </tr>
                                     {% endfor %}
