@@ -121,10 +121,12 @@ class MotoristaForm(forms.ModelForm):
     class Meta:
         model = Motorista
         fields = ['naran_motorista', 'sexo', 'id_diresaun', 'id_departamentu', 'id_regional']
-        # labels = {
-        #      'naran_motorista': 'sexo',
-        # # fields = ['cutomer'] #only specific form
-        # }
+        labels = {
+             'id_diresaun': 'Diresaun',
+             'id_departamentu': 'Departamentu',
+             'id_regional': 'Regional',
+        # fields = ['cutomer'] #only specific form
+        }
     def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
             self.helper = FormHelper()
@@ -145,9 +147,10 @@ class MotoristaForm(forms.ModelForm):
                     Column('id_regional', css_class='form-group col-md-6 mb-0'),
                     css_class='form-row'
                 ),
-                HTML(""" <div class="form-group text-right"><button class="btn btn-sm btn-info" type="submit">Save <i class="fa fa-save"></i></button> """),
-                HTML(""" <span class="btn btn-sm btn-secondary"  onclick=self.history.back()><i class="fa close"></i> Cancel</span></div> """)
-            )  
+                HTML(""" <div class="form-group text-right"><button class="btn btn-sm btn-success" type="submit">Rai Dadus</i></button> """),
+                HTML(""" <span class="btn btn-sm btn-danger"  onclick=self.history.back()></i>Kansela</span></div> """)
+            ) 
+             
 #formulario distribuisaun kombustivel
 class DistribuisaunForm(forms.ModelForm):
     class Meta:
@@ -220,8 +223,8 @@ class DistribuisaunForm(forms.ModelForm):
                     css_class='form-row'
                 ),
                 HTML(""" <center> <img id='output' width='200' /> </center> """),
-                HTML(""" <div class="form-group text-right"><button class="btn btn-sm btn-info" type="submit">Save <i class="fa fa-save"></i></button> """),
-                HTML(""" <span class="btn btn-sm btn-secondary"  onclick=self.history.back()><i class="fa close"></i> Cancel</span></div> """)
+                HTML(""" <div class="form-group text-right"><button class="btn btn-sm btn-success" type="submit">Rai Dadus</i></button> """),
+                HTML(""" <span class="btn btn-sm btn-danger"  onclick=self.history.back()>Kansela</span></div> """)
             )
 
     def save(self, commit=True):

@@ -25,10 +25,9 @@ def loginPage(request):
             return redirect('home')
         else:
             messages.info(request, 'Username ou Password la loos')
-                
-        
+                      
     context = {}
-        
+     
     return render(request, 'templateKombustivel/Login/login.html', context)
 
 def logoutUser(request):
@@ -536,47 +535,7 @@ def updateTransporte (request, pk):
     return render(request, 'templateKombustivel/transporte/edit_trans.html', context)
 
 #Views dadus motorista
-@login_required(login_url='login')
-def dadus_motorista (request):
-    dadus_motorista = Motorista.objects.all()
-    context = {'motorista': dadus_motorista}
-    return render(request, 'templateKombustivel/motorista/dadus_motorista.html', context)
-
-@login_required(login_url='login')
-@manejarial_only
-def aumenta_dadus_motorista (request):
-    form = MotoristaForm
-    if request.method == 'POST':
-        form = MotoristaForm(request.POST)
-        if form.is_valid():
-           form.save()
-           return redirect('dadus_motorista')
-         
-    context = {'form': form}
-    return render(request, 'templateKombustivel/motorista/aumenta_dadus_motorista.html', context)
-
-@login_required(login_url='login')
-@manejarial_only
-def delete_dadus_motorista (request, pk):
-    motorista = Motorista.objects.get(id_motorista=pk)
-    if request.method == 'GET':
-        motorista.delete()
-        return redirect('dadus_motorista')
-
-@login_required(login_url='login')   
-@manejarial_only
-def updateMotorista (request, pk):
-    motorista = Motorista.objects.get(id_motorista=pk)
-    form = MotoristaForm(instance=motorista)
-    
-    if request.method == 'POST':
-        # print('Printing Post', request.POST) print result form iha terminal
-        form = MotoristaForm(request.POST, instance=motorista)
-        if form.is_valid():
-            form.save()
-            return redirect('dadus_motorista')
-    context = {'form': form}
-    return render(request, 'templateKombustivel/motorista/update_motorista.html', context) 
+ 
 #Viewa StockIn
 @login_required(login_url='login')
 def stockIn (request):
