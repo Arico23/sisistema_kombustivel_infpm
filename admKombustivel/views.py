@@ -11,6 +11,7 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 from pprint import pprint
 from django.contrib.auth.models import User
+from datetime import datetime
 
 @unauthenticated_user
 def loginPage(request):
@@ -535,7 +536,48 @@ def updateTransporte (request, pk):
     return render(request, 'templateKombustivel/transporte/edit_trans.html', context)
 
 #Views dadus motorista
+@login_required(login_url='login')
+def dadus_motorista (request):
+    dadus_motorista = Motorista.objects.all()
+    context = {'motorista': dadus_motorista}
+    return render(request, 'templateKombustivel/motorista/dadus_motorista.html', context)
+
+@login_required(login_url='login')
+@manejarial_only
+def aumenta_dadus_motorista (request):
+    form = MotoristaForm
+    if request.method == 'POST':
+        form = MotoristaForm(request.POST)
+        if form.is_valid():
+           form.save()
+           return redirect('dadus_motorista')
+         
+    context = {'form': form}
+    return render(request, 'templateKombustivel/motorista/aumenta_dadus_motorista.html', context)
+
+@login_required(login_url='login')
+@manejarial_only
+def delete_dadus_motorista (request, pk):
+    motorista = Motorista.objects.get(id_motorista=pk)
+    if request.method == 'GET':
+        motorista.delete()
+        return redirect('dadus_moto')
  
+@login_required(login_url='login')
+@manejarial_only
+def updateMotorista (request, pk):
+    motorista = Motorista.objects.get(id_motorista=pk)
+    form = MotoristaForm(instance=motorista)
+    
+    if request.method == 'POST':
+        # print('Printing Post', request.POST) print result form iha terminal
+        form = MotoristaForm(request.POST, instance=motorista)
+        if form.is_valid():
+            form.save()
+            return redirect('dadus_motorista')
+    context = {'form': form}
+    return render(request, 'templateKombustivel/motorista/update_motorista.html', context)
+
 #Viewa StockIn
 @login_required(login_url='login')
 def stockIn (request):
@@ -554,9 +596,17 @@ def stockIn (request):
 #Views StockOut
 @login_required(login_url='login')
 def stockOut (request):
-    stockOut = Distribuisaun.objects.all()
-    total_dist = Distribuisaun.objects.values_list('id_senhas__folin_senhas') 
-    total = 0
+    if request.method=='POST':
+        data_hahu = request.POST.get("datahahu")
+        data_ikus = request.POST.get("dataikus")
+        filterreport = Distribuisaun.objects.get.raw('select id_distribuisaun, tipo_kombustivel, kilometrajen,  id_transporte,  id_senhas,  id_motorista, fulan, ano, destinasaun,  folin_utilitariu,  data from Distribuisaun where data betwen "'+data_hahu+'" and "'+data_ikus+'"')
+        print(filterreport.raw)
+        context = {'data': filterreport, 'datahahu': data_hahu, 'dataikus': data_ikus}
+        return render(request, 'templateKombustivel/relatoriu/stockOut.html', context)
+    else:
+        stockOut = Distribuisaun.objects.all()
+        total_dist = Distribuisaun.objects.values_list('id_senhas__folin_senhas') 
+        total = 0
 
     for dist_tuple in total_dist:
         total += dist_tuple[0]
@@ -578,4 +628,10 @@ def stockAtual (request):
    
     context = {'kombustivels': stock_atual,'total_montante': total}
     return render(request, 'templateKombustivel/dash_kombustivel.html', context)
+
+
+#report relatorio stock out
+
+
+
 

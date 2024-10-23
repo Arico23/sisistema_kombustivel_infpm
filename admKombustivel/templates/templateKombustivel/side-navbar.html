@@ -1,6 +1,8 @@
-<nav class="sb-topnav navbar navbar-expand navbar-light bg-success2 shadow-sm p-3">
+{% load static %}
+<nav class="sb-topnav navbar navbar-expand navbar-light bg-success2">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href=""><strong style="font-family: Georgia, serif; color: white">Pajina Admin</strong></a>
+    <img src="{% static 'image/admin.png' %}" width='215px' alt="Brand Logo" class="img-fluid">
+    {% comment %} <a class="navbar-brand ps-3" href=""><strong style="font-family: Georgia, serif; color: white">Menu Admin</strong></a> {% endcomment %}
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
     <!-- Navbar Search-->
@@ -25,15 +27,55 @@
         <nav class="sb-sidenav accordion sb-sidenav-light bg-success2" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
-                    <div class="sb-sidenav-menu-heading "><h6 style="font-family: Georgia, serif;"><b>Menu sjk infpm</b></h6></div>
+                    
+                    <div class="sb-sidenav-menu-heading shadow-sm p-3">
+                        <img src="{% static 'image/logoinfpm4.png' %}" width='150px' alt="Brand Logo" class="img-fluid"></div>
                     <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'home' %}">
                         <div><i class="fas fa-home-alt" style="margin-right: 0.5rem;"></i></div>
                         <b style="font-family: Georgia, serif;">Pajina Inisiu</b>
                     </a>
                     <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dash_kombustivel' %}">
-                        <div><i class="fas fa-tachometer-alt" style="margin-right: 0.5rem;"></i></div>
+                        <div><i class="fa fa-bar-chart" style="margin-right: 0.5rem;"></i></div>
                         <b style="font-family: Georgia, serif;">Monitoring</b>
                     </a>
+
+
+                    <a class="nav-link collapsed btn btn-sm btn-ba-hover" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDadus" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div><i class="fa fa-database" style="margin-right: 0.5rem;"></i></div>
+                        <b style="font-family: Georgia, serif;">Dadus Geral</b>
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseDadus" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_diresaun' %}"> <div><i class="fa fa-circle" style="margin-right: 0.5rem;"></i></div>
+                                <b style="font-family: Georgia, serif;">Diresaun</a></b>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_departamentu' %}"> <div><i class="fa fa-circle" style="margin-right: 0.5rem;"></i></div>
+                                <b style="font-family: Georgia, serif;">Departamentu</a></b>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_regional' %}"> <div><i class="fa fa-circle" style="margin-right: 0.5rem;"></i></div>
+                                <b style="font-family: Georgia, serif;">Regional</a></b>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_trans' %}"> <div><i class="fa fa-circle" style="margin-right: 0.5rem;"></i></div>
+                                <b style="font-family: Georgia, serif;">Transporte</a></b>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_motorista' %}"> <div><i class="fa fa-circle" style="margin-right: 0.5rem;"></i></div>
+                                <b style="font-family: Georgia, serif;">Motorista</a></b>
+                        </nav>
+                    </div>
+
+                    <a class="nav-link collapsed btn btn-sm btn-ba-hover" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDadusPrinsipal" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div><i class="fa fa-database" style="margin-right: 0.5rem;"></i></div>
+                        <b style="font-family: Georgia, serif;">Dadus Prinsipal</b>
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseDadusPrinsipal" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_distributor' %}"> <div><i class="fa fa-circle" style="margin-right: 0.5rem;"></i></div>
+                                <b style="font-family: Georgia, serif;">Distribuitor</a></b>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'distribui_kom' %}"> <div><i class="fa fa-circle" style="margin-right: 0.5rem;"></i></div>
+                                <b style="font-family: Georgia, serif;">Distribuisaun</a></b>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_senhas' %}"> <div><i class="fa fa-circle" style="margin-right: 0.5rem;"></i></div>
+                                <b style="font-family: Georgia, serif;">Senhas</a></b>
+                        </nav>
+                    </div>
+                    
                     {% comment %} <div class="sb-sidenav-menu-heading">MENU-SJLP-INFPM</div> {% endcomment %}
 
                     {% comment %} <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -53,9 +95,9 @@
                                 Distribuisaun</a>
                         </nav>
                     </div> {% endcomment %}
-                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_distributor' %}">
+                    {% comment %} <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_distributor' %}">
                         <div><i class="fa fa-file" aria-hidden="true" style="margin-right: 0.5rem;"></i></div>
-                        <b style="font-family: Georgia, serif;">Distributor</b>
+                        <b style="font-family: Georgia, serif;">Suplyer</b>
                     </a>
                     <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'distribui_kom' %}">
                         <div><i class="fa fa-file" aria-hidden="true" style="margin-right: 0.5rem;"></i></div>
@@ -64,9 +106,9 @@
                     <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_senhas' %}">
                         <div><i class="fa fa-file" aria-hidden="true" style="margin-right: 0.5rem;"></i></div>
                         <b style="font-family: Georgia, serif;">Senhas</b>
-                    </a>
+                    </a> {% endcomment %}
 
-                    <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_regional' %}">
+                    {% comment %} <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_regional' %}">
                         <div><i class="fa fa-file" aria-hidden="true" style="margin-right: 0.5rem;"></i></div>
                         <b style="font-family: Georgia, serif;">Regional</b>
                     </a>
@@ -88,7 +130,7 @@
                     <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_motorista' %}">
                         <div><i class="fa fa-male" style="margin-right: 0.5rem;"></i></div>
                         <b style="font-family: Georgia, serif;">Motorista</b>
-                    </a>
+                    </a> {% endcomment %}
 
 
                     {% comment %} <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'dadus_tinan' %}">
@@ -116,15 +158,15 @@
                         </nav>
                     </div> {% endcomment %}
                     <a class="nav-link collapsed btn btn-sm btn-ba-hover" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRelatorio" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div><i class="fa fa-database" style="margin-right: 0.5rem;"></i></div>
-                        <b style="font-family: Georgia, serif;">RELATORIO</b>
+                        <div><i class="fa fa-folder-open" style="margin-right: 0.5rem;"></i></div>
+                        <b style="font-family: Georgia, serif;">Relatorio</b>
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseRelatorio" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'StockIn' %}"> <div><i class="fa fa-database" style="margin-right: 0.5rem;"></i></div>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'StockIn' %}"> <div><i class="fa fa-circle" style="margin-right: 0.5rem;"></i></div>
                                 <b style="font-family: Georgia, serif;">Stock In</a></b>
-                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'StockOut' %}"> <div><i class="fa fa-database" style="margin-right: 0.5rem;"></i></div>
+                            <a class="nav-link btn btn-sm btn-ba-hover" href="{% url 'StockOut' %}"> <div><i class="fa fa-circle" style="margin-right: 0.5rem;"></i></div>
                                 <b style="font-family: Georgia, serif;">Stock Out</a></b>
                         </nav>
                     </div>

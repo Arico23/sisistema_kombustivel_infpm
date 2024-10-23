@@ -6,6 +6,7 @@ Dashboard Kombustivel
 {% endblock %}
 
 {% block konteudu %}
+
 <body class="sb-nav-fixed">
 
     {% include 'templateKombustivel/side-navbar.html' %}
@@ -26,7 +27,7 @@ Dashboard Kombustivel
                         <div class="card-body shadow p-3">
                   <div class="row mt-2">
                       <div class="col-xl-3 col-md-6">
-                          <div class="card shadow-lg bg-primary text-white mb-4">
+                          <div class="card shadow-lg text-white mb-4" style="background-color:rgb(72,129,146);">
                               <div class="card-body">Total Stock Tama</div>
                               <div class="card-body"><h4>$ {{ total_stock_in }}</h4></div>
                               <div class="card-footer d-flex align-items-center justify-content-between">
@@ -36,7 +37,7 @@ Dashboard Kombustivel
                           </div>
                       </div>
                       <div class="col-xl-3 col-md-6">
-                        <div class="card shadow-lg bg-primary text-white mb-4">
+                        <div class="card shadow-lg text-white mb-4"  style="background-color:rgb(72,129,146);">
                             <div class="card-body">Total Stock Sai</div>
                             <div class="card-body"><h4>$ {{ total_stock_out }}</h4></div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
@@ -46,7 +47,7 @@ Dashboard Kombustivel
                         </div>
                     </div>
                       <div class="col-xl-3 col-md-6">
-                          <div class="card shadow-lg bg-success text-white mb-4">
+                          <div class="card shadow-lg text-white mb-4"  style="background-color:rgb(72,129,146);">
                               <div class="card-body">Stock Balansu</div>
                               <div class="card-body"><h4>$ {{ stock_atual }}</h4></div>
                               <div class="card-footer d-flex align-items-center justify-content-between">
@@ -56,7 +57,7 @@ Dashboard Kombustivel
                           </div>
                       </div>
                       <div class="col-xl-3 col-md-6">
-                          <div class="card shadow-lg bg-danger text-white mb-4">
+                          <div class="card shadow-lg text-white mb-4"  style="background-color:rgb(72,129,146);">
                               <div class="card-body">Total Transporte</div>
                               <div class="card-body"><h4><i class="fa fa-car"></i> {{ total_trans }}</h4></div>
                               <div class="card-footer d-flex align-items-center justify-content-between">
@@ -66,7 +67,7 @@ Dashboard Kombustivel
                           </div>
                       </div>
                       <div class="col-xl-3 col-md-6">
-                        <div class="card shadow-lg bg-danger text-white mb-4">
+                        <div class="card shadow-lg text-white mb-4"  style="background-color:rgb(72,129,146);">
                             <div class="card-body">Total Motorista</div>
                             <div class="card-body"><h4><i class="fa fa-male" aria-hidden="true"></i> {{ total_motor }}</h4></div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
@@ -76,7 +77,7 @@ Dashboard Kombustivel
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-6">
-                        <div class="card shadow-lg bg-warning text-white mb-4">
+                        <div class="card shadow-lg text-white mb-4"  style="background-color:rgb(72,129,146);">
                             <div class="card-body">Pessoal Foti Kombustivel</div>
                             <div class="card-body"><h4><i class="fa fa-male" aria-hidden="true"></i> {{total_motorista_foti_mina }}</h4></div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
@@ -86,7 +87,7 @@ Dashboard Kombustivel
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-6">
-                          <div class="card shadow-lg bg-warning text-white mb-4">
+                          <div class="card shadow-lg text-white mb-4"  style="background-color:rgb(72,129,146);">
                               <div class="card-body">Total Distributor</div>
                               <div class="card-body"><h4><i class="fa fa-male" aria-hidden="true"></i> {{ total_distributor }}</h4></div>
                               <div class="card-footer d-flex align-items-center justify-content-between">
@@ -96,7 +97,7 @@ Dashboard Kombustivel
                           </div>
                       </div>
                       <div class="col-xl-3 col-md-6">
-                        <div class="card shadow-lg bg-warning text-white mb-4">
+                        <div class="card shadow-lg text-white mb-4" style="background-color:rgb(72,129,146);">
                             <div class="card-body">Total Senhas</div>
                             <div class="card-body"><h4><i class="fa fa-credit-card" aria-hidden="true"></i> {{ total_senhas }}</h4></div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
@@ -123,7 +124,7 @@ Dashboard Kombustivel
                           <div class="card mb-4">
                               <div class="card-header">
                                   <i class="fas fa-chart-bar me-1"></i>
-                                  Gastus Kombustivel Kada Fulan
+                                  {% comment %} Gastus Kombustivel Kada Fulan {% endcomment %}
                               </div>
                             <article
                                 id="electric-cars"

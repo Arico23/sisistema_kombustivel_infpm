@@ -23,12 +23,12 @@ dadus kombustivel
                         <div class="card-body">
                             {% if request.user|has_group:"manejarial" %}
                             <div class="form-group">
-                                <a class="button-group mb-2 btn btn-primary" id="exportBtn">
-                                    <i class ="fa fa-plus"></i>Download</a>
+                                <a class="button-group mb-2 btn btn-primary" id="exportBtn">Download</a>
                                     <label for="date">Data Hahu</label>
                                     <input type="date">
                                     <label for="date">Data ikus</label>
                                     <input type="date">
+                                    <a class="button-group mb-2 btn btn-primary" id="exportBtn">Filter</a>
                                     <input type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Buka dadus distribuisaun.." class="form-control" style="width: 200px; float: right; clear: both;">
                             </div>
                             {% endif %}
