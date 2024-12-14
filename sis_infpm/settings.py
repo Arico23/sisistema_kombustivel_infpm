@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'admLojistik',
     # 'admPatrimonio',
-    'admKombustivel',   
+    'admKombustivel',
+    'sweetify',   
 ]
 #crispy forms bootstrap 5
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

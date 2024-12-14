@@ -344,6 +344,10 @@ class UserProfileForm(forms.ModelForm):
             instance.save()
         
         return instance
+# myapp/forms.py
+from django import forms
+
+
 
 
     

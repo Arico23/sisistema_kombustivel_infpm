@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm, DepartamentuForm, DiresaunForm, FulanForm, TinanForm, UserProfileForm
 from .models import *
 from django.contrib import messages
+import sweetify
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
@@ -12,6 +13,7 @@ from dateutil.relativedelta import relativedelta
 from pprint import pprint
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.http import HttpResponse
 
 @unauthenticated_user
 def loginPage(request):
@@ -193,6 +195,7 @@ def aumenta_dadus_distribuisaun (request):
         form = DistribuisaunForm(request.POST)
         if form.is_valid():
            form.save()
+           sweetify.toast(request, 'Successfully Added.')
            return redirect('distribui_kom')
          
     context = {'form': form}
@@ -293,6 +296,7 @@ def aumenta_dadus_regional (request):
         form = RegionalForm(request.POST)
         if form.is_valid():
            form.save()
+           sweetify.success(request, 'Successfully Added.')
            return redirect('dadus_regional')
         
     context = {'form': form}
@@ -317,6 +321,7 @@ def updateRegional (request, pk):
         form = RegionalForm(request.POST, instance=regional)
         if form.is_valid():
             form.save()
+            sweetify.toast(request, 'Successfully Added.')
             return redirect('dadus_regional')
     context = {'form': form}
     return render(request, 'templateKombustivel/regional/update_regional.html', context)
@@ -595,27 +600,19 @@ def stockIn (request):
     return render(request, 'templateKombustivel/relatorio/stockIn.html', context)
 #Views StockOut
 @login_required(login_url='login')
-def stockOut (request):
-    if request.method=='POST':
-        data_hahu = request.POST.get("datahahu")
-        data_ikus = request.POST.get("dataikus")
-        filterreport = Distribuisaun.objects.get.raw('select id_distribuisaun, tipo_kombustivel, kilometrajen,  id_transporte,  id_senhas,  id_motorista, fulan, ano, destinasaun,  folin_utilitariu,  data from Distribuisaun where data betwen "'+data_hahu+'" and "'+data_ikus+'"')
-        print(filterreport.raw)
-        context = {'data': filterreport, 'datahahu': data_hahu, 'dataikus': data_ikus}
-        return render(request, 'templateKombustivel/relatoriu/stockOut.html', context)
-    else:
+def stockOut(request):
         stockOut = Distribuisaun.objects.all()
         total_dist = Distribuisaun.objects.values_list('id_senhas__folin_senhas') 
         total = 0
 
-    for dist_tuple in total_dist:
-        total += dist_tuple[0]
-   
-    paginator = Paginator(stockOut, 5)
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
-    context = {'kombustivels': stockOut, 'page_obj': page_obj, 'total_montante': total}
-    return render(request, 'templateKombustivel/relatorio/stockOut.html', context)
+        for dist_tuple in total_dist:
+            total += dist_tuple[0]
+       
+        paginator = Paginator(stockOut, 5)
+        page_number = request.GET.get("page")
+        page_obj = paginator.get_page(page_number)
+        context = {'kombustivels': stockOut, 'page_obj': page_obj, 'total_montante': total}
+        return render(request, 'templateKombustivel/relatorio/stockOut.html', context)
 
 @login_required(login_url='login')
 def stockAtual (request):
@@ -628,10 +625,3 @@ def stockAtual (request):
    
     context = {'kombustivels': stock_atual,'total_montante': total}
     return render(request, 'templateKombustivel/dash_kombustivel.html', context)
-
-
-#report relatorio stock out
-
-
-
-
