@@ -23,7 +23,7 @@ dadus kombustivel
                         <div class="card-body">
                             {% if request.user|has_group:"manejarial" %}
                             <div class="form-group">
-                                <a class="button-group mb-2 btn btn-primary fa fa-plus" id="exportBtn">Download</a>
+                                <a class="button-group mb-2 btn btn-primary" id="exportBtn">Download</a>
                                 <div class="d-flex justify-content-center">
                                     <form class="form-control" method="get" action="{% url 'StockIn' %}">
                                         <div class="row mb-3">
