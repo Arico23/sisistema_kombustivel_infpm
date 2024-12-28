@@ -17,7 +17,7 @@
         "documentation": {}
     },
     {
-        "label": "date",
+        "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -218,6 +218,14 @@
         "documentation": {}
     },
     {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -250,7 +258,24 @@
         "documentation": {}
     },
     {
+        "label": "django.http",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.http",
+        "description": "django.http",
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -443,6 +468,55 @@
         "documentation": {}
     },
     {
+        "label": "stockMonth",
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "isExtraImport": true,
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "total_transportes",
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "isExtraImport": true,
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Sum",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Count",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "sweetify",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sweetify",
+        "description": "sweetify",
+        "detail": "sweetify",
+        "documentation": {}
+    },
+    {
         "label": "Paginator",
         "importPath": "django.core.paginator",
         "description": "django.core.paginator",
@@ -488,6 +562,22 @@
         "description": "dateutil.relativedelta",
         "isExtraImport": true,
         "detail": "dateutil.relativedelta",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractYear",
+        "importPath": "django.db.models.functions",
+        "description": "django.db.models.functions",
+        "isExtraImport": true,
+        "detail": "django.db.models.functions",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractMonth",
+        "importPath": "django.db.models.functions",
+        "description": "django.db.models.functions",
+        "isExtraImport": true,
+        "detail": "django.db.models.functions",
         "documentation": {}
     },
     {
@@ -762,7 +852,7 @@
         "kind": 2,
         "importPath": "admKombustivel.decorators",
         "description": "admKombustivel.decorators",
-        "peekOfCode": "def allowed_users(allowed_roles=[]):\n    def decorator(view_func):\n        def wrapper_func(request, *args, **kwargs):\n            group = None\n            if request.user.groups.exists():\n                group = request.user.groups.all()[0].name\n            if group in allowed_roles:\n                return view_func(request, *args, **kwargs)\n            else:\n                return HttpResponse('You are not authorized to view this page')",
+        "peekOfCode": "def allowed_users(allowed_roles=[]):\n    def decorator(view_func):\n        def wrapper_func(request, *args, **kwargs):\n            group = None\n            if request.user.groups.exists():\n                group = request.user.groups.all()[0].name\n            if group in allowed_roles:\n                return view_func(request, *args, **kwargs)\n            else: \n                return HttpResponse('You are not authorized to view this page')",
         "detail": "admKombustivel.decorators",
         "documentation": {}
     },
@@ -789,7 +879,7 @@
         "kind": 6,
         "importPath": "admKombustivel.forms",
         "description": "admKombustivel.forms",
-        "peekOfCode": "class SenhasForm(forms.ModelForm):\n    class Meta:\n        model = Senhas\n        fields = ['nu_senhas', 'folin_senhas', 'id_distributor']\n        labels = {\n            'nu_senhas': 'Numeru Senhas',\n            'folin_senhas': 'Folin Senhas',\n            'id_distributor': 'Distributor'\n        }\n    def clean(self):",
+        "peekOfCode": "class SenhasForm(forms.ModelForm):\n    class Meta:\n        model = Senhas\n        fields = ['nu_senhas', 'folin_senhas', 'id_distributor']\n        labels = {\n            'nu_senhas': 'Numeru Senhas',\n            'folin_senhas': 'Folin Senhas',\n            'id_distributor': 'Distributor'\n        }\n        placeholder = {",
         "detail": "admKombustivel.forms",
         "documentation": {}
     },
@@ -807,7 +897,7 @@
         "kind": 6,
         "importPath": "admKombustivel.forms",
         "description": "admKombustivel.forms",
-        "peekOfCode": "class DepartamentuForm(forms.ModelForm):\n    class Meta:\n        model = Departamentu\n        fields = ['naran_departamentu']\n        labels = {\n             'naran_departamentu': 'Naran Departamentu',\n        # fields = ['cutomer'] #only specific form\n        }\n#formulario Diresaun\nclass DiresaunForm(forms.ModelForm):",
+        "peekOfCode": "class DepartamentuForm(forms.ModelForm):\n    class Meta:\n        model = Departamentu\n        fields = ['naran_departamentu']\n        labels = {\n             'naran_departamentu': 'Naran Departamentu'\n        # fields = ['cutomer'] #only specific form\n        }\n#formulario Diresaun\nclass DiresaunForm(forms.ModelForm):",
         "detail": "admKombustivel.forms",
         "documentation": {}
     },
@@ -843,7 +933,7 @@
         "kind": 6,
         "importPath": "admKombustivel.forms",
         "description": "admKombustivel.forms",
-        "peekOfCode": "class MotoristaForm(forms.ModelForm):\n    class Meta:\n        model = Motorista\n        fields = ['naran_motorista', 'sexo', 'id_diresaun', 'id_departamentu', 'id_regional']\n        # labels = {\n        #      'naran_motorista': 'sexo',\n        # # fields = ['cutomer'] #only specific form\n        # }\n    def __init__(self, *args, **kwargs):\n            super().__init__(*args, **kwargs)",
+        "peekOfCode": "class MotoristaForm(forms.ModelForm):\n    class Meta:\n        model = Motorista\n        fields = ['naran_motorista', 'sexo', 'id_diresaun', 'id_departamentu', 'id_regional']\n        labels = {\n             'id_diresaun': 'Diresaun',\n             'id_departamentu': 'Departamentu',\n             'id_regional': 'Regional',\n        # fields = ['cutomer'] #only specific form\n        }",
         "detail": "admKombustivel.forms",
         "documentation": {}
     },
@@ -1028,6 +1118,33 @@
         "documentation": {}
     },
     {
+        "label": "stockYea",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def stockYear (request):\n    # Fetch the data\n    distribuisaun_query = (\n        Distribuisaun.objects.filter(data__year__gte=2024)\n        .annotate(year=ExtractYear('data'))\n        .values('year')\n        .annotate(total_folin_senhas=Sum('id_senhas__folin_senhas'))\n        .order_by('year')\n    )\n    # Prepare the data for JSON response",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "stockMonth",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def stockMonth(request):\n    # Fetch the data for the year 2024\n    distribuisaun_query = (\n        Distribuisaun.objects.filter(data__year=2024)  # Filter for the year 2024\n        .annotate(month=ExtractMonth('data'))  # Extract the month\n        .values('month')  # Group by month\n        .annotate(total_folin_senhas=Sum('id_senhas__folin_senhas'))  # Sum `folin_senhas` for each month\n        .order_by('month')  # Order by month\n    )\n    data = list(distribuisaun_query)",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
+        "label": "total_transportes",
+        "kind": 2,
+        "importPath": "admKombustivel.views",
+        "description": "admKombustivel.views",
+        "peekOfCode": "def total_transportes(request):\n    # Aggregate count of transport types\n    total_transportes = Transporte.objects.values('categoria')\\\n        .annotate(total=Count('categoria'))\\\n        .order_by('categoria')\n    # Convert the queryset to a list of dictionaries\n    data = list(total_transportes)\n    # Return as a JSON response\n    return JsonResponse(data, safe=False)\n#views Distribuitor ",
+        "detail": "admKombustivel.views",
+        "documentation": {}
+    },
+    {
         "label": "dadus_distributo",
         "kind": 2,
         "importPath": "admKombustivel.views",
@@ -1077,7 +1194,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def aumenta_dadus_distribuisaun (request):\n    form = DistribuisaunForm\n    if request.method == 'POST':\n        form = DistribuisaunForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('distribui_kom')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/kombustivel/aumenta_dadus_distribuisaun.html', context)\n@login_required(login_url='login')",
+        "peekOfCode": "def aumenta_dadus_distribuisaun (request):\n    form = DistribuisaunForm\n    if request.method == 'POST':\n        form = DistribuisaunForm(request.POST)\n        if form.is_valid():\n           form.save()\n           sweetify.toast(request, 'Successfully Added.')\n           return redirect('distribui_kom')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/kombustivel/aumenta_dadus_distribuisaun.html', context)",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -1149,7 +1266,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def aumenta_dadus_regional (request):\n    form = RegionalForm\n    if request.method == 'POST':\n        form = RegionalForm(request.POST)\n        if form.is_valid():\n           form.save()\n           return redirect('dadus_regional')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/regional/aumenta_dadus_regional.html', context)\n@login_required(login_url='login')",
+        "peekOfCode": "def aumenta_dadus_regional (request):\n    form = RegionalForm\n    if request.method == 'POST':\n        form = RegionalForm(request.POST)\n        if form.is_valid():\n           form.save()\n           sweetify.success(request, 'Successfully Added.')\n           return redirect('dadus_regional')\n    context = {'form': form}\n    return render(request, 'templateKombustivel/regional/aumenta_dadus_regional.html', context)",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -1167,7 +1284,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def updateRegional (request, pk):\n    regional = Regional.objects.get(id_regional=pk)\n    form = RegionalForm(instance=regional)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = RegionalForm(request.POST, instance=regional)\n        if form.is_valid():\n            form.save()\n            return redirect('dadus_regional')\n    context = {'form': form}",
+        "peekOfCode": "def updateRegional (request, pk):\n    regional = Regional.objects.get(id_regional=pk)\n    form = RegionalForm(instance=regional)\n    if request.method == 'POST':\n        # print('Printing Post', request.POST) print result form iha terminal\n        form = RegionalForm(request.POST, instance=regional)\n        if form.is_valid():\n            form.save()\n            sweetify.toast(request, 'Successfully Added.')\n            return redirect('dadus_regional')",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -1302,7 +1419,7 @@
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def delete_dadus_motorista (request, pk):\n    motorista = Motorista.objects.get(id_motorista=pk)\n    if request.method == 'GET':\n        motorista.delete()\n        return redirect('dadus_motorista')\n@login_required(login_url='login')   \n@manejarial_only\ndef updateMotorista (request, pk):\n    motorista = Motorista.objects.get(id_motorista=pk)\n    form = MotoristaForm(instance=motorista)",
+        "peekOfCode": "def delete_dadus_motorista (request, pk):\n    motorista = Motorista.objects.get(id_motorista=pk)\n    if request.method == 'GET':\n        motorista.delete()\n        return redirect('dadus_moto')\n@login_required(login_url='login')\n@manejarial_only\ndef updateMotorista (request, pk):\n    motorista = Motorista.objects.get(id_motorista=pk)\n    form = MotoristaForm(instance=motorista)",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
@@ -1316,20 +1433,20 @@
         "documentation": {}
     },
     {
-        "label": "stockI",
+        "label": "stockIn",
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def stockIn (request):\n    stockIn = Distribuitor.objects.all()\n    total_dist = Distribuitor.objects.values_list('montante_distribuitor') \n    total = 0\n    for dist_tuple in total_dist:\n        total += dist_tuple[0]\n    paginator = Paginator(stockIn, 5)\n    page_number = request.GET.get(\"page\")\n    page_obj = paginator.get_page(page_number)\n    context = {'kombustivels': stockIn, 'page_obj': page_obj, 'total_montante': total}",
+        "peekOfCode": "def stockIn(request):\n    # Initialize variables\n    stockIn = Distribuitor.objects.all()\n    total_dist = Distribuitor.objects.values_list('montante_distribuitor', flat=True) \n    total = sum(total_dist)\n    # Handle filtering\n    start_date = request.GET.get('start_date')\n    end_date = request.GET.get('end_date')\n    if start_date and end_date:\n        stockIn = stockIn.filter(Q(data__gte=start_date) & Q(data__lte=end_date))",
         "detail": "admKombustivel.views",
         "documentation": {}
     },
     {
-        "label": "stockOu",
+        "label": "stockOut",
         "kind": 2,
         "importPath": "admKombustivel.views",
         "description": "admKombustivel.views",
-        "peekOfCode": "def stockOut (request):\n    stockOut = Distribuisaun.objects.all()\n    total_dist = Distribuisaun.objects.values_list('id_senhas__folin_senhas') \n    total = 0\n    for dist_tuple in total_dist:\n        total += dist_tuple[0]\n    paginator = Paginator(stockOut, 5)\n    page_number = request.GET.get(\"page\")\n    page_obj = paginator.get_page(page_number)\n    context = {'kombustivels': stockOut, 'page_obj': page_obj, 'total_montante': total}",
+        "peekOfCode": "def stockOut(request):\n        stockOut = Distribuisaun.objects.all()\n        total_dist = Distribuisaun.objects.values_list('id_senhas__folin_senhas') \n        total = 0\n        for dist_tuple in total_dist:\n            total += dist_tuple[0]\n         # Handle filtering\n        start_date = request.GET.get('start_date')\n        end_date = request.GET.get('end_date')\n        if start_date and end_date:",
         "detail": "admKombustivel.views",
         "documentation": {}
     },

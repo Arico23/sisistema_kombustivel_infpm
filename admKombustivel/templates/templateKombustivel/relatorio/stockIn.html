@@ -23,13 +23,28 @@ dadus kombustivel
                         <div class="card-body">
                             {% if request.user|has_group:"manejarial" %}
                             <div class="form-group">
-                                <a class="button-group mb-2 btn btn-primary" id="exportBtn">Download</a>
-                                    <label for="date">Data Hahu</label>
-                                    <input type="date">
-                                    <label for="date">Data ikus</label>
-                                    <input type="date">
-                                    <input type='submit' value='Filter'/>
-                                    {% comment %} <input type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Buka relatoriu stock tama" class="form-control" style="width: 200px; float: right; clear: both;"> {% endcomment %}
+                                <a class="button-group mb-2 btn btn-primary fa fa-plus" id="exportBtn">Download</a>
+                                <div class="d-flex justify-content-center">
+                                    <form class="form-control" method="get" action="{% url 'StockIn' %}">
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="start_date" class="form-label">Loron Komesa:</label>
+                                                <input class="form-control" type="date" id="start_date" name="start_date" value="{{ start_date }}">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="end_date" class="form-label">Loron Remata:</label>
+                                                <input class="form-control" type="date" id="end_date" name="end_date" value="{{ end_date }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-1 d-flex justify-content-center">
+                                                <button class="btn btn-primary" type="submit">Filter</button>
+                                            </div>
+                                        </div>
+                                        <input type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Buka relatoriu stock tama" class="form-control" style="width: 250px; float: right; clear: both;">
+                                    </form>
+                                </div>
+                                
                             </div>
                             {% endif %}
                                     
@@ -43,15 +58,21 @@ dadus kombustivel
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {% for distributor in page_obj %}
+                                    {%  if total_montante == 0 %}
+                                        <tr>
+                                            <td colspan="4" style="text-align: center;">Dadus la existe</td>
+                                        </tr>
+                                    {% else %}    
+                                    {% for kombustivel in page_obj %}
                                         <tr>
                                             <td>{{ forloop.counter }}</td>
-                                            <td>{{ distributor.naran_distribuitor }}</td>
-                                            <td>$ {{ distributor.montante_distribuitor }}</td>
-                                            <td>{{ distributor.data }}</td>
+                                            <td>{{ kombustivel.naran_distribuitor }}</td>
+                                            <td>$ {{ kombustivel.montante_distribuitor }}</td>
+                                            <td>{{ kombustivel.data }}</td>
                                            
                                         </tr>
                                     {% endfor %}
+                                    {% endif %}
                                         <tr style="background-color:#f0f0f0;">
                                             <td colspan="2"><b>Total: </b></td>
                                             <td style="background-color: #c9c9c9;"><b> ${{ total_montante }}<b></td>

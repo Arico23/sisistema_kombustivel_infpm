@@ -3,8 +3,15 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // Bar Chart Example
+
+// // Fetch data from the API
+// fetch('/stockMonth') // Replace with your API URL
+//   .then(response => response.json())
+//   .then(data => {
+//     // Prepare the labels and data from the API response
+//     const datasetData = data.map(item => item.total_folin_senhas);
+
 var ctx = document.getElementById("myBarChart");
-var chart_data = document.getElementById("data_chart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
@@ -13,7 +20,7 @@ var myLineChart = new Chart(ctx, {
       label: "Revenue",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [30,20],
+      data: [60,604,69,76,745,74],
     }],
   },
   options: {
@@ -45,45 +52,9 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
-// Bar Chart Example
-var ctx = document.getElementById("gastus");
-var myLineChart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
-    datasets: [{
-      label: "Revenue",
-      backgroundColor: "rgba(2,117,216,1)",
-      borderColor: "rgba(2,117,216,1)",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
-    }],
-  },
-  options: {
-    scales: {
-      xAxes: [{
-        time: {
-          unit: 'month'
-        },
-        gridLines: {
-          display: false
-        },
-        ticks: {
-          maxTicksLimit: 6
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          min: 0,
-          max: 15000,
-          maxTicksLimit: 5
-        },
-        gridLines: {
-          display: true
-        }
-      }],
-    },
-    legend: {
-      display: false
-    }
-  }
-});
+// })
+// .catch(error => {
+//     console.error('Error fetching data:', error);
+// });
+
+

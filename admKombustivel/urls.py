@@ -1,4 +1,5 @@
 from django.urls import path
+from admKombustivel.views import stockMonth, total_transportes
 from . import views
 urlpatterns = [
      path('login/', views.loginPage, name='login'),
@@ -49,4 +50,7 @@ urlpatterns = [
      path('stockOut/', views.stockOut, name='StockOut'),
      path('stockAtual/', views.stockAtual, name='StockAtual'),
      path('update_user/', views.user_profile, name='update_user'),
+     path('stockYear/', views.stockYear, name='stockYear'),
+     path('transCat/', views.total_transportes, name='transCat'),
+     path('stockMonth/', views.stockMonth, name='stockMonth'),
 ]

@@ -171,9 +171,12 @@ class DistribuisaunForm(forms.ModelForm):
              'folin_utilitariu' : 'Folin Unitariu',
              
         }
+     
+
         widgets = {
-            'data': forms.TextInput(attrs={'readonly': 'readonly', 'style': 'background-color: lightgray;'})
-        }
+            # 'data': forms.TextInput(attrs={'readonly': 'readonly', 'style': 'background-color: lightgray;'})
+            'data': forms.TextInput(attrs={'type': 'date'}),
+        } 
      
         # fields = ['cutomer'] #only specific form
     

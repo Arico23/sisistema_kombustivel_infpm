@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Q
 from .forms import DistribuisaunForm, TransporteForm, DistributorForm, MotoristaForm, SenhasForm, RegionalForm, DepartamentuForm, DiresaunForm, FulanForm, TinanForm, UserProfileForm
 from .models import *
 from django.contrib import messages
@@ -8,12 +9,18 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .decorators import manejarial_only, unauthenticated_user
-from datetime import date
+import datetime
 from dateutil.relativedelta import relativedelta
 from pprint import pprint
 from django.contrib.auth.models import User
 from datetime import datetime
-from django.http import HttpResponse
+import django.http
+from django.db.models import Sum
+from django.db.models.functions import ExtractYear
+from django.db.models.functions import ExtractMonth
+from django.http import JsonResponse
+from django.db.models import Count
+import calendar
 
 @unauthenticated_user
 def loginPage(request):
@@ -96,21 +103,70 @@ def dash_kombustivel (request):
     #Get total_motorista_foti_mina
     total_motorista_foti_mina = Distribuisaun.objects.count()
     
-    #Get all the distribuited data by month
-    today = date.today()
-    six_months = today - relativedelta(months=6)
-    distrubuisaun_query = Distribuisaun.objects.values_list('id_senhas__folin_senhas').filter(data__gte = six_months)
-    distrubuisaun_list = list(distrubuisaun_query)
-    
-    distributed_six_months = []
-    for i in distrubuisaun_list:
-        for item in i:
-            distributed_six_months.append(item)    
-    
+        
     context = {'total_stock_in':total_stock_in, 'total_stock_out': total_stock_out, 'total_trans':total_trans,
-               'total_motor':total_motor, 'stock_atual': stock_atual, 'total_motorista_foti_mina': total_motorista_foti_mina, 'total_distributor': total_distributor, 'total_senhas':total_senhas, 'dist_month': distributed_six_months}
+               'total_motor':total_motor, 'stock_atual': stock_atual, 'total_motorista_foti_mina': total_motorista_foti_mina, 
+               'total_distributor': total_distributor, 'total_senhas':total_senhas}
     
     return render(request, 'templateKombustivel/dash_kombustivel.html', context)
+
+
+@login_required(login_url='login')
+def stockYear (request):
+    # Fetch the data
+    distribuisaun_query = (
+        Distribuisaun.objects.filter(data__year__gte=2024)
+        .annotate(year=ExtractYear('data'))
+        .values('year')
+        .annotate(total_folin_senhas=Sum('id_senhas__folin_senhas'))
+        .order_by('year')
+    )
+
+    # Prepare the data for JSON response
+    data = list(distribuisaun_query)
+
+    # Return the data as JSON
+    return JsonResponse(data, safe=False)
+
+
+@login_required(login_url='login')
+def stockMonth(request):
+    # Fetch the data for the year 2024
+    year_now = datetime.today().year
+    distribuisaun_query = (
+        Distribuisaun.objects.filter(data__year=year_now)  # Filter for the year 2024
+        .annotate(month=ExtractMonth('data'))  # Extract the month
+        .values('month')  # Group by month
+        .annotate(total_folin_senhas=Sum('id_senhas__folin_senhas'))  # Sum `folin_senhas` for each month
+        .order_by('month')  # Order by month
+    )
+    
+    data = [
+        {
+            'month': calendar.month_name[item['month']],  # Convert numeric month to name
+            'total_folin_senhas': item['total_folin_senhas'],
+        }
+        for item in distribuisaun_query
+    ]
+    
+    data = list(data)
+    return JsonResponse(data, safe=False)
+    
+   
+
+    
+def total_transportes(request):
+    # Aggregate count of transport types
+    total_transportes = Transporte.objects.values('categoria')\
+        .annotate(total=Count('categoria'))\
+        .order_by('categoria')
+
+    # Convert the queryset to a list of dictionaries
+    data = list(total_transportes)
+
+    # Return as a JSON response
+    return JsonResponse(data, safe=False)
+
 
 #views Distribuitor 
 @login_required(login_url='login')
@@ -585,19 +641,34 @@ def updateMotorista (request, pk):
 
 #Viewa StockIn
 @login_required(login_url='login')
-def stockIn (request):
+def stockIn(request):
+    # Initialize variables
     stockIn = Distribuitor.objects.all()
-    total_dist = Distribuitor.objects.values_list('montante_distribuitor') 
-    total = 0
+    total_dist = Distribuitor.objects.values_list('montante_distribuitor', flat=True) 
+    total = sum(total_dist)
 
-    for dist_tuple in total_dist:
-        total += dist_tuple[0]
-   
+    # Handle filtering
+    start_date = request.GET.get('start_date')
+    end_date = request.GET.get('end_date')
+    if start_date and end_date:
+        stockIn = stockIn.filter(Q(data__gte=start_date) & Q(data__lte=end_date))
+        total = sum(stockIn.values_list('montante_distribuitor', flat=True))
+        
+    # Pagination
     paginator = Paginator(stockIn, 5)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
-    context = {'kombustivels': stockIn, 'page_obj': page_obj, 'total_montante': total}
+
+    # Context
+    context = {
+        'kombustivels': stockIn, 
+        'page_obj': page_obj, 
+        'total_montante': total,
+        'start_date': start_date, 
+        'end_date': end_date,
+    }
     return render(request, 'templateKombustivel/relatorio/stockIn.html', context)
+
 #Views StockOut
 @login_required(login_url='login')
 def stockOut(request):
@@ -607,6 +678,16 @@ def stockOut(request):
 
         for dist_tuple in total_dist:
             total += dist_tuple[0]
+            
+         # Handle filtering
+        start_date = request.GET.get('start_date')
+        end_date = request.GET.get('end_date')
+        if start_date and end_date:
+            stockOut = stockOut.filter(Q(data__gte=start_date) & Q(data__lte=end_date))
+            total_dist = stockOut.values_list('id_senhas__folin_senhas')
+            total = 0
+            for dist_tuple in total_dist:
+                total += dist_tuple[0]
        
         paginator = Paginator(stockOut, 5)
         page_number = request.GET.get("page")
